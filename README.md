@@ -2,8 +2,13 @@
 
 Projeto dedicado ao estudo e implementação de técnicas de *Pruning* aplicadas à ingestão de Grafos de Conhecimento (Knowledge Graphs), utilizando o dataset **CICIDS2017** e armazenamento no **Apache Jena Fuseki**.
 
-O objetivo é comparar diferentes estratégias de redução do volume de triplas durante a ingestão, analisando custo, ganho de eficiência, perda de informação e impacto semântico.
+## 🎯 Objetivo do Projeto
+Investigar o impacto de diferentes **técnicas de pruning aplicadas durante a ingestão de eventos de rede** para construção de Grafos de Conhecimento, avaliando:
 
+- Redução no volume de triplas
+- Preservação de informação relevante para incidentes
+- Custo computacional
+- Reprodutibilidade do pipeline de ingestão
 ---
 
 ## 📁 Estrutura do Repositório
@@ -104,7 +109,13 @@ python ingest_cicids2017.py --csv-root dataset/ --aggregate 60s
 Todos organizados na pasta `/sparql`.
 
 ### ✔ 5. Ontologia  
-Incluindo versão comentada explicando cada classe e predicado.
+ontology.ttl: ontologia minimalista projetada para representar:
+    NetworkFlow
+    IPAddress
+    timestamps, ports, labels, protocolos, etc.
+ontology-commented.ttl: versão com explicações linha a linha.
+
+A ontologia deve ser carregada antes ou depois dos arquivos .nt.gz, pois ela está em grafo separado.
 
 ### ✔ 6. Logs de execução  
 Um diretório pode ser adicionado, ex:
@@ -127,6 +138,13 @@ Cada técnica proporciona:
 | Sample           | Muito Alta       | Alta             | Baixo                |
 | Top-K            | Médio            | Média            | Médio–Alto           |
 | Aggregation      | Muito Alta       | Baixa–Média      | Alto                 |
+
+---
+
+👥 Autores
+
+Roger Pires - roger.pires@inf.ufrgs.br
+Douglas Nascimento - doug@inf.ufrgs.br
 
 ---
 
