@@ -1,0 +1,11 @@
+# Query Distribuição por protocolo
+PREFIX ex: <http://example.org/ns#>
+
+SELECT ?proto (COUNT(*) AS ?n)
+WHERE {
+  GRAPH ?g {
+    ?f ex:protocol ?proto .
+  }
+}
+GROUP BY ?proto
+ORDER BY DESC(?n)

@@ -1,0 +1,7 @@
+# Query Lista grafos importados e triplas por grafo
+SELECT ?g (COUNT(*) AS ?triples)
+WHERE {
+  GRAPH ?g { ?s ?p ?o }
+}
+GROUP BY ?g
+ORDER BY ?g

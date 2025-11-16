@@ -1,0 +1,10 @@
+# Query Quantidade de instâncias por classe
+PREFIX ex: <http://example.org/ns#>
+
+SELECT ?class (COUNT(?s) AS ?instances)
+WHERE {
+  GRAPH ?g { ?s a ?class }
+  FILTER(?g != <urn:ontology>)
+}
+GROUP BY ?class
+ORDER BY DESC(?instances)

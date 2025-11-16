@@ -1,0 +1,9 @@
+# Query Quantidade total de triplas no dataset
+SELECT (SUM(?c) AS ?total)
+WHERE {
+  SELECT ?g (COUNT(*) AS ?c)
+  WHERE {
+    GRAPH ?g { ?s ?p ?o }
+  }
+  GROUP BY ?g
+}

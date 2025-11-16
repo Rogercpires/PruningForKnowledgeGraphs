@@ -1,0 +1,56 @@
+@prefix ex:   <http://example.org/ns#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+### Classes
+ex:NetworkFlow a rdfs:Class .
+ex:AggregatedFlow a rdfs:Class .
+ex:IPAddress a rdfs:Class .
+
+### Object properties
+ex:hasSourceAddress a rdf:Property ;
+  rdfs:domain ex:NetworkFlow ; rdfs:range ex:IPAddress .
+
+ex:hasDestinationAddress a rdf:Property ;
+  rdfs:domain ex:NetworkFlow ; rdfs:range ex:IPAddress .
+
+### Datetime, Identifiers
+ex:timestamp a rdf:Property ;
+  rdfs:domain ex:NetworkFlow ; rdfs:range xsd:dateTime .
+
+ex:timestampEpoch a rdf:Property ;
+  rdfs:domain ex:NetworkFlow ; rdfs:range xsd:integer .
+
+### Ports & protocol
+ex:srcPort a rdf:Property ;
+  rdfs:domain ex:NetworkFlow ; rdfs:range xsd:integer .
+
+ex:dstPort a rdf:Property ;
+  rdfs:domain ex:NetworkFlow ; rdfs:range xsd:integer .
+
+ex:protocol a rdf:Property ;
+  rdfs:domain ex:NetworkFlow ; rdfs:range xsd:string .
+
+### Label & duration
+ex:label a rdf:Property ;
+  rdfs:domain ex:NetworkFlow ; rdfs:range xsd:string .
+
+ex:duration a rdf:Property ;
+  rdfs:domain ex:NetworkFlow ; rdfs:range xsd:double .
+
+### Aggregated Flow metrics
+ex:count a rdf:Property ;
+  rdfs:domain ex:AggregatedFlow ; rdfs:range xsd:integer .
+
+ex:sumBytes a rdf:Property ;
+  rdfs:domain ex:AggregatedFlow ; rdfs:range xsd:integer .
+
+ex:bucketStart a rdf:Property ;
+  rdfs:domain ex:AggregatedFlow ; rdfs:range xsd:integer .
+
+ex:firstSeen a rdf:Property ;
+  rdfs:domain ex:AggregatedFlow ; rdfs:range xsd:integer .
+
+ex:lastSeen a rdf:Property ;
+  rdfs:domain ex:AggregatedFlow ; rdfs:range xsd:integer .

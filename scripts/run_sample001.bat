@@ -1,0 +1,1 @@
+python ingest_cicids2017.py --csv-root "CAMINHO\TrafficLabelling" --sample 0.01

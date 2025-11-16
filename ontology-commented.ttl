@@ -1,0 +1,101 @@
+@prefix ex:   <http://example.org/ns#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+#################################################################
+# Minimal Ontology for Network Flow Knowledge Graph (Baseline)
+# Alinhada à NORIA-O, STIX 2.1 e W3C Cybersecurity KG
+# Autores: Douglas Roger Pires — Mestrado UFRGS (2025)
+#################################################################
+
+### === CLASSES ===
+ex:NetworkFlow a rdfs:Class ;
+    rdfs:label "Network Flow"@en ;
+    rdfs:comment "Representa um fluxo individual de rede capturado (par IP origem/destino, protocolo e tempo)."@pt .
+
+ex:AggregatedFlow a rdfs:Class ;
+    rdfs:label "Aggregated Flow"@en ;
+    rdfs:comment "Representa uma agregação de múltiplos fluxos de rede em uma janela temporal (pruning/aggregação temporal)."@pt .
+
+ex:IPAddress a rdfs:Class ;
+    rdfs:label "IP Address"@en ;
+    rdfs:comment "Endereço IP associado a um fluxo de rede."@pt .
+
+### === OBJECT PROPERTIES ===
+ex:hasSourceAddress a rdf:Property ;
+    rdfs:domain ex:NetworkFlow ;
+    rdfs:range ex:IPAddress ;
+    rdfs:label "has source address"@en ;
+    rdfs:comment "Relaciona um fluxo de rede ao seu endereço IP de origem."@pt .
+
+ex:hasDestinationAddress a rdf:Property ;
+    rdfs:domain ex:NetworkFlow ;
+    rdfs:range ex:IPAddress ;
+    rdfs:label "has destination address"@en ;
+    rdfs:comment "Relaciona um fluxo de rede ao seu endereço IP de destino."@pt .
+
+### === DATATYPE PROPERTIES ===
+ex:timestamp a rdf:Property ;
+    rdfs:domain ex:NetworkFlow ;
+    rdfs:range xsd:dateTime ;
+    rdfs:label "timestamp"@en ;
+    rdfs:comment "Momento temporal do fluxo em formato ISO-8601."@pt .
+
+ex:timestampEpoch a rdf:Property ;
+    rdfs:domain ex:NetworkFlow ;
+    rdfs:range xsd:integer ;
+    rdfs:label "timestamp (epoch)"@en ;
+    rdfs:comment "Timestamp do fluxo em formato epoch (inteiro)."@pt .
+
+ex:srcPort a rdf:Property ;
+    rdfs:domain ex:NetworkFlow ;
+    rdfs:range xsd:integer ;
+    rdfs:label "source port"@en .
+
+ex:dstPort a rdf:Property ;
+    rdfs:domain ex:NetworkFlow ;
+    rdfs:range xsd:integer ;
+    rdfs:label "destination port"@en .
+
+ex:protocol a rdf:Property ;
+    rdfs:domain ex:NetworkFlow ;
+    rdfs:range xsd:string ;
+    rdfs:label "protocol"@en .
+
+ex:label a rdf:Property ;
+    rdfs:domain ex:NetworkFlow ;
+    rdfs:range xsd:string ;
+    rdfs:label "label"@en ;
+    rdfs:comment "Classe do fluxo (benign, DDoS, portscan, etc.)."@pt .
+
+ex:duration a rdf:Property ;
+    rdfs:domain ex:NetworkFlow ;
+    rdfs:range xsd:double ;
+    rdfs:label "duration (ms)"@en .
+
+### === AGGREGATED FLOW METRICS ===
+ex:count a rdf:Property ;
+    rdfs:domain ex:AggregatedFlow ;
+    rdfs:range xsd:integer ;
+    rdfs:label "count"@en .
+
+ex:sumBytes a rdf:Property ;
+    rdfs:domain ex:AggregatedFlow ;
+    rdfs:range xsd:integer ;
+    rdfs:label "sum of bytes"@en .
+
+ex:bucketStart a rdf:Property ;
+    rdfs:domain ex:AggregatedFlow ;
+    rdfs:range xsd:integer ;
+    rdfs:label "bucket start (epoch)"@en .
+
+ex:firstSeen a rdf:Property ;
+    rdfs:domain ex:AggregatedFlow ;
+    rdfs:range xsd:integer ;
+    rdfs:label "first seen (epoch)"@en .
+
+ex:lastSeen a rdf:Property ;
+    rdfs:domain ex:AggregatedFlow ;
+    rdfs:range xsd:integer ;
+    rdfs:label "last seen (epoch)"@en .

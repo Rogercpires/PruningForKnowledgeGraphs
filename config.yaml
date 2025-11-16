@@ -1,0 +1,13 @@
+scenarios:
+  - name: baseline
+    args: "--baseline"
+  - name: temporal24h
+    args: "--temporal 24h"
+  - name: aggregate60s
+    args: "--aggregate 60s"
+  - name: topk20
+    args: "--topk 20"
+  - name: sample001
+    args: "--sample 0.01"
+  - name: labels-attacks
+    args: "--labels ddos,portscan,heartbleed,bot" 

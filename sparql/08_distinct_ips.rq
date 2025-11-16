@@ -1,0 +1,9 @@
+# Query Distinct IPs por dataset
+PREFIX ex: <http://example.org/ns#>
+SELECT (COUNT(DISTINCT ?ip) AS ?ips)
+WHERE {
+  GRAPH ?g {
+    ?ip a ex:IPAddress .
+  }
+  FILTER(?g != <urn:ontology>)
+}

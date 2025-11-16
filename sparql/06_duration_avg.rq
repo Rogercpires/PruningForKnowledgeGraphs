@@ -1,0 +1,7 @@
+# Query Duração média dos fluxos
+PREFIX ex: <http://example.org/ns#>
+
+SELECT (AVG(?dur) AS ?avgDuration)
+WHERE {
+  GRAPH ?g { ?f ex:duration ?dur }
+}

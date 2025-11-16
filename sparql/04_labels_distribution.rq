@@ -1,0 +1,11 @@
+# Query Distribuição de labels
+PREFIX ex: <http://example.org/ns#>
+
+SELECT ?label (COUNT(*) AS ?flows)
+WHERE {
+  GRAPH ?g {
+    ?f ex:label ?label .
+  }
+}
+GROUP BY ?label
+ORDER BY DESC(?flows)

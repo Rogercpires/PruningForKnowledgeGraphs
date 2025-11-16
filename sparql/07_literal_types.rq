@@ -1,0 +1,12 @@
+# Query Literais e datatypes por propriedade
+SELECT ?p ?dt (COUNT(*) AS ?n)
+WHERE {
+  GRAPH ?g {
+    ?s ?p ?o .
+    FILTER(isLiteral(?o))
+    BIND (DATATYPE(?o) AS ?dt)
+  }
+  FILTER(?g != <urn:ontology>)
+}
+GROUP BY ?p ?dt
+ORDER BY ?p
