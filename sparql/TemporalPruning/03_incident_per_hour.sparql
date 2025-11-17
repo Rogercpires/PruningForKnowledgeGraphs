@@ -1,0 +1,8 @@
+# Incidentes por hora
+SELECT (FLOOR(?t/3600) AS ?hour) (COUNT(*) AS ?n)
+WHERE {
+  GRAPH <http://ex.org/graph_temporal_24h> {
+    ?f <ex:timestamp> ?t .
+  }
+}
+GROUP BY ?hour ORDER BY ?hour

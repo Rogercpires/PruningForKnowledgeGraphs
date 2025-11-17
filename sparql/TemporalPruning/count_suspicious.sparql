@@ -1,0 +1,9 @@
+SELECT (SUM(?countSuspicious) AS ?totalSuspicious)
+WHERE {
+  SELECT (COUNT(*) AS ?countSuspicious)
+  WHERE {
+    GRAPH ?g {
+      ?f <http://example.org/ns#label> "suspicious" .
+    }
+  }
+}

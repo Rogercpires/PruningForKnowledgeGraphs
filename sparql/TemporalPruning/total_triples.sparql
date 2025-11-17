@@ -1,0 +1,7 @@
+SELECT (SUM(?count) AS ?totalTriples)
+WHERE {
+  SELECT (COUNT(*) AS ?count)
+  WHERE {
+    GRAPH ?g { ?s ?p ?o }
+  }
+}

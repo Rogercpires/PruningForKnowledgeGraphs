@@ -159,5 +159,5 @@ Douglas Nascimento - doug@inf.ufrgs.br
 
 ## 📝 Licença
 
-Este projeto está licenciado sob a licença GLP.
+Este projeto está licenciado sob a licença GPL-2.0 license .
 
