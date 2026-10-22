@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "rules_version": "2026-10-22.1",
+  "timezone_convention": {
+    "source_timezone": "unknown",
+    "representation": "local civil time without UTC offset",
+    "bucket_method": "Floor the proposed local civil timestamp to the configured number of seconds; do not convert to an epoch."
+  },
+  "default_rule": {
+    "id": "preserve-uncovered-file",
+    "action": "preserve",
+    "confidence": "preserved",
+    "rationale": "No automatic AM/PM reconstruction is authorized for this file without a documented temporal-session rule."
+  },
+  "file_rules": {
+    "Monday-WorkingHours.pcap_ISCX.csv": {
+      "id": "working-hours-early-clock-to-afternoon",
+      "raw_clock_hours": [1, 2, 3, 4, 5],
+      "add_hours": 12,
+      "permitted_proposed_hours": [13, 14, 15, 16, 17],
+      "confidence": "high",
+      "rationale": "Conservative working-hours rule derived from the documented CICIDS2017 collection timetable. It is independent of row order and attack label."
+    },
+    "Tuesday-WorkingHours.pcap_ISCX.csv": {
+      "id": "working-hours-early-clock-to-afternoon",
+      "raw_clock_hours": [1, 2, 3, 4, 5],
+      "add_hours": 12,
+      "permitted_proposed_hours": [13, 14, 15, 16, 17],
+      "confidence": "high",
+      "rationale": "Conservative working-hours rule derived from the documented CICIDS2017 collection timetable. It is independent of row order and attack label."
+    },
+    "Wednesday-workingHours.pcap_ISCX.csv": {
+      "id": "working-hours-early-clock-to-afternoon",
+      "raw_clock_hours": [1, 2, 3, 4, 5],
+      "add_hours": 12,
+      "permitted_proposed_hours": [13, 14, 15, 16, 17],
+      "confidence": "high",
+      "rationale": "Conservative working-hours rule derived from the documented CICIDS2017 collection timetable. It is independent of row order and attack label."
+    },
+    "Thursday-WorkingHours-Afternoon-Infilteration.pcap_ISCX.csv": {
+      "id": "afternoon-session-early-clock-to-afternoon",
+      "raw_clock_hours": [1, 2, 3, 4, 5],
+      "add_hours": 12,
+      "permitted_proposed_hours": [13, 14, 15, 16, 17],
+      "confidence": "high",
+      "rationale": "The canonical file identifies this as an afternoon collection session. The rule is file/session-scoped and independent of row order and attack label."
+    },
+    "Friday-WorkingHours-Afternoon-PortScan.pcap_ISCX.csv": {
+      "id": "afternoon-session-early-clock-to-afternoon",
+      "raw_clock_hours": [1, 2, 3, 4, 5],
+      "add_hours": 12,
+      "permitted_proposed_hours": [13, 14, 15, 16, 17],
+      "confidence": "high",
+      "rationale": "The canonical file identifies this as an afternoon collection session. The rule is file/session-scoped and independent of row order and attack label."
+    },
+    "Friday-WorkingHours-Afternoon-DDos.pcap_ISCX.csv": {
+      "id": "afternoon-session-early-clock-to-afternoon",
+      "raw_clock_hours": [1, 2, 3, 4, 5],
+      "add_hours": 12,
+      "permitted_proposed_hours": [13, 14, 15, 16, 17],
+      "confidence": "high",
+      "rationale": "The canonical file identifies this as an afternoon collection session. The rule is file/session-scoped and independent of row order and attack label."
+    }
+  }
+}
