@@ -1,0 +1,16 @@
+PREFIX ex: <http://example.org/ns#>
+
+# Sum retained flow labels from AggregatedFlow resources. This does not recover
+# individual flow entities; it measures label counts represented by aggregates.
+SELECT ?label (SUM(?flow_count) AS ?retained_flows)
+WHERE {
+  ?aggregate a ex:AggregatedFlow ;
+             ex:hasLabelCount ?label_count .
+  ?label_count a ex:LabelCount ;
+               ex:label ?label ;
+               ex:count ?flow_count .
+}
+GROUP BY ?label
+ORDER BY DESC(?retained_flows) ?label
+
+

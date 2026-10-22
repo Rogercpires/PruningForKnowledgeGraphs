@@ -1,0 +1,5 @@
+PREFIX ex: <http://example.org/ns#>
+SELECT (COUNT(?flow) AS ?flows)
+WHERE { ?flow a ex:NetworkFlow }
+
+

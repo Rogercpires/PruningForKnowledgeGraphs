@@ -1,0 +1,18 @@
+@prefix ex: <http://example.org/ns#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+ex:AggregatedFlow a rdfs:Class ;
+  rdfs:comment "A bucketed summary of one or more network flows." .
+
+ex:LabelCount a rdfs:Class ;
+  rdfs:comment "The count of source-flow labels represented by one AggregatedFlow." .
+
+ex:hasLabelCount a rdf:Property ;
+  rdfs:domain ex:AggregatedFlow ;
+  rdfs:range ex:LabelCount .
+
+ex:label a rdf:Property .
+ex:count a rdf:Property .
+
+

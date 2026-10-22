@@ -1,0 +1,6 @@
+{
+  "technique": "aggregate",
+  "bucket_seconds": 60
+}
+
+
