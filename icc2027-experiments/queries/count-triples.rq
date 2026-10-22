@@ -1,0 +1,7 @@
+SELECT ?graph (COUNT(*) AS ?triples)
+WHERE { GRAPH ?graph { ?s ?p ?o } }
+GROUP BY ?graph
+ORDER BY ?graph
+
+
+
