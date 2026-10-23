@@ -110,11 +110,36 @@ def local_bucket(value: Optional[datetime], seconds: int) -> str:
     return local_iso(day_start + timedelta(seconds=(offset // seconds) * seconds))
 
 
-def decision_for(file_name: str, timestamp: Optional[datetime], rules: Mapping[str, object]) -> AuditDecision:
+def decision_for(
+    file_name: str,
+    timestamp: Optional[datetime],
+    rules: Mapping[str, object],
+    *,
+    line_no: Optional[int] = None,
+    timestamp_original: str = "",
+) -> AuditDecision:
     if timestamp is None:
         return AuditDecision(None, "invalid-timestamp", "invalid", "invalid", "Timestamp does not match a supported CICIDS2017 local format.")
     file_rules = rules.get("file_rules", {})
     rule = file_rules.get(file_name) if isinstance(file_rules, dict) else None
+    if isinstance(rule, dict):
+        for exception in rule.get("line_exceptions", []):
+            if not isinstance(exception, dict):
+                continue
+            if exception.get("line") != line_no or exception.get("timestamp_original") != timestamp_original:
+                continue
+            action = exception.get("action")
+            if action == "preserve":
+                return AuditDecision(
+                    timestamp, str(exception["id"]), str(exception["classification"]),
+                    str(exception["confidence"]), str(exception["rationale"]),
+                )
+            if action == "ambiguous":
+                return AuditDecision(
+                    None, str(exception["id"]), str(exception["classification"]),
+                    str(exception["confidence"]), str(exception["rationale"]),
+                )
+            raise ValueError(f"Unsupported temporal exception action: {action}")
     if isinstance(rule, dict) and timestamp.hour in set(rule.get("raw_clock_hours", [])):
         proposed = timestamp + timedelta(hours=int(rule.get("add_hours", 0)))
         if proposed.hour in set(rule.get("permitted_proposed_hours", [])):
@@ -209,7 +234,10 @@ def audit(inputs: list[Path], rules: Mapping[str, object], output_dir: Path, buc
                     if timestamp and timestamp.hour == 12 and first_noon_line is None:
                         first_noon_line = line_no
                         noon_seen = True
-                    decision = decision_for(path.name, timestamp, rules)
+                    decision = decision_for(
+                        path.name, timestamp, rules, line_no=line_no,
+                        timestamp_original=row.get("Timestamp", ""),
+                    )
                     item = report_row(path, line_no, row, decision, bucket_seconds)
                     writer.writerow(item)
                     if decision.classification != "preserved":
