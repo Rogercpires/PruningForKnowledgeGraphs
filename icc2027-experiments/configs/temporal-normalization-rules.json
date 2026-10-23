@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "rules_version": "2026-10-22.1",
+  "rules_version": "2026-10-22.2-r04",
   "timezone_convention": {
     "source_timezone": "unknown",
     "representation": "local civil time without UTC offset",
@@ -35,7 +35,72 @@
       "add_hours": 12,
       "permitted_proposed_hours": [13, 14, 15, 16, 17],
       "confidence": "high",
-      "rationale": "Conservative working-hours rule derived from the documented CICIDS2017 collection timetable. It is independent of row order and attack label."
+      "rationale": "Conservative working-hours rule derived from the documented CICIDS2017 collection timetable. It is independent of row order and attack label.",
+      "line_exceptions": [
+        {
+          "line": 6560,
+          "timestamp_original": "5/7/2017 2:24",
+          "id": "wednesday-slowloris-dawn-window-preserve",
+          "action": "preserve",
+          "classification": "preserved",
+          "confidence": "provisional",
+          "rationale": "The independently documented Slowloris timing window starts at 02:23 local time on Wednesday. Preserve this raw civil timestamp pending a source-PCAP reconstruction."
+        },
+        {
+          "line": 26702,
+          "timestamp_original": "5/7/2017 2:24",
+          "id": "wednesday-slowloris-dawn-window-preserve",
+          "action": "preserve",
+          "classification": "preserved",
+          "confidence": "provisional",
+          "rationale": "The independently documented Slowloris timing window starts at 02:23 local time on Wednesday. Preserve this raw civil timestamp pending a source-PCAP reconstruction."
+        },
+        {
+          "line": 26703,
+          "timestamp_original": "5/7/2017 2:24",
+          "id": "wednesday-slowloris-dawn-window-preserve",
+          "action": "preserve",
+          "classification": "preserved",
+          "confidence": "provisional",
+          "rationale": "The independently documented Slowloris timing window starts at 02:23 local time on Wednesday. Preserve this raw civil timestamp pending a source-PCAP reconstruction."
+        },
+        {
+          "line": 26704,
+          "timestamp_original": "5/7/2017 2:24",
+          "id": "wednesday-slowloris-dawn-window-preserve",
+          "action": "preserve",
+          "classification": "preserved",
+          "confidence": "provisional",
+          "rationale": "The independently documented Slowloris timing window starts at 02:23 local time on Wednesday. Preserve this raw civil timestamp pending a source-PCAP reconstruction."
+        },
+        {
+          "line": 26705,
+          "timestamp_original": "5/7/2017 2:25",
+          "id": "wednesday-slowloris-dawn-window-preserve",
+          "action": "preserve",
+          "classification": "preserved",
+          "confidence": "provisional",
+          "rationale": "The independently documented Slowloris timing window starts at 02:23 local time on Wednesday. Preserve this raw civil timestamp pending a source-PCAP reconstruction."
+        },
+        {
+          "line": 55504,
+          "timestamp_original": "5/7/2017 1:43",
+          "id": "wednesday-0143-no-independent-time-evidence",
+          "action": "ambiguous",
+          "classification": "ambiguous",
+          "confidence": "ambiguous",
+          "rationale": "No independent temporal evidence establishes whether this local 01:43 value represents 01:43 or 13:43. Do not infer it from the row order or label."
+        },
+        {
+          "line": 55523,
+          "timestamp_original": "5/7/2017 1:43",
+          "id": "wednesday-0143-no-independent-time-evidence",
+          "action": "ambiguous",
+          "classification": "ambiguous",
+          "confidence": "ambiguous",
+          "rationale": "No independent temporal evidence establishes whether this local 01:43 value represents 01:43 or 13:43. Do not infer it from the row order or label."
+        }
+      ]
     },
     "Thursday-WorkingHours-Afternoon-Infilteration.pcap_ISCX.csv": {
       "id": "afternoon-session-early-clock-to-afternoon",
