@@ -32,6 +32,8 @@ The completed first evidence pass is summarized in [AUDITORIA_TEMPORAL_R03.md](A
 
 The follow-up [AUDITORIA_TEMPORAL_R04.md](AUDITORIA_TEMPORAL_R04.md) supersedes R03 only for the seven documented Wednesday exceptions; it still does not enable a pipeline transformation.
 
+The temporal layer is now available to new generator runs, with explicit `raw` and `normalized` modes. Its RDF contract, ambiguous-row policy, validation and future full-run commands are documented in [TEMPORAL_PIPELINE_INTEGRATION.md](TEMPORAL_PIPELINE_INTEGRATION.md). Existing runs are immutable and are not retroactively transformed.
+
 ## Design decisions
 
 - Dataset discovery is deterministic (the eight canonical CIC-IDS-2017 filenames, in fixed order).
