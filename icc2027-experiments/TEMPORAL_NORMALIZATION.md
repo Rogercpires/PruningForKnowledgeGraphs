@@ -19,6 +19,15 @@ As regras estão versionadas em `configs/temporal-normalization-rules.json`. A v
 
 A condição depende somente do arquivo/sessão e do relógio local. Ela não usa `Label`, `Flow ID`, posição da linha ou a presença anterior de 12h. Os arquivos com a sessão explícita `Afternoon` são tratados pela sua identidade canônica de sessão. Em particular, registros de 08h–11h depois de uma linha de 12h continuam preservados: a não ordenação do CSV é medida como evidência, mas nunca aciona correção.
 
+### Exceções R04 da quarta-feira
+
+A versão `2026-10-22.2-r04` introduz sete exceções estritas para `Wednesday-workingHours.pcap_ISCX.csv`, identificadas por arquivo, número de linha e texto original do timestamp. Elas são avaliadas antes da regra geral 01h–05h:
+
+- linhas 6.560, 26.702–26.705 (`02:24`/`02:25`): `preserved` com confiança `provisional`; a documentação complementar de Engelen, Rimmer e Joosen informa janela Slowloris de 02:23:00 AM a 10:12:59 AM em 05/07/2017;
+- linhas 55.504 e 55.523 (`01:43`): `ambiguous`, sem timestamp ou bucket proposto, pois a inspeção não fornece evidência temporal independente para decidir entre 01:43 e 13:43.
+
+O rótulo foi usado somente para a explicação humana da auditoria, não como condição de código. A R04 está resumida em `AUDITORIA_TEMPORAL_R04.md`.
+
 O fundamento é a documentação de coleta em horário de trabalho e a análise posterior do dataset, que descreve ambiguidades de formato e exemplos de horários de tarde registrados sem AM/PM. A regra não afirma recuperar entidades de fluxo individuais; ela somente produz uma hipótese explícita para o timestamp agregado.
 
 ## Saídas de uma auditoria
