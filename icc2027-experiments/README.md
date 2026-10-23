@@ -24,6 +24,12 @@ Run each configuration in fresh output directories (`baseline-r01`, `baseline-r0
 3. **SPARQL measurement** — `run-fuseki-measurement.ps1`; one warm-up and configurable repeated trials per fixed query, saved as individual observations.
 4. **Analysis** — derive means and confidence intervals from raw observations; do not paste values from different run IDs into one comparison table.
 
+### Pre-stage: temporal audit
+
+Before any RDF generation, use `scripts/run-temporal-audit.ps1` to execute the separate, read-only `audit-only` timestamp audit. It creates a fresh evidence directory with a complete compressed CSV report, a differences report, a Wednesday neighborhood inspection and `summary.json`; it does not modify source CSVs or run a benchmark. See [TEMPORAL_NORMALIZATION.md](TEMPORAL_NORMALIZATION.md) for the current rules, local-time convention, limitations and validation gate.
+
+The completed first evidence pass is summarized in [AUDITORIA_TEMPORAL_R03.md](AUDITORIA_TEMPORAL_R03.md). It remains a validation gate, not an enabled transformation in the RDF pipeline.
+
 ## Design decisions
 
 - Dataset discovery is deterministic (the eight canonical CIC-IDS-2017 filenames, in fixed order).
