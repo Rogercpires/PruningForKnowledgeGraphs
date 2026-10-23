@@ -34,5 +34,9 @@ Every table must name the baseline run ID and the metric denominator. Report gen
 
 The generator validates structural reproducibility. It does not validate the correctness of the CIC-IDS labels, nor does it establish a new pruning algorithm. The final manuscript should describe the contribution as an empirical evaluation of predeclared pruning policies.
 
+## Temporal normalization R04
+
+New runs must declare `raw` or `normalized` temporal mode in the manifest. The recommended normalized mode uses R04 rules and excludes the two timestamps classified as ambiguous; this is a fixed treatment policy, not a label-dependent correction. Temporal Pruning windows use the manifest's `reference_local` and `cutoff_local` civil timestamps. Because the CICIDS2017 CSVs do not establish a timezone, values must not be reported as UTC or compared to absolute epochs. See `TEMPORAL_PIPELINE_INTEGRATION.md` for the exact RDF-model migration and commands.
+
 
 
