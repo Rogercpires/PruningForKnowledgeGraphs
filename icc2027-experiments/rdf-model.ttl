@@ -1,6 +1,7 @@
 @prefix ex: <http://example.org/ns#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 ex:AggregatedFlow a rdfs:Class ;
   rdfs:comment "A bucketed summary of one or more network flows." .
@@ -14,5 +15,16 @@ ex:hasLabelCount a rdf:Property ;
 
 ex:label a rdf:Property .
 ex:count a rdf:Property .
+
+ex:timestamp a rdf:Property ;
+  rdfs:range xsd:dateTime ;
+  rdfs:comment "CICIDS2017 local civil timestamp. No timezone offset is asserted." .
+
+ex:bucketStart a rdf:Property ;
+  rdfs:range xsd:dateTime ;
+  rdfs:comment "Start of a deterministic local-civil-time bucket." .
+
+ex:firstSeen a rdf:Property ; rdfs:range xsd:dateTime .
+ex:lastSeen a rdf:Property ; rdfs:range xsd:dateTime .
 
 

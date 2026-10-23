@@ -16,10 +16,12 @@ import platform
 import random
 import sys
 from collections import Counter, defaultdict
-from datetime import datetime, timezone, timedelta
+from datetime import datetime, timedelta
 from pathlib import Path
 from time import perf_counter
 from typing import Dict, Iterable, Iterator, Optional, Tuple
+
+from temporal_audit import decision_for, parse_local_timestamp, source_rows
 
 FILES = (
     "Monday-WorkingHours.pcap_ISCX.csv",
@@ -37,6 +39,7 @@ FLOW = "http://kg/cicids/flow/"
 IP = "http://kg/cicids/ip/"
 RDF_TYPE = "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
 XSD = "http://www.w3.org/2001/XMLSchema#"
+DEFAULT_TEMPORAL_RULES = Path(__file__).resolve().parents[1] / "configs" / "temporal-normalization-rules.json"
 
 
 def sha256(path: Path) -> str:
@@ -49,18 +52,6 @@ def sha256(path: Path) -> str:
 
 def normalized_label(value: str) -> str:
     return (value or "").strip().casefold()
-
-
-def parse_timestamp(value: str) -> Optional[datetime]:
-    value = (value or "").strip()
-    for fmt in ("%Y-%m-%d %H:%M:%S", "%d/%m/%Y %H:%M:%S",
-                "%d/%m/%Y %I:%M:%S %p", "%m/%d/%Y %H:%M:%S",
-                "%m/%d/%Y %I:%M:%S %p"):
-        try:
-            return datetime.strptime(value, fmt).replace(tzinfo=timezone.utc)
-        except ValueError:
-            pass
-    return None
 
 
 def literal(value: object, datatype: Optional[str] = None) -> str:
@@ -86,51 +77,93 @@ def discover_inputs(root: Path) -> list[Path]:
     return inputs
 
 
-def rows(path: Path) -> Iterator[Tuple[int, Dict[str, str], datetime]]:
-    csv_encoding = (
-        "cp1252"
-        if path.name == "Thursday-WorkingHours-Morning-WebAttacks.pcap_ISCX.csv"
-        else "utf-8-sig"
+def load_temporal_rules(path: Path) -> dict:
+    rules = json.loads(path.read_text(encoding="utf-8"))
+    rules["_path"] = str(path)
+    return rules
+
+
+def temporal_value(
+    path: Path, line_no: int, row: Dict[str, str], temporal_mode: str,
+    rules: dict, ambiguous_policy: str,
+) -> tuple[Optional[datetime], str, str, str]:
+    """Return local civil time and the applicable decision, never an asserted UTC instant."""
+    timestamp = parse_local_timestamp(row.get("Timestamp", ""))
+    if timestamp is None:
+        return None, "invalid-timestamp", "invalid", "invalid"
+    if temporal_mode == "raw":
+        return timestamp, "raw-civil-time", "preserved", "raw"
+    decision = decision_for(
+        path.name, timestamp, rules, line_no=line_no,
+        timestamp_original=row.get("Timestamp", ""),
     )
-    with path.open("r", encoding=csv_encoding, newline="", errors="strict") as source:
-        reader = csv.DictReader(source)
-        if not reader.fieldnames:
-            raise ValueError(f"Empty or headerless CSV: {path}")
-        reader.fieldnames = [name.strip() for name in reader.fieldnames]
-        missing = REQUIRED.difference(reader.fieldnames)
-        if missing:
-            raise ValueError(f"{path.name} lacks required columns: {sorted(missing)}")
-        for line_no, row in enumerate(reader, start=2):
-            row = {(key or "").strip(): (value or "").strip() for key, value in row.items()}
-            if not row["Source IP"] or not row["Destination IP"] or not row["Label"]:
-                continue
-            timestamp = parse_timestamp(row["Timestamp"])
+    if decision.classification == "ambiguous":
+        if ambiguous_policy == "exclude":
+            return None, decision.rule_id, decision.classification, decision.confidence
+        if ambiguous_policy == "raw-local":
+            return timestamp, decision.rule_id, decision.classification, decision.confidence
+        raise ValueError(f"Unsupported ambiguous timestamp policy: {ambiguous_policy}")
+    return decision.proposed, decision.rule_id, decision.classification, decision.confidence
 
-            if timestamp is None:
-                try:
-                    timestamp = datetime.strptime(
-                        row["Timestamp"], "%d/%m/%Y %H:%M"
-                    ).replace(tzinfo=timezone.utc)
-                except ValueError:
-                    continue
 
+def rows(
+    path: Path, temporal_mode: str = "raw", rules: Optional[dict] = None,
+    ambiguous_policy: str = "exclude",
+) -> Iterator[Tuple[int, Dict[str, str], datetime]]:
+    if temporal_mode not in {"raw", "normalized"}:
+        raise ValueError("temporal_mode must be raw or normalized")
+    rules = rules or {}
+    for line_no, row in source_rows(path):
+        if not row["Source IP"] or not row["Destination IP"] or not row["Label"]:
+            continue
+        timestamp, _, _, _ = temporal_value(path, line_no, row, temporal_mode, rules, ambiguous_policy)
+        if timestamp is not None:
             yield line_no, row, timestamp
 
 
-def global_max_timestamp(inputs: Iterable[Path]) -> datetime:
+def temporal_preflight(inputs: Iterable[Path], temporal_mode: str, rules: dict, ambiguous_policy: str) -> dict:
+    counts, attack_labels = Counter(), Counter()
+    for path in inputs:
+        for line_no, row in source_rows(path):
+            timestamp = parse_local_timestamp(row.get("Timestamp", ""))
+            if not row.get("Source IP") or not row.get("Destination IP") or not row.get("Label"):
+                counts["invalid_structural_rows"] += 1
+                continue
+            _, _, classification, _ = temporal_value(path, line_no, row, temporal_mode, rules, ambiguous_policy)
+            counts[classification] += 1
+            if classification == "ambiguous" and ambiguous_policy == "exclude":
+                counts["ambiguous_excluded"] += 1
+            if timestamp is not None:
+                counts["eligible_flows"] += 1
+                if row["Label"].casefold() != "benign":
+                    attack_labels[row["Label"]] += 1
+            else:
+                counts["invalid"] += 1
+    return {
+        "corrected": counts["corrected"], "preserved": counts["preserved"],
+        "ambiguous": counts["ambiguous"], "ambiguous_excluded": counts["ambiguous_excluded"],
+        "invalid": counts["invalid"] + counts["invalid_structural_rows"],
+        "eligible_flows": counts["eligible_flows"],
+        "labelled_attacks": sum(attack_labels.values()), "attack_classes": len(attack_labels),
+    }
+
+
+def global_max_timestamp(
+    inputs: Iterable[Path], temporal_mode: str, rules: dict, ambiguous_policy: str,
+) -> datetime:
     maximum: Optional[datetime] = None
     for input_path in inputs:
-        for _, _, timestamp in rows(input_path):
+        for _, _, timestamp in rows(input_path, temporal_mode, rules, ambiguous_policy):
             maximum = timestamp if maximum is None or timestamp > maximum else maximum
     if maximum is None:
         raise ValueError("No valid timestamp found in input CSV files")
     return maximum
 
 
-def topk_edges(inputs: Iterable[Path], k: int) -> set[tuple[str, str]]:
+def topk_edges(inputs: Iterable[Path], k: int, temporal_mode: str, rules: dict, ambiguous_policy: str) -> set[tuple[str, str]]:
     counts: dict[str, Counter[str]] = defaultdict(Counter)
     for input_path in inputs:
-        for _, row, _ in rows(input_path):
+        for _, row, _ in rows(input_path, temporal_mode, rules, ambiguous_policy):
             counts[row["Source IP"]][row["Destination IP"]] += 1
     keep: set[tuple[str, str]] = set()
     for source, destinations in counts.items():
@@ -144,7 +177,9 @@ def emit_flow(file_key: str, line_no: int, row: Dict[str, str], timestamp: datet
     flow = f"{FLOW}{file_key}/line/{line_no}"
     source = f"{IP}{uri_token(row['Source IP'])}"
     destination = f"{IP}{uri_token(row['Destination IP'])}"
-    iso = timestamp.isoformat().replace("+00:00", "Z")
+    # CICIDS2017 does not establish a UTC offset.  Keep the auditable local
+    # civil-time convention in RDF instead of fabricating an absolute instant.
+    iso = timestamp.isoformat(timespec="seconds")
     output = [
         triple(flow, RDF_TYPE, f"<{EX}NetworkFlow>"),
         triple(source, RDF_TYPE, f"<{EX}IPAddress>"),
@@ -152,7 +187,6 @@ def emit_flow(file_key: str, line_no: int, row: Dict[str, str], timestamp: datet
         triple(flow, f"{EX}hasSourceAddress", f"<{source}>"),
         triple(flow, f"{EX}hasDestinationAddress", f"<{destination}>"),
         triple(flow, f"{EX}timestamp", literal(iso, f"{XSD}dateTime")),
-        triple(flow, f"{EX}timestampEpoch", literal(int(timestamp.timestamp()), f"{XSD}integer")),
         triple(flow, f"{EX}label", literal(row["Label"])),
     ]
     for column, predicate, datatype in (("Source Port", "srcPort", "integer"), ("Destination Port", "dstPort", "integer"), ("Protocol", "protocol", None), ("Flow Duration", "duration", "double")):
@@ -166,12 +200,18 @@ def emit_flow(file_key: str, line_no: int, row: Dict[str, str], timestamp: datet
     return output
 
 
-def aggregate_key(row: Dict[str, str], timestamp: datetime, bucket_seconds: int) -> tuple[int, str, str, str, str]:
-    epoch = int(timestamp.timestamp())
-    return ((epoch // bucket_seconds) * bucket_seconds, row["Source IP"], row["Destination IP"], row.get("Protocol", ""), row.get("Destination Port", ""))
+def floor_local_bucket(timestamp: datetime, bucket_seconds: int) -> datetime:
+    day_start = timestamp.replace(hour=0, minute=0, second=0, microsecond=0)
+    elapsed = int((timestamp - day_start).total_seconds())
+    return day_start + timedelta(seconds=(elapsed // bucket_seconds) * bucket_seconds)
 
 
-def emit_aggregate(file_key: str, key: tuple[int, str, str, str, str], state: dict) -> list[str]:
+def aggregate_key(row: Dict[str, str], timestamp: datetime, bucket_seconds: int) -> tuple[str, str, str, str, str]:
+    bucket = floor_local_bucket(timestamp, bucket_seconds).isoformat(timespec="seconds")
+    return (bucket, row["Source IP"], row["Destination IP"], row.get("Protocol", ""), row.get("Destination Port", ""))
+
+
+def emit_aggregate(file_key: str, key: tuple[str, str, str, str, str], state: dict) -> list[str]:
     bucket, source_ip, destination_ip, protocol, destination_port = key
     stable_id = hashlib.sha256("\x1f".join(map(str, key)).encode("utf-8")).hexdigest()[:24]
     aggregate = f"{FLOW}{file_key}/aggregate/{stable_id}"
@@ -182,10 +222,10 @@ def emit_aggregate(file_key: str, key: tuple[int, str, str, str, str], state: di
         triple(destination, RDF_TYPE, f"<{EX}IPAddress>"),
         triple(aggregate, f"{EX}hasSourceAddress", f"<{source}>"),
         triple(aggregate, f"{EX}hasDestinationAddress", f"<{destination}>"),
-        triple(aggregate, f"{EX}bucketStart", literal(bucket, f"{XSD}integer")),
+        triple(aggregate, f"{EX}bucketStart", literal(bucket, f"{XSD}dateTime")),
         triple(aggregate, f"{EX}count", literal(state["count"], f"{XSD}integer")),
-        triple(aggregate, f"{EX}firstSeen", literal(state["first"], f"{XSD}integer")),
-        triple(aggregate, f"{EX}lastSeen", literal(state["last"], f"{XSD}integer")),
+        triple(aggregate, f"{EX}firstSeen", literal(state["first"].isoformat(timespec="seconds"), f"{XSD}dateTime")),
+        triple(aggregate, f"{EX}lastSeen", literal(state["last"].isoformat(timespec="seconds"), f"{XSD}dateTime")),
     ]
     if protocol:
         output.append(triple(aggregate, f"{EX}protocol", literal(protocol)))
@@ -208,10 +248,19 @@ def emit_aggregate(file_key: str, key: tuple[int, str, str, str, str], state: di
     return output
 
 
-def write_run(config: dict, inputs: list[Path], output_dir: Path, run_id: str) -> dict:
+def write_run(
+    config: dict, inputs: list[Path], output_dir: Path, run_id: str,
+    temporal_mode: str = "raw", temporal_rules: Optional[dict] = None,
+    ambiguous_policy: str = "exclude",
+) -> dict:
     technique = config.get("technique")
     if technique not in {"baseline", "temporal", "labels", "sample", "topk", "aggregate"}:
         raise ValueError("Unsupported technique")
+    if temporal_mode not in {"raw", "normalized"}:
+        raise ValueError("temporal_mode must be raw or normalized")
+    if ambiguous_policy not in {"exclude", "raw-local"}:
+        raise ValueError("ambiguous_policy must be exclude or raw-local")
+    temporal_rules = temporal_rules or load_temporal_rules(DEFAULT_TEMPORAL_RULES)
     required_config = {
         "temporal": ("window_hours",), "labels": ("labels",),
         "sample": ("sample_probability", "seed"), "topk": ("k",),
@@ -224,10 +273,18 @@ def write_run(config: dict, inputs: list[Path], output_dir: Path, run_id: str) -
     cutoff = None
     keep_edges = None
     labels = {normalized_label(value) for value in config.get("labels", [])}
+    total_started = perf_counter()
+    verification_started = perf_counter()
+    input_details = [{"path": str(path), "sha256": sha256(path), "bytes": path.stat().st_size} for path in inputs]
+    input_verification_seconds = perf_counter() - verification_started
+    preflight_started = perf_counter()
+    temporal_summary = temporal_preflight(inputs, temporal_mode, temporal_rules, ambiguous_policy)
+    temporal_preflight_seconds = perf_counter() - preflight_started
     if technique == "temporal":
-        cutoff = global_max_timestamp(inputs) - timedelta(hours=float(config["window_hours"]))
+        reference = global_max_timestamp(inputs, temporal_mode, temporal_rules, ambiguous_policy)
+        cutoff = reference - timedelta(hours=float(config["window_hours"]))
     if technique == "topk":
-        keep_edges = topk_edges(inputs, int(config["k"]))
+        keep_edges = topk_edges(inputs, int(config["k"]), temporal_mode, temporal_rules, ambiguous_policy)
     if technique == "sample" and not 0 < float(config.get("sample_probability", 0)) <= 1:
         raise ValueError("sample_probability must be in (0, 1]")
     if technique == "topk" and int(config["k"]) < 1:
@@ -236,9 +293,7 @@ def write_run(config: dict, inputs: list[Path], output_dir: Path, run_id: str) -
         raise ValueError("bucket_seconds must be positive")
     output_dir.mkdir(parents=True, exist_ok=False)
 
-    started = datetime.now(timezone.utc)
     started_monotonic = perf_counter()
-    input_details = [{"path": str(path), "sha256": sha256(path), "bytes": path.stat().st_size} for path in inputs]
     artifacts, label_counts = [], Counter()
     aggregate_label_counts = Counter()
     total_flows = total_triples = total_aggregate_groups = 0
@@ -246,12 +301,12 @@ def write_run(config: dict, inputs: list[Path], output_dir: Path, run_id: str) -
         file_key = input_path.name.removesuffix(".pcap_ISCX.csv")
         artifact = output_dir / f"{file_key}.nt.gz"
         flows = triples = 0
-        aggregate: dict[tuple[int, str, str, str, str], dict] = {}
+        aggregate: dict[tuple[str, str, str, str, str], dict] = {}
         # Fixed gzip metadata makes identical RDF output produce the same SHA-256.
         with artifact.open("wb") as binary, gzip.GzipFile(
             filename="", mode="wb", fileobj=binary, mtime=0
         ) as compressed, io.TextIOWrapper(compressed, encoding="utf-8", newline="\n") as sink:
-            for line_no, row, timestamp in rows(input_path):
+            for line_no, row, timestamp in rows(input_path, temporal_mode, temporal_rules, ambiguous_policy):
                 selected = True
                 if cutoff is not None:
                     selected = timestamp >= cutoff
@@ -267,16 +322,15 @@ def write_run(config: dict, inputs: list[Path], output_dir: Path, run_id: str) -
                 flows += 1
                 if technique == "aggregate":
                     key = aggregate_key(row, timestamp, int(config["bucket_seconds"]))
-                    epoch = int(timestamp.timestamp())
                     state = aggregate.setdefault(key, {
                         "count": 0,
-                        "first": epoch,
-                        "last": epoch,
+                        "first": timestamp,
+                        "last": timestamp,
                         "label_counts": Counter(),
                     })
                     state["count"] += 1
-                    state["first"] = min(state["first"], epoch)
-                    state["last"] = max(state["last"], epoch)
+                    state["first"] = min(state["first"], timestamp)
+                    state["last"] = max(state["last"], timestamp)
                     state["label_counts"][row["Label"].strip()] += 1
                 else:
                     lines = emit_flow(file_key, line_no, row, timestamp)
@@ -303,11 +357,22 @@ def write_run(config: dict, inputs: list[Path], output_dir: Path, run_id: str) -
         raise RuntimeError(
             "Aggregate label counts differ from the selected input flow label counts"
         )
-    finished = datetime.now(timezone.utc)
     manifest = {
-        "schema_version": 1, "run_id": run_id, "created_at_utc": finished.isoformat(),
+        "schema_version": 2, "run_id": run_id,
         "generator": {"name": Path(__file__).name, "python": sys.version, "platform": platform.platform()},
         "config": config, "input_csvs": input_details, "artifacts": artifacts,
+        "temporal_interpretation": {
+            "mode": temporal_mode,
+            "ambiguous_policy": ambiguous_policy if temporal_mode == "normalized" else "not-applicable",
+            "rules_version": temporal_rules.get("rules_version"),
+            "rules_sha256": sha256(Path(temporal_rules["_path"])),
+            "timezone_convention": temporal_rules.get("timezone_convention"),
+            "input_counts": temporal_summary,
+            **({
+                "reference_local": reference.isoformat(timespec="seconds"),
+                "cutoff_local": cutoff.isoformat(timespec="seconds"),
+            } if technique == "temporal" else {}),
+        },
         "metrics": {
             "selected_flows": total_flows,
             "emitted_triples": total_triples,
@@ -318,7 +383,10 @@ def write_run(config: dict, inputs: list[Path], output_dir: Path, run_id: str) -
                 "aggregate_label_counts": dict(sorted(aggregate_label_counts.items())),
                 "aggregate_label_count_sum": sum(aggregate_label_counts.values()),
             } if technique == "aggregate" else {}),
+            "input_verification_seconds": round(input_verification_seconds, 6),
+            "temporal_preflight_seconds": round(temporal_preflight_seconds, 6),
             "generation_seconds": round(perf_counter() - started_monotonic, 6),
+            "total_seconds": round(perf_counter() - total_started, 6),
         },
     }
     (output_dir / "manifest.json").write_text(json.dumps(manifest, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
@@ -331,10 +399,16 @@ def main() -> int:
     parser.add_argument("--csv-root", type=Path, required=True)
     parser.add_argument("--output-dir", type=Path, required=True)
     parser.add_argument("--run-id", required=True)
+    parser.add_argument("--temporal-mode", choices=("raw", "normalized"), default="raw")
+    parser.add_argument("--temporal-rules", type=Path, default=DEFAULT_TEMPORAL_RULES)
+    parser.add_argument("--ambiguous-policy", choices=("exclude", "raw-local"), default="exclude")
     args = parser.parse_args()
     try:
         config = json.loads(args.config.read_text(encoding="utf-8"))
-        manifest = write_run(config, discover_inputs(args.csv_root), args.output_dir, args.run_id)
+        manifest = write_run(
+            config, discover_inputs(args.csv_root), args.output_dir, args.run_id,
+            args.temporal_mode, load_temporal_rules(args.temporal_rules), args.ambiguous_policy,
+        )
     except (OSError, ValueError, KeyError, json.JSONDecodeError) as error:
         print(f"ERROR: {error}", file=sys.stderr)
         return 2
