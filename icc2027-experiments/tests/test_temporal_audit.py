@@ -74,6 +74,23 @@ class TemporalAuditTests(unittest.TestCase):
         self.assertEqual(decision.classification, "preserved")
         self.assertEqual(decision.proposed, datetime(2017, 7, 3, 8, 55, 58))
 
+    def test_wednesday_line_exceptions_do_not_use_label_or_row_order(self) -> None:
+        dawn = temporal_audit.decision_for(
+            "Wednesday-workingHours.pcap_ISCX.csv", datetime(2017, 7, 5, 2, 24), self.rules(),
+            line_no=6560, timestamp_original="5/7/2017 2:24",
+        )
+        benign = temporal_audit.decision_for(
+            "Wednesday-workingHours.pcap_ISCX.csv", datetime(2017, 7, 5, 1, 43), self.rules(),
+            line_no=55504, timestamp_original="5/7/2017 1:43",
+        )
+        normal = temporal_audit.decision_for(
+            "Wednesday-workingHours.pcap_ISCX.csv", datetime(2017, 7, 5, 2, 24), self.rules(),
+            line_no=55505, timestamp_original="5/7/2017 2:24",
+        )
+        self.assertEqual((dawn.classification, dawn.confidence, dawn.proposed.hour), ("preserved", "provisional", 2))
+        self.assertEqual((benign.classification, benign.confidence, benign.proposed), ("ambiguous", "ambiguous", None))
+        self.assertEqual((normal.classification, normal.proposed.hour), ("corrected", 14))
+
     def test_audit_reports_wednesday_neighbors_and_is_deterministic(self) -> None:
         with tempfile.TemporaryDirectory() as temporary:
             root = Path(temporary)

@@ -30,6 +30,8 @@ Before any RDF generation, use `scripts/run-temporal-audit.ps1` to execute the s
 
 The completed first evidence pass is summarized in [AUDITORIA_TEMPORAL_R03.md](AUDITORIA_TEMPORAL_R03.md). It remains a validation gate, not an enabled transformation in the RDF pipeline.
 
+The follow-up [AUDITORIA_TEMPORAL_R04.md](AUDITORIA_TEMPORAL_R04.md) supersedes R03 only for the seven documented Wednesday exceptions; it still does not enable a pipeline transformation.
+
 ## Design decisions
 
 - Dataset discovery is deterministic (the eight canonical CIC-IDS-2017 filenames, in fixed order).
