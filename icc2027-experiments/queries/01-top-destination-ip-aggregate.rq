@@ -1,0 +1,11 @@
+PREFIX ex: <http://example.org/ns#>
+
+SELECT ?destination (SUM(?n) AS ?flows)
+WHERE {
+    ?aggregate a ex:AggregatedFlow ;
+               ex:hasDestinationAddress ?destination ;
+               ex:count ?n .
+}
+GROUP BY ?destination
+ORDER BY DESC(?flows) ?destination
+LIMIT 20

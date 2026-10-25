@@ -1,0 +1,10 @@
+PREFIX ex: <http://example.org/ns#>
+
+SELECT ?protocol (SUM(?n) AS ?flows)
+WHERE {
+    ?aggregate a ex:AggregatedFlow ;
+               ex:protocol ?protocol ;
+               ex:count ?n .
+}
+GROUP BY ?protocol
+ORDER BY ?protocol

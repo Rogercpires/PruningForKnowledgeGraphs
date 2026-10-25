@@ -1,0 +1,9 @@
+PREFIX ex: <http://example.org/ns#>
+
+SELECT ?protocol (COUNT(?flow) AS ?flows)
+WHERE {
+    ?flow a ex:NetworkFlow ;
+          ex:protocol ?protocol .
+}
+GROUP BY ?protocol
+ORDER BY ?protocol
