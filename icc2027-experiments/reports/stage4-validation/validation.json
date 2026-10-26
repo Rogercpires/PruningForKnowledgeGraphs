@@ -1,0 +1,71 @@
+{
+  "scope": "Synthetic unit tests and tiny Jena integration; no full CICIDS campaign",
+  "outcomes": {
+    "unit": {
+      "tests": 80,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "integration": {
+      "tests": 6,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  },
+  "coverage_method": "Python stdlib trace; child process lines excluded; line coverage only",
+  "modules": {
+    "phase_timing.py": {
+      "executable_lines": 33,
+      "covered_lines": 31,
+      "line_coverage_pct": 93.93939393939394
+    },
+    "performance_statistics.py": {
+      "executable_lines": 62,
+      "covered_lines": 57,
+      "line_coverage_pct": 91.93548387096774
+    },
+    "benchmark_plan.py": {
+      "executable_lines": 89,
+      "covered_lines": 81,
+      "line_coverage_pct": 91.01123595505618
+    },
+    "benchmark_environment.py": {
+      "executable_lines": 88,
+      "covered_lines": 67,
+      "line_coverage_pct": 76.13636363636364
+    },
+    "benchmark_backend.py": {
+      "executable_lines": 154,
+      "covered_lines": 144,
+      "line_coverage_pct": 93.50649350649351
+    },
+    "benchmark_reports.py": {
+      "executable_lines": 98,
+      "covered_lines": 96,
+      "line_coverage_pct": 97.95918367346938
+    },
+    "benchmark_runner.py": {
+      "executable_lines": 310,
+      "covered_lines": 292,
+      "line_coverage_pct": 94.19354838709677
+    },
+    "icc2027_pipeline.py": {
+      "executable_lines": 395,
+      "covered_lines": 344,
+      "line_coverage_pct": 87.0886075949367
+    },
+    "jena_executor.py": {
+      "executable_lines": 88,
+      "covered_lines": 83,
+      "line_coverage_pct": 94.31818181818181
+    },
+    "sparql_results.py": {
+      "executable_lines": 90,
+      "covered_lines": 79,
+      "line_coverage_pct": 87.77777777777777
+    }
+  },
+  "line_coverage_pct": 90.54726368159204
+}

@@ -30,18 +30,30 @@ def run_recorded(command: list[str], prefix: Path, timeout: float, validator=Non
             "timeout_seconds": timeout, "returncode": None, "status": "execution_error",
             "error": None, "result": None}
     started = perf_counter()
+    interrupted = False
     with stdout.open("xb") as out, stderr.open("xb") as err:
         try:
-            process = subprocess.run(command, stdin=subprocess.DEVNULL, stdout=out, stderr=err,
-                                     timeout=timeout, check=False)
-            meta["returncode"] = process.returncode
-            meta["status"] = "success" if process.returncode == 0 else "execution_error"
-            if process.returncode:
-                meta["error"] = f"Jena exited with status {process.returncode}; see stderr"
+            with subprocess.Popen(command, stdin=subprocess.DEVNULL, stdout=out, stderr=err) as process:
+                meta["pid"] = process.pid
+                try:
+                    write_json(prefix.with_suffix(".process.json"), {"pid": process.pid, "command": command,
+                                                                   "started_utc": meta["started_utc"]})
+                    process.wait(timeout=timeout)
+                except BaseException:
+                    process.kill()
+                    process.wait()
+                    raise
+                meta["returncode"] = process.returncode
+                meta["status"] = "success" if process.returncode == 0 else "execution_error"
+                if process.returncode:
+                    meta["error"] = f"Process exited with status {process.returncode}; see stderr"
         except subprocess.TimeoutExpired:
             meta.update(status="timeout", error="Execution exceeded timeout; Java process terminated")
         except OSError as exc:
             meta["error"] = str(exc)
+        except KeyboardInterrupt:
+            interrupted = True
+            meta.update(status="interrupted", error="Interrupted; child process terminated and reaped")
     meta["duration_seconds"] = perf_counter() - started
     meta["stdout_sha256"], meta["stderr_sha256"] = sha256(stdout), sha256(stderr)
     if validator is not None and meta["status"] == "success":
@@ -50,6 +62,8 @@ def run_recorded(command: list[str], prefix: Path, timeout: float, validator=Non
         except (ValueError, TypeError, KeyError, AttributeError) as exc:
             meta.update(status="invalid_result", error=str(exc))
     write_json(prefix.with_suffix(".meta.json"), meta)
+    if interrupted:
+        raise KeyboardInterrupt
     return meta
 
 

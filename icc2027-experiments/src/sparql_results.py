@@ -7,7 +7,7 @@ from datetime import datetime
 from decimal import Decimal, InvalidOperation
 
 SCHEMAS = {"top": ("destination", "flows"), "protocol": ("protocol", "flows"),
-           "hour": ("hour", "attacks"), "stored": (None, "stored_triples")}
+           "hour": ("hour", "attacks"), "stored": (None, "stored_triples"), "entities": (None, "entities")}
 XSD = "http://www.w3.org/2001/XMLSchema#"
 INTEGER_TYPES = {XSD + s for s in ("integer", "int", "long", "short", "byte", "nonNegativeInteger", "positiveInteger", "unsignedLong", "unsignedInt", "decimal")}
 
@@ -66,7 +66,7 @@ def parse_json(data: bytes, kind: str) -> dict[str, int]:
         else:
             k = "default_graph"
         rows.append((k, v))
-    if kind == "stored" and len(rows) != 1:
+    if kind in {"stored", "entities"} and len(rows) != 1:
         raise ValueError("COUNT query must have exactly one result")
     return validate_rows(rows, kind)
 

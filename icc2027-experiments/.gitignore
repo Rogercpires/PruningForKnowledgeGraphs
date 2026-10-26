@@ -1,5 +1,6 @@
 __pycache__/
 evaluations/
+benchmark-runs/
 *.py[cod]
 runs/
 measurements/

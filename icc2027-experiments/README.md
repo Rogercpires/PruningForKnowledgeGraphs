@@ -61,5 +61,14 @@ and Jena integration tests. The 13-policy registry is
 latency benchmark. [STAGE3_AUDIT_DISPOSITION.md](STAGE3_AUDIT_DISPOSITION.md)
 records addressed audit items and remaining debt.
 
+## Instrumented benchmarks and sensitivity
+
+[BENCHMARKING.md](BENCHMARKING.md) defines generator timing partitions, isolated
+fresh-store repetitions, warm-ups, cache declarations, reproducible order,
+failure/resume behavior, statistics and future PowerShell commands. The default
+30-configuration design is `configs/benchmark-sensitivity-r04.json`; use `plan`
+to inspect it without running the campaign. Existing R04 selections and saved
+experimental results are preserved.
+
 
 

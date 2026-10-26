@@ -1,0 +1,62 @@
+{
+  "dry_run": true,
+  "configuration_count": 30,
+  "tasks": 180,
+  "measured_tasks": 150,
+  "storage_budget": {
+    "probe_path": "C:\\UFRGS",
+    "free_bytes": 137746132992,
+    "required_bytes": 1556925644800,
+    "reserve_free_bytes": 10737418240,
+    "estimated_bytes_per_repetition": 8589934592,
+    "remaining_repetitions": 180,
+    "sufficient": false,
+    "kind": "operator_supplied_budget_not_measured_prediction"
+  },
+  "sensitivity": {
+    "sample_probabilities": [
+      0.005,
+      0.01,
+      0.05,
+      0.1
+    ],
+    "sample_seeds": [
+      1001,
+      1002,
+      1003,
+      1004,
+      1005
+    ],
+    "topk_values": [
+      10,
+      20,
+      50
+    ],
+    "temporal_hours": [
+      6,
+      12,
+      24,
+      48
+    ],
+    "aggregation_buckets_seconds": [
+      60
+    ],
+    "labels": [
+      "Bot",
+      "DDoS",
+      "DoS GoldenEye",
+      "DoS Hulk",
+      "DoS Slowhttptest",
+      "DoS slowloris",
+      "FTP-Patator",
+      "Heartbleed",
+      "Infiltration",
+      "PortScan",
+      "SSH-Patator",
+      "Web Attack Ã¢â‚¬â€œ Brute Force",
+      "Web Attack Ã¢â‚¬â€œ Sql Injection",
+      "Web Attack Ã¢â‚¬â€œ XSS"
+    ]
+  },
+  "no_campaign_executed": true
+}

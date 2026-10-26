@@ -1,0 +1,132 @@
+{
+  "baseline": {
+    "config": {
+      "technique": "baseline"
+    },
+    "selected_flows": 24,
+    "label_counts": {
+      "BENIGN": 8,
+      "DDoS": 8,
+      "PortScan": 8
+    },
+    "artifact_sha256": [
+      "c6c210eff695ea98968ea43b75e6203acf58cc83063adb38a36ba1227da2a0a4",
+      "6800bffd069a32fea215754b647c77a8e4270a0e75912ce0d3f961e6d4470d8b",
+      "9155bf1aa96427d72fb05aa67c5e2d7c70d7f398a7e9839691c30407ebbcb095",
+      "4d36b96d095f66fc7d0cbf500c8805bd8b96fe950ac640760e203af20cb7cdfe",
+      "03fd998d838bf09cc05145a287792ec9ed50a658e6da14c42a0424d7562dd605",
+      "5e25f70c92ef6e7fe091e32614bee9bdc08d0c2a52c2938ba735010e54072e82",
+      "afff27ec0b461429857e2cd58aa2a5d7d65b535d449ff6316ba174f038652cd9",
+      "0381ac8b49bc061e7798646701118bb1f6da05786858fb3da16d92686adfc8a4"
+    ]
+  },
+  "temporal": {
+    "config": {
+      "technique": "temporal",
+      "window_hours": 24
+    },
+    "selected_flows": 11,
+    "label_counts": {
+      "BENIGN": 3,
+      "DDoS": 3,
+      "PortScan": 5
+    },
+    "artifact_sha256": [
+      "471bca732c742e1b5e345b262c55c05c700029e1bd52440c7c5a9aefc5d3d518",
+      "471bca732c742e1b5e345b262c55c05c700029e1bd52440c7c5a9aefc5d3d518",
+      "471bca732c742e1b5e345b262c55c05c700029e1bd52440c7c5a9aefc5d3d518",
+      "c90a4c674636dbb1efae348f499602dab1d4221c9ced700d22fda587e83cd0fb",
+      "aef688c96dcc5cf36e7ad0410f41f21e867445350b733bad43b6f2e0bf85b9e6",
+      "5e25f70c92ef6e7fe091e32614bee9bdc08d0c2a52c2938ba735010e54072e82",
+      "afff27ec0b461429857e2cd58aa2a5d7d65b535d449ff6316ba174f038652cd9",
+      "0381ac8b49bc061e7798646701118bb1f6da05786858fb3da16d92686adfc8a4"
+    ]
+  },
+  "topk": {
+    "config": {
+      "technique": "topk",
+      "k": 1
+    },
+    "selected_flows": 16,
+    "label_counts": {
+      "BENIGN": 8,
+      "DDoS": 8
+    },
+    "artifact_sha256": [
+      "b064971c1f406ffdb0be5c123bceb1f9cfe5be1e426fa7d8202c95ad83fec24a",
+      "e0abc4afe3ba8711073f0b24be4f9cacf62a59c8a53688037eaac7fcb728ab57",
+      "0df4a953a19606babc6ad21e4ae11898d314c67fd47d7c74e950728c700e5149",
+      "29c2a76d8241d9b5ef61c5b6f880de5f24371d2c9e2a0417f2b1ddb6273834fe",
+      "3df01194b2523ca6cf8644f2414e55bd39c74402162109c0edf4ee1f50a3ce5c",
+      "d69166df3538cbd95926da7737e61200392c685aefb344b1ef7a7c97245a03b7",
+      "cccf80f289fd1e5c35f9cf9d97127b3226e8bff99e3484543c022f78858be065",
+      "1ae89328facaf23cd645a79afd9e13419bd50161ddf39d0678ff09b7cc09c094"
+    ]
+  },
+  "labels": {
+    "config": {
+      "technique": "labels",
+      "labels": [
+        "DDoS"
+      ]
+    },
+    "selected_flows": 8,
+    "label_counts": {
+      "DDoS": 8
+    },
+    "artifact_sha256": [
+      "2bc987f6a1a7159791e7caa641629ce830ae3ac4a2cd51103f6a0ab2f685a263",
+      "a1a46754aacabf4281762eedbc4a73c17c80598c44700d98a92b10e3383be01e",
+      "237d8f4bf72792c95a0fbdcb5f0110771425c6dfac35332edf3348b2cae80bed",
+      "e25b7b9cfafd1fd5ab7f597a0c4afcc74c723ac0cd89d76275ca92bd1b94fd67",
+      "123776bf2fff7415be7d827112457ff0ae06d1f850fc13e6fb86a1e36aa72c49",
+      "f6fcf566ec988698c5660574fac227cf45905ba3fed97e0e83396a4ca0ab6827",
+      "355a92ce8fbb738eb079395fa7732710e4abe76bede2fd6c2b917360df4937cd",
+      "ddae663f16ddc7c7560d92f4d5b8aa136731ad1e6a863b936225beeeafcde7d0"
+    ]
+  },
+  "sample": {
+    "config": {
+      "technique": "sample",
+      "sample_probability": 0.5,
+      "seed": 1001
+    },
+    "selected_flows": 7,
+    "label_counts": {
+      "DDoS": 5,
+      "PortScan": 2
+    },
+    "artifact_sha256": [
+      "2bc987f6a1a7159791e7caa641629ce830ae3ac4a2cd51103f6a0ab2f685a263",
+      "a1a46754aacabf4281762eedbc4a73c17c80598c44700d98a92b10e3383be01e",
+      "5c9f9ef3cef5ff77713f8cf0c37f6137152ce1ad013c1de2d6f15c2661ff255c",
+      "e25b7b9cfafd1fd5ab7f597a0c4afcc74c723ac0cd89d76275ca92bd1b94fd67",
+      "123776bf2fff7415be7d827112457ff0ae06d1f850fc13e6fb86a1e36aa72c49",
+      "471bca732c742e1b5e345b262c55c05c700029e1bd52440c7c5a9aefc5d3d518",
+      "aa7bcd09d2a17496b49a72716b3e9b2eb5f220d057920b200158376d941c240f",
+      "471bca732c742e1b5e345b262c55c05c700029e1bd52440c7c5a9aefc5d3d518"
+    ]
+  },
+  "aggregate": {
+    "config": {
+      "technique": "aggregate",
+      "bucket_seconds": 60
+    },
+    "selected_flows": 24,
+    "label_counts": {
+      "BENIGN": 8,
+      "DDoS": 8,
+      "PortScan": 8
+    },
+    "artifact_sha256": [
+      "555228a19b908232906776e582254df3c6cfe1f6add8c9397a2046b513d4840d",
+      "93e82b75a5b9e6f94bafd89d7835ffc2adb7c2bf7ff40ceb02e6256e9fef7eba",
+      "1ae128e86304d2c73b89ccd41b526de0a92c8b1dcda2ed1c2e46b1663ae05539",
+      "f3e17a3a79a3ea92a8b54b01254b062cd1cb3f38993a1d3efb8106def6f31829",
+      "8466326079bfa9b5b864ce966fbd071caeeb2f79d2f9453980db1b65fdabf0a6",
+      "496604635f06a736ced533a265529d6c3a270089d908baaa56019becb75c6fc4",
+      "e8c311a49ccbbf1d516f5e9ada710f9b94ec9d9a0ff25025e05e0c5ef6229ff3",
+      "4c277d86a63af3961a71e21622036a932e289efae9a7651cb409f3d74cacb5b7"
+    ]
+  }
+}

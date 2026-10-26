@@ -12,16 +12,18 @@ import gzip
 import hashlib
 import io
 import json
+import math
 import platform
 import random
 import sys
 from collections import Counter, defaultdict
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from time import perf_counter
 from typing import Dict, Iterable, Iterator, Optional, Tuple
 
 from temporal_audit import decision_for, parse_local_timestamp, source_rows
+from phase_timing import PhaseTiming
 
 FILES = (
     "Monday-WorkingHours.pcap_ISCX.csv",
@@ -160,17 +162,45 @@ def global_max_timestamp(
     return maximum
 
 
-def topk_edges(inputs: Iterable[Path], k: int, temporal_mode: str, rules: dict, ambiguous_policy: str) -> set[tuple[str, str]]:
+def topk_edges(inputs: Iterable[Path], k: int, temporal_mode: str, rules: dict, ambiguous_policy: str,
+               timing: Optional[PhaseTiming] = None) -> set[tuple[str, str]]:
+    timing = timing or PhaseTiming()
     counts: dict[str, Counter[str]] = defaultdict(Counter)
-    for input_path in inputs:
-        for _, row, _ in rows(input_path, temporal_mode, rules, ambiguous_policy):
-            counts[row["Source IP"]][row["Destination IP"]] += 1
+    with timing.measure("topk_counting_seconds"):
+        for input_path in inputs:
+            for _, row, _ in rows(input_path, temporal_mode, rules, ambiguous_policy):
+                counts[row["Source IP"]][row["Destination IP"]] += 1
     keep: set[tuple[str, str]] = set()
-    for source, destinations in counts.items():
-        # Deterministic resolution of ties is material to reproducibility.
-        ranked = sorted(destinations.items(), key=lambda item: (-item[1], item[0]))[:k]
-        keep.update((source, destination) for destination, _ in ranked)
+    with timing.measure("topk_ranking_seconds"):
+        for source, destinations in counts.items():
+            # Deterministic resolution of ties is material to reproducibility.
+            ranked = sorted(destinations.items(), key=lambda item: (-item[1], item[0]))[:k]
+            keep.update((source, destination) for destination, _ in ranked)
     return keep
+
+
+def validate_config(config: dict) -> None:
+    """Validate a single policy before any dataset pass; preserve valid selection."""
+    required = {"baseline": set(), "temporal": {"window_hours"}, "labels": {"labels"},
+                "sample": {"sample_probability", "seed"}, "topk": {"k"}, "aggregate": {"bucket_seconds"}}
+    if not isinstance(config, dict) or config.get("technique") not in required:
+        raise ValueError("Unsupported technique")
+    technique = config["technique"]
+    if set(config) != {"technique", *required[technique]}:
+        raise ValueError(f"Invalid or missing configuration keys for {technique}")
+    for key in required[technique] - {"labels"}:
+        value = config[key]
+        if isinstance(value, bool) or not isinstance(value, (int, float)) or not math.isfinite(value):
+            raise ValueError(f"{key} must be finite and numeric")
+        if key != "seed" and value <= 0:
+            raise ValueError(f"{key} must be positive")
+        if key in {"k", "bucket_seconds", "seed"} and not isinstance(value, int):
+            raise ValueError(f"{key} must be an integer")
+    if technique == "sample" and config["sample_probability"] > 1:
+        raise ValueError("sample_probability must be in (0, 1]")
+    if technique == "labels" and (not isinstance(config["labels"], list) or not config["labels"] or
+                                  any(not isinstance(v, str) or not v.strip() for v in config["labels"])):
+        raise ValueError("labels must be a nonempty list of nonempty strings")
 
 
 def emit_flow(file_key: str, line_no: int, row: Dict[str, str], timestamp: datetime) -> list[str]:
@@ -253,6 +283,10 @@ def write_run(
     temporal_mode: str = "raw", temporal_rules: Optional[dict] = None,
     ambiguous_policy: str = "exclude",
 ) -> dict:
+    total_started = perf_counter()
+    started_utc = datetime.now(timezone.utc).isoformat()
+    timing = PhaseTiming()
+    validate_config(config)
     technique = config.get("technique")
     if technique not in {"baseline", "temporal", "labels", "sample", "topk", "aggregate"}:
         raise ValueError("Unsupported technique")
@@ -273,18 +307,16 @@ def write_run(
     cutoff = None
     keep_edges = None
     labels = {normalized_label(value) for value in config.get("labels", [])}
-    total_started = perf_counter()
-    verification_started = perf_counter()
-    input_details = [{"path": str(path), "sha256": sha256(path), "bytes": path.stat().st_size} for path in inputs]
-    input_verification_seconds = perf_counter() - verification_started
-    preflight_started = perf_counter()
-    temporal_summary = temporal_preflight(inputs, temporal_mode, temporal_rules, ambiguous_policy)
-    temporal_preflight_seconds = perf_counter() - preflight_started
+    with timing.measure("input_verification_seconds"):
+        input_details = [{"path": str(path), "sha256": sha256(path), "bytes": path.stat().st_size} for path in inputs]
+    with timing.measure("temporal_preflight_seconds"):
+        temporal_summary = temporal_preflight(inputs, temporal_mode, temporal_rules, ambiguous_policy)
     if technique == "temporal":
-        reference = global_max_timestamp(inputs, temporal_mode, temporal_rules, ambiguous_policy)
-        cutoff = reference - timedelta(hours=float(config["window_hours"]))
+        with timing.measure("temporal_reference_seconds"):
+            reference = global_max_timestamp(inputs, temporal_mode, temporal_rules, ambiguous_policy)
+            cutoff = reference - timedelta(hours=float(config["window_hours"]))
     if technique == "topk":
-        keep_edges = topk_edges(inputs, int(config["k"]), temporal_mode, temporal_rules, ambiguous_policy)
+        keep_edges = topk_edges(inputs, int(config["k"]), temporal_mode, temporal_rules, ambiguous_policy, timing)
     if technique == "sample" and not 0 < float(config.get("sample_probability", 0)) <= 1:
         raise ValueError("sample_probability must be in (0, 1]")
     if technique == "topk" and int(config["k"]) < 1:
@@ -297,6 +329,7 @@ def write_run(
     artifacts, label_counts = [], Counter()
     aggregate_label_counts = Counter()
     total_flows = total_triples = total_aggregate_groups = 0
+    selection_eligible_flows = 0
     for input_path in inputs:
         file_key = input_path.name.removesuffix(".pcap_ISCX.csv")
         artifact = output_dir / f"{file_key}.nt.gz"
@@ -306,60 +339,82 @@ def write_run(
         with artifact.open("wb") as binary, gzip.GzipFile(
             filename="", mode="wb", fileobj=binary, mtime=0
         ) as compressed, io.TextIOWrapper(compressed, encoding="utf-8", newline="\n") as sink:
-            for line_no, row, timestamp in rows(input_path, temporal_mode, temporal_rules, ambiguous_policy):
-                selected = True
-                if cutoff is not None:
-                    selected = timestamp >= cutoff
-                elif labels:
-                    selected = normalized_label(row["Label"]) in labels
-                elif keep_edges is not None:
-                    selected = (row["Source IP"], row["Destination IP"]) in keep_edges
-                elif technique == "sample":
-                    selected = randomizer.random() < float(config["sample_probability"])
+            for line_no, row, timestamp in timing.iterate(
+                rows(input_path, temporal_mode, temporal_rules, ambiguous_policy), "input_decoding_seconds"
+            ):
+                with timing.measure("selection_seconds"):
+                    selection_eligible_flows += 1
+                    selected = True
+                    if cutoff is not None:
+                        selected = timestamp >= cutoff
+                    elif labels:
+                        selected = normalized_label(row["Label"]) in labels
+                    elif keep_edges is not None:
+                        selected = (row["Source IP"], row["Destination IP"]) in keep_edges
+                    elif technique == "sample":
+                        selected = randomizer.random() < float(config["sample_probability"])
                 if not selected:
                     continue
                 label_counts[row["Label"].strip()] += 1
                 flows += 1
                 if technique == "aggregate":
-                    key = aggregate_key(row, timestamp, int(config["bucket_seconds"]))
-                    state = aggregate.setdefault(key, {
-                        "count": 0,
-                        "first": timestamp,
-                        "last": timestamp,
-                        "label_counts": Counter(),
-                    })
-                    state["count"] += 1
-                    state["first"] = min(state["first"], timestamp)
-                    state["last"] = max(state["last"], timestamp)
-                    state["label_counts"][row["Label"].strip()] += 1
+                    with timing.measure("aggregation_grouping_seconds"):
+                        key = aggregate_key(row, timestamp, int(config["bucket_seconds"]))
+                        state = aggregate.setdefault(key, {
+                            "count": 0,
+                            "first": timestamp,
+                            "last": timestamp,
+                            "label_counts": Counter(),
+                        })
+                        state["count"] += 1
+                        state["first"] = min(state["first"], timestamp)
+                        state["last"] = max(state["last"], timestamp)
+                        state["label_counts"][row["Label"].strip()] += 1
                 else:
-                    lines = emit_flow(file_key, line_no, row, timestamp)
-                    sink.writelines(lines)
-                    triples += len(lines)
+                    with timing.measure("rdf_emission_seconds"):
+                        lines = emit_flow(file_key, line_no, row, timestamp)
+                        sink.writelines(lines)
+                        triples += len(lines)
             if technique == "aggregate":
                 for key in sorted(aggregate):
                     if sum(aggregate[key]["label_counts"].values()) != aggregate[key]["count"]:
                         raise RuntimeError(
                             "Aggregate label counts differ from its input flow count"
                         )
-                    lines = emit_aggregate(file_key, key, aggregate[key])
-                    sink.writelines(lines)
-                    triples += len(lines)
+                    with timing.measure("rdf_emission_seconds"):
+                        lines = emit_aggregate(file_key, key, aggregate[key])
+                        sink.writelines(lines)
+                        triples += len(lines)
                     aggregate_label_counts.update(aggregate[key]["label_counts"])
                 total_aggregate_groups += len(aggregate)
-        artifacts.append({"path": artifact.name, "sha256": sha256(artifact), "bytes": artifact.stat().st_size,
-                          "selected_flows": flows, "emitted_triples": triples,
-                          **({"aggregated_groups": len(aggregate), "aggregate_input_flows": flows}
-                             if technique == "aggregate" else {})})
+        with timing.measure("artifact_verification_seconds"):
+            artifacts.append({"path": artifact.name, "sha256": sha256(artifact), "bytes": artifact.stat().st_size,
+                              "selected_flows": flows, "emitted_triples": triples,
+                              **({"aggregated_groups": len(aggregate), "aggregate_input_flows": flows}
+                                 if technique == "aggregate" else {})})
         total_flows += flows
         total_triples += triples
     if technique == "aggregate" and aggregate_label_counts != label_counts:
         raise RuntimeError(
             "Aggregate label counts differ from the selected input flow label counts"
         )
+    generation_seconds = perf_counter() - started_monotonic
+    total_seconds = perf_counter() - total_started
+    partition = timing.snapshot(total_seconds)
     manifest = {
         "schema_version": 2, "run_id": run_id,
-        "generator": {"name": Path(__file__).name, "python": sys.version, "platform": platform.platform()},
+        "generator": {"name": Path(__file__).name, "python": sys.version, "platform": platform.platform(),
+                      "started_utc": started_utc, "argv": sys.argv},
+        "timing": {"schema_version": 1, "clock": "perf_counter", "exclusive_seconds": partition,
+                   "envelopes": ["generation_seconds", "total_seconds", "topk_selection_seconds"],
+                   "partition_total_seconds": total_seconds,
+                   "passes_over_csv": 4 if technique in {"temporal", "topk"} else 3,
+                   "manifest_serialization_included": False,
+                   "profile": "per-row decoding/selection/grouping/emission; overhead is included"},
+        "sampling": ({"probability_nominal": config["sample_probability"], "seed": config["seed"],
+                      "selection_eligible_flows": selection_eligible_flows,
+                      "probability_effective": total_flows / selection_eligible_flows if selection_eligible_flows else None}
+                     if technique == "sample" else None),
         "config": config, "input_csvs": input_details, "artifacts": artifacts,
         "temporal_interpretation": {
             "mode": temporal_mode,
@@ -383,10 +438,11 @@ def write_run(
                 "aggregate_label_counts": dict(sorted(aggregate_label_counts.items())),
                 "aggregate_label_count_sum": sum(aggregate_label_counts.values()),
             } if technique == "aggregate" else {}),
-            "input_verification_seconds": round(input_verification_seconds, 6),
-            "temporal_preflight_seconds": round(temporal_preflight_seconds, 6),
-            "generation_seconds": round(perf_counter() - started_monotonic, 6),
-            "total_seconds": round(perf_counter() - total_started, 6),
+            **{k: timing.seconds.get(k, 0.0) for k in ("input_verification_seconds", "temporal_preflight_seconds",
+                                                      "temporal_reference_seconds", "selection_seconds")},
+            "topk_selection_seconds": timing.seconds.get("topk_counting_seconds", 0) + timing.seconds.get("topk_ranking_seconds", 0),
+            "generation_seconds": generation_seconds, "total_seconds": total_seconds,
+            "rdf_validation_seconds": None, "tdb2_load_seconds": None, "sparql_query_seconds": None,
         },
     }
     (output_dir / "manifest.json").write_text(json.dumps(manifest, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")

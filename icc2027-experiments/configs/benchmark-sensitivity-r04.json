@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "temporal_mode": "normalized",
+  "ambiguous_policy": "exclude",
+  "protocol": {
+    "warmup_repetitions": 1,
+    "measured_repetitions": 5,
+    "query_warmups": 1,
+    "query_measurements": 5,
+    "order": "randomized",
+    "blocking": "repetition",
+    "order_seed": 2027,
+    "cache_state": "os_cache_uncontrolled",
+    "cache_evidence": "Fresh Java processes and new stores; no OS page-cache eviction performed.",
+    "subprocess_timeout_seconds": 7200,
+    "loader": "basic",
+    "require_clean_git": true
+  },
+  "storage": {
+    "reserve_free_bytes": 10737418240,
+    "estimated_bytes_per_repetition": 8589934592
+  },
+  "confidence_interval": {
+    "method": "none"
+  },
+  "sensitivity": {
+    "sample_probabilities": [
+      0.005,
+      0.01,
+      0.05,
+      0.1
+    ],
+    "sample_seeds": [
+      1001,
+      1002,
+      1003,
+      1004,
+      1005
+    ],
+    "topk_values": [
+      10,
+      20,
+      50
+    ],
+    "temporal_hours": [
+      6,
+      12,
+      24,
+      48
+    ],
+    "aggregation_buckets_seconds": [
+      60
+    ],
+    "labels": [
+      "Bot",
+      "DDoS",
+      "DoS GoldenEye",
+      "DoS Hulk",
+      "DoS Slowhttptest",
+      "DoS slowloris",
+      "FTP-Patator",
+      "Heartbleed",
+      "Infiltration",
+      "PortScan",
+      "SSH-Patator",
+      "Web Attack â€“ Brute Force",
+      "Web Attack â€“ Sql Injection",
+      "Web Attack â€“ XSS"
+    ]
+  }
+}

@@ -1,7 +1,9 @@
 import json
 import sys
 import tempfile
+import subprocess
 import unittest
+from unittest.mock import patch
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parents[1] / "src"))
@@ -53,6 +55,22 @@ class ExecutionTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             executor.query(self.root / "not-a-store", self.root / "query.rq", self.root / "result", 1, None)
         self.assertFalse((self.root / "not-a-store").exists())
+
+    def test_interruption_preserves_metadata_and_reaps_child(self):
+        original = subprocess.Popen
+        class InterruptedProcess(original):
+            def wait(self, *args, **kwargs):
+                if not getattr(self, "already_interrupted", False):
+                    self.already_interrupted = True
+                    raise KeyboardInterrupt
+                return super().wait(*args, **kwargs)
+        with patch("jena_executor.subprocess.Popen", InterruptedProcess):
+            with self.assertRaises(KeyboardInterrupt):
+                run_recorded([sys.executable, "-c", "import time; time.sleep(20)"], self.root / "interrupted", 30)
+        meta = json.loads((self.root / "interrupted.meta.json").read_text())
+        self.assertEqual("interrupted", meta["status"])
+        from benchmark_environment import pid_alive
+        self.assertFalse(pid_alive(meta["pid"]))
 
 
 if __name__ == "__main__":
