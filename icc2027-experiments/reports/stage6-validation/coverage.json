@@ -1,0 +1,33 @@
+{
+  "method": "Python 3.12 stdlib trace line coverage; unit tests only; subprocess lines not counted; not branch coverage",
+  "tests_run": 88,
+  "successful": true,
+  "modules": {
+    "benchmark_plan.py": {
+      "covered_executable_lines": 102,
+      "executable_lines": 110,
+      "percent": 92.72727272727273
+    },
+    "benchmark_runner.py": {
+      "covered_executable_lines": 296,
+      "executable_lines": 315,
+      "percent": 93.96825396825396
+    },
+    "evaluate_queries.py": {
+      "covered_executable_lines": 389,
+      "executable_lines": 473,
+      "percent": 82.24101479915433
+    },
+    "evaluation_metrics.py": {
+      "covered_executable_lines": 89,
+      "executable_lines": 94,
+      "percent": 94.68085106382979
+    },
+    "icc2027_pipeline.py": {
+      "covered_executable_lines": 347,
+      "executable_lines": 394,
+      "percent": 88.07106598984771
+    }
+  },
+  "combined_percent": 88.23953823953823
+}

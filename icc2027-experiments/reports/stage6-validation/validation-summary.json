@@ -1,0 +1,69 @@
+{
+  "base_commit": "94bce1cb666aa735ec3d7de1904a235b38cb410f",
+  "protected_sources_and_archives_unchanged": [
+    "icc2027-experiments/configs/temporal-normalization-rules.json",
+    "icc2027-experiments/src/temporal_audit.py",
+    "icc2027-experiments/queries",
+    "icc2027-experiments/reports/stage3-reference-r04",
+    "icc2027-experiments/reports/stage3-jena-r04",
+    "icc2027-experiments/reports/stage4-validation"
+  ],
+  "replay_input": "reports/stage3-jena-r04",
+  "replayed_policies": 13,
+  "successful_policies": 13,
+  "metrics_schema_version": 2,
+  "sampling_statistics": {
+    "protocol_tvd_pct": {
+      "n_total": 5,
+      "n_defined": 5,
+      "n_undefined": 0,
+      "mean": 0.34351831257649845,
+      "median": 0.17017479810423772,
+      "sample_stdev": 0.28183932343887264,
+      "min": 0.10666932636520518,
+      "max": 0.703376005653306
+    },
+    "protocol_estimated_count_l1_error_pct": {
+      "n_total": 5,
+      "n_defined": 5,
+      "n_undefined": 0,
+      "mean": 0.7457764592380582,
+      "median": 0.4889532458109025,
+      "sample_stdev": 0.5731142649176189,
+      "min": 0.25615201108119745,
+      "max": 1.4891860470456324
+    },
+    "hour_tvd_pct": {
+      "n_total": 5,
+      "n_defined": 5,
+      "n_undefined": 0,
+      "mean": 1.0551840823080354,
+      "median": 1.038881043128715,
+      "sample_stdev": 0.1594650785294086,
+      "min": 0.8884171936538501,
+      "max": 1.2412044436944443
+    },
+    "hour_estimated_count_l1_error_pct": {
+      "n_total": 5,
+      "n_defined": 5,
+      "n_undefined": 0,
+      "mean": 2.3019621767214327,
+      "median": 2.490468863759446,
+      "sample_stdev": 0.44636407591393545,
+      "min": 1.8223030381281313,
+      "max": 2.797832316559251
+    },
+    "retained_attack_classes": {
+      "n_total": 5,
+      "n_defined": 5,
+      "n_undefined": 0,
+      "mean": 11.6,
+      "median": 12,
+      "sample_stdev": 0.5477225575051661,
+      "min": 11,
+      "max": 12
+    }
+  },
+  "existing_tdb2_registry_checked": 13,
+  "new_cicids2017_campaign_executed": false
+}

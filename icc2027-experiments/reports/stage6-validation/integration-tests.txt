@@ -1,0 +1,13 @@
+aggregate-measured-001: success
+baseline-measured-001: success
+test_fresh_load_validation_warmups_reporting_and_noop_resume (test_benchmark_jena.BenchmarkJenaIntegrationTests.test_fresh_load_validation_warmups_reporting_and_noop_resume) ... ok
+test_queries_on_flow_and_aggregate_representations (test_jena_in_memory.InstalledJenaTests.test_queries_on_flow_and_aggregate_representations) ... ok
+test_39_actual_jena_answers_match_archived_exploratory_answers (test_reference_reports.ReferenceRegressionTests.test_39_actual_jena_answers_match_archived_exploratory_answers) ... ok
+test_aggregation_topk_and_five_sampling_seeds (test_reference_reports.ReferenceRegressionTests.test_aggregation_topk_and_five_sampling_seeds) ... ok
+test_offline_replay_is_stable_across_python_hash_seeds (test_reference_reports.ReferenceRegressionTests.test_offline_replay_is_stable_across_python_hash_seeds) ... ok
+test_reproduced_csvs_match_exploratory_reports (test_reference_reports.ReferenceRegressionTests.test_reproduced_csvs_match_exploratory_reports) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 315.969s
+
+OK

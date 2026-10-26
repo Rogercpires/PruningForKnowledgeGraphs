@@ -1,0 +1,256 @@
+{
+  "schema_version": 1,
+  "dry_run": true,
+  "created_utc": "2026-10-26T14:16:07.615159+00:00",
+  "spec": {
+    "schema_version": 1,
+    "temporal_mode": "normalized",
+    "ambiguous_policy": "exclude",
+    "protocol": {
+      "warmup_repetitions": 0,
+      "measured_repetitions": 5,
+      "query_warmups": 1,
+      "query_measurements": 5,
+      "order": "randomized",
+      "blocking": "repetition",
+      "order_seed": 2027,
+      "cache_state": "os_cache_uncontrolled",
+      "cache_evidence": "Fresh Java processes and new stores; no OS page-cache eviction performed.",
+      "subprocess_timeout_seconds": 7200,
+      "loader": "basic",
+      "require_clean_git": true
+    },
+    "storage": {
+      "reserve_free_bytes": 10737418240,
+      "estimated_bytes_per_repetition": 8589934592
+    },
+    "confidence_interval": {
+      "method": "none"
+    },
+    "sensitivity": {
+      "sample_probabilities": [
+        0.005,
+        0.01,
+        0.05,
+        0.1
+      ],
+      "sample_seeds": [
+        1001,
+        1002,
+        1003,
+        1004,
+        1005
+      ],
+      "topk_values": [
+        10,
+        20,
+        50
+      ],
+      "temporal_hours": [
+        6,
+        12,
+        24,
+        48
+      ],
+      "aggregation_buckets_seconds": [
+        60
+      ],
+      "labels": [
+        "Bot",
+        "DDoS",
+        "DoS GoldenEye",
+        "DoS Hulk",
+        "DoS Slowhttptest",
+        "DoS slowloris",
+        "FTP-Patator",
+        "Heartbleed",
+        "Infiltration",
+        "PortScan",
+        "SSH-Patator",
+        "Web Attack – Brute Force",
+        "Web Attack – Sql Injection",
+        "Web Attack – XSS"
+      ]
+    },
+    "configurations": [
+      {
+        "id": "baseline",
+        "config": {
+          "technique": "baseline"
+        }
+      },
+      {
+        "id": "aggregate-60s",
+        "config": {
+          "technique": "aggregate",
+          "bucket_seconds": 60
+        }
+      }
+    ]
+  },
+  "schedule": [
+    {
+      "task_id": "aggregate-60s-measured-001",
+      "configuration_id": "aggregate-60s",
+      "kind": "measured",
+      "repetition": 1,
+      "block_id": "measured-001",
+      "order_index": 0,
+      "config": {
+        "technique": "aggregate",
+        "bucket_seconds": 60
+      }
+    },
+    {
+      "task_id": "baseline-measured-001",
+      "configuration_id": "baseline",
+      "kind": "measured",
+      "repetition": 1,
+      "block_id": "measured-001",
+      "order_index": 1,
+      "config": {
+        "technique": "baseline"
+      }
+    },
+    {
+      "task_id": "baseline-measured-002",
+      "configuration_id": "baseline",
+      "kind": "measured",
+      "repetition": 2,
+      "block_id": "measured-002",
+      "order_index": 2,
+      "config": {
+        "technique": "baseline"
+      }
+    },
+    {
+      "task_id": "aggregate-60s-measured-002",
+      "configuration_id": "aggregate-60s",
+      "kind": "measured",
+      "repetition": 2,
+      "block_id": "measured-002",
+      "order_index": 3,
+      "config": {
+        "technique": "aggregate",
+        "bucket_seconds": 60
+      }
+    },
+    {
+      "task_id": "aggregate-60s-measured-003",
+      "configuration_id": "aggregate-60s",
+      "kind": "measured",
+      "repetition": 3,
+      "block_id": "measured-003",
+      "order_index": 4,
+      "config": {
+        "technique": "aggregate",
+        "bucket_seconds": 60
+      }
+    },
+    {
+      "task_id": "baseline-measured-003",
+      "configuration_id": "baseline",
+      "kind": "measured",
+      "repetition": 3,
+      "block_id": "measured-003",
+      "order_index": 5,
+      "config": {
+        "technique": "baseline"
+      }
+    },
+    {
+      "task_id": "aggregate-60s-measured-004",
+      "configuration_id": "aggregate-60s",
+      "kind": "measured",
+      "repetition": 4,
+      "block_id": "measured-004",
+      "order_index": 6,
+      "config": {
+        "technique": "aggregate",
+        "bucket_seconds": 60
+      }
+    },
+    {
+      "task_id": "baseline-measured-004",
+      "configuration_id": "baseline",
+      "kind": "measured",
+      "repetition": 4,
+      "block_id": "measured-004",
+      "order_index": 7,
+      "config": {
+        "technique": "baseline"
+      }
+    },
+    {
+      "task_id": "baseline-measured-005",
+      "configuration_id": "baseline",
+      "kind": "measured",
+      "repetition": 5,
+      "block_id": "measured-005",
+      "order_index": 8,
+      "config": {
+        "technique": "baseline"
+      }
+    },
+    {
+      "task_id": "aggregate-60s-measured-005",
+      "configuration_id": "aggregate-60s",
+      "kind": "measured",
+      "repetition": 5,
+      "block_id": "measured-005",
+      "order_index": 9,
+      "config": {
+        "technique": "aggregate",
+        "bucket_seconds": 60
+      }
+    }
+  ],
+  "task_count": 10,
+  "measured_task_count": 10,
+  "input_paths": [
+    {
+      "path": "D:\\UFRGS\\Extras\\Gerencia de Redes\\Dataset\\CIC-IDS-2017\\CSVs\\GeneratedLabelledFlows\\TrafficLabelling\\Monday-WorkingHours.pcap_ISCX.csv",
+      "bytes": 268649908
+    },
+    {
+      "path": "D:\\UFRGS\\Extras\\Gerencia de Redes\\Dataset\\CIC-IDS-2017\\CSVs\\GeneratedLabelledFlows\\TrafficLabelling\\Tuesday-WorkingHours.pcap_ISCX.csv",
+      "bytes": 174696560
+    },
+    {
+      "path": "D:\\UFRGS\\Extras\\Gerencia de Redes\\Dataset\\CIC-IDS-2017\\CSVs\\GeneratedLabelledFlows\\TrafficLabelling\\Wednesday-workingHours.pcap_ISCX.csv",
+      "bytes": 285642925
+    },
+    {
+      "path": "D:\\UFRGS\\Extras\\Gerencia de Redes\\Dataset\\CIC-IDS-2017\\CSVs\\GeneratedLabelledFlows\\TrafficLabelling\\Thursday-WorkingHours-Morning-WebAttacks.pcap_ISCX.csv",
+      "bytes": 92030223
+    },
+    {
+      "path": "D:\\UFRGS\\Extras\\Gerencia de Redes\\Dataset\\CIC-IDS-2017\\CSVs\\GeneratedLabelledFlows\\TrafficLabelling\\Thursday-WorkingHours-Afternoon-Infilteration.pcap_ISCX.csv",
+      "bytes": 108723183
+    },
+    {
+      "path": "D:\\UFRGS\\Extras\\Gerencia de Redes\\Dataset\\CIC-IDS-2017\\CSVs\\GeneratedLabelledFlows\\TrafficLabelling\\Friday-WorkingHours-Morning.pcap_ISCX.csv",
+      "bytes": 75386737
+    },
+    {
+      "path": "D:\\UFRGS\\Extras\\Gerencia de Redes\\Dataset\\CIC-IDS-2017\\CSVs\\GeneratedLabelledFlows\\TrafficLabelling\\Friday-WorkingHours-Afternoon-PortScan.pcap_ISCX.csv",
+      "bytes": 101874777
+    },
+    {
+      "path": "D:\\UFRGS\\Extras\\Gerencia de Redes\\Dataset\\CIC-IDS-2017\\CSVs\\GeneratedLabelledFlows\\TrafficLabelling\\Friday-WorkingHours-Afternoon-DDos.pcap_ISCX.csv",
+      "bytes": 96101069
+    }
+  ],
+  "output": "C:\\Users\\roger.pires\\OneDrive\\Documentos\\Meus Documentos\\Documentos Roger\\Meus Cursos\\Documentos UFRGS\\ICC 2027\\PruningForKnowledgeGraphs-ICC2027\\icc2027-experiments\\reports\\stage6-validation",
+  "storage_budget": {
+    "probe_path": "C:\\Users\\roger.pires\\OneDrive\\Documentos\\Meus Documentos\\Documentos Roger\\Meus Cursos\\Documentos UFRGS\\ICC 2027\\PruningForKnowledgeGraphs-ICC2027\\icc2027-experiments\\reports\\stage6-validation",
+    "free_bytes": 133832843264,
+    "required_bytes": 96636764160,
+    "reserve_free_bytes": 10737418240,
+    "estimated_bytes_per_repetition": 8589934592,
+    "remaining_repetitions": 10,
+    "sufficient": true,
+    "kind": "operator_supplied_budget_not_measured_prediction"
+  },
+  "note": "No input hashing, generation, Jena or cache manipulation performed"
+}

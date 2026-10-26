@@ -70,5 +70,16 @@ failure/resume behavior, statistics and future PowerShell commands. The default
 to inspect it without running the campaign. Existing R04 selections and saved
 experimental results are preserved.
 
+## Final audit closure (Stage 6)
+
+[STAGE6_AUDIT_DISPOSITION.md](STAGE6_AUDIT_DISPOSITION.md) records every final
+Antigravity finding, corrections and justified deferrals. Use
+[STAGE6_OPERATIONS.md](STAGE6_OPERATIONS.md) for exact PowerShell commands A–E
+(existing-store evaluation, replay, tiny integration test, controlled repetitions
+and sensitivity batches). [STAGE6_RESEARCH_SUMMARY.md](STAGE6_RESEARCH_SUMMARY.md)
+separates previous exploratory results from new infrastructure validation and
+outlines the next NOMS campaign. Test evidence is in
+[reports/stage6-validation/README.md](reports/stage6-validation/README.md).
+
 
 

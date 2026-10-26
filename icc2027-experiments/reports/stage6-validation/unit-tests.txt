@@ -1,0 +1,130 @@
+test_cli_plan_and_refusal_to_overwrite (test_benchmark_runner.BenchmarkTests.test_cli_plan_and_refusal_to_overwrite) ... Benchmark failed: [Errno 17] File exists: 'C:\\TEMP\\ROGER~1.PIR\\tmptpmj2gwe\\plan.json'
+ok
+{"status": "failed", "reports": ["reports/report-84931266774949b596191659f58aef45"]}
+baseline-measured-001: success
+test_cli_run_resume_retry_and_summarize (test_benchmark_runner.BenchmarkTests.test_cli_run_resume_retry_and_summarize) ... ok
+{"status": "success", "reports": ["reports/report-84931266774949b596191659f58aef45", "reports/report-c44a1580384f418c9f875970f3398e7b"]}
+{"status": "success", "reports": ["reports/report-84931266774949b596191659f58aef45", "reports/report-c44a1580384f418c9f875970f3398e7b", "reports/report-de0d5dcf66f74989a1f8518e02982e1c"]}
+baseline-measured-001: success
+test_committed_completion_with_stale_root_state_is_recovered (test_benchmark_runner.BenchmarkTests.test_committed_completion_with_stale_root_state_is_recovered) ... ok
+baseline-measured-001: success
+test_completed_evidence_tampering_is_detected (test_benchmark_runner.BenchmarkTests.test_completed_evidence_tampering_is_detected) ... ok
+test_dry_plan_does_not_hash_generate_or_launch_processes (test_benchmark_runner.BenchmarkTests.test_dry_plan_does_not_hash_generate_or_launch_processes) ... ok
+baseline-measured-001: success
+aggregate-measured-001: success
+baseline-measured-002: success
+aggregate-measured-002: success
+test_failed_attempt_preserved_and_retry_gets_fresh_path (test_benchmark_runner.BenchmarkTests.test_failed_attempt_preserved_and_retry_gets_fresh_path) ... ok
+aggregate-warmup-001: success
+baseline-warmup-001: success
+baseline-measured-001: success
+aggregate-measured-001: success
+aggregate-measured-002: success
+baseline-measured-002: success
+aggregate-measured-003: success
+baseline-measured-003: success
+baseline-measured-004: success
+aggregate-measured-004: success
+baseline-measured-005: success
+aggregate-measured-005: success
+test_five_repetitions_have_distinct_stores_and_warmups_are_excluded (test_benchmark_runner.BenchmarkTests.test_five_repetitions_have_distinct_stores_and_warmups_are_excluded) ... ok
+baseline-measured-001: success
+aggregate-measured-001: success
+test_interrupt_and_resume_without_overwriting (test_benchmark_runner.BenchmarkTests.test_interrupt_and_resume_without_overwriting) ... ok
+test_live_orphan_pid_blocks_resume (test_benchmark_runner.BenchmarkTests.test_live_orphan_pid_blocks_resume) ... ok
+test_lock_blocks_second_runner (test_benchmark_runner.BenchmarkTests.test_lock_blocks_second_runner) ... ok
+baseline-measured-001: success
+test_recovery_after_report_failure_does_not_repeat_valid_loads (test_benchmark_runner.BenchmarkTests.test_recovery_after_report_failure_does_not_repeat_valid_loads) ... ok
+s01-measured-001: success
+s005-measured-001: success
+baseline-measured-001: success
+test_sampling_probabilities_are_not_pooled_in_quality_reports (test_benchmark_runner.BenchmarkTests.test_sampling_probabilities_are_not_pooled_in_quality_reports) ... ok
+test_schedule_reproducibility_blocks_and_seed_dimensions (test_benchmark_runner.BenchmarkTests.test_schedule_reproducibility_blocks_and_seed_dimensions) ... ok
+test_source_drift_and_storage_shortage_are_not_ignored (test_benchmark_runner.BenchmarkTests.test_source_drift_and_storage_shortage_are_not_ignored) ... ok
+baseline-measured-001: success
+baseline-measured-001: success
+test_unsealed_success_is_preserved_as_interrupted_before_new_attempt (test_benchmark_runner.BenchmarkTests.test_unsealed_success_is_preserved_as_interrupted_before_new_attempt) ... ok
+test_validation_rejects_unsafe_or_noncomparable_designs (test_benchmark_runner.BenchmarkTests.test_validation_rejects_unsafe_or_noncomparable_designs) ... ok
+test_aggregation_counts_are_not_instances (test_evaluate_queries.EvaluationTests.test_aggregation_counts_are_not_instances) ... ok
+test_cli_failure_nonzero_without_creating_database (test_evaluate_queries.EvaluationTests.test_cli_failure_nonzero_without_creating_database) ... Evaluation failed: Existing TDB2 store not found: C:\TEMP\roger.pires\tmp4cg1jzz8\missing\baseline
+ok
+test_corrupt_saved_raw_output_fails_checksum (test_evaluate_queries.EvaluationTests.test_corrupt_saved_raw_output_fails_checksum) ... ok
+test_exact_comparison_command_and_same_results (test_evaluate_queries.EvaluationTests.test_exact_comparison_command_and_same_results) ... ok
+test_failure_is_not_an_empty_answer (test_evaluate_queries.EvaluationTests.test_failure_is_not_an_empty_answer) ... ok
+test_input_population_mismatch_and_duplicate_ids_fail (test_evaluate_queries.EvaluationTests.test_input_population_mismatch_and_duplicate_ids_fail) ... ok
+test_missing_saved_query_is_not_success (test_evaluate_queries.EvaluationTests.test_missing_saved_query_is_not_success) ... ok
+test_missing_tdb_path_and_overwrite_are_rejected (test_evaluate_queries.EvaluationTests.test_missing_tdb_path_and_overwrite_are_rejected) ... ok
+test_replay_compatibility_and_no_jena_dependency (test_evaluate_queries.EvaluationTests.test_replay_compatibility_and_no_jena_dependency) ... ok
+test_representation_selects_aggregate_queries (test_evaluate_queries.EvaluationTests.test_representation_selects_aggregate_queries) ... ok
+test_wrong_graph_detected_by_population (test_evaluate_queries.EvaluationTests.test_wrong_graph_detected_by_population) ... ok
+test_absent_classes_distinguish_instances_from_classes (test_evaluation_metrics.MetricTests.test_absent_classes_distinguish_instances_from_classes) ... ok
+test_bad_counts_fail_explicitly (test_evaluation_metrics.MetricTests.test_bad_counts_fail_explicitly) ... ok
+test_empty_distributions_are_not_zero_error (test_evaluation_metrics.MetricTests.test_empty_distributions_are_not_zero_error) ... ok
+test_errors_small_counts (test_evaluation_metrics.MetricTests.test_errors_small_counts) ... ok
+test_ht_design_simulation_without_real_csvs (test_evaluation_metrics.MetricTests.test_ht_design_simulation_without_real_csvs) ... ok
+test_ht_estimates_and_small_counts (test_evaluation_metrics.MetricTests.test_ht_estimates_and_small_counts) ... ok
+test_ht_rejects_other_policies_and_bad_probabilities (test_evaluation_metrics.MetricTests.test_ht_rejects_other_policies_and_bad_probabilities) ... ok
+test_l1_counts_uses_union_and_baseline_population (test_evaluation_metrics.MetricTests.test_l1_counts_uses_union_and_baseline_population) ... ok
+test_l1_on_proportions_is_twice_tvd (test_evaluation_metrics.MetricTests.test_l1_on_proportions_is_twice_tvd) ... ok
+test_rank_empty_baseline_is_undefined (test_evaluation_metrics.MetricTests.test_rank_empty_baseline_is_undefined) ... ok
+test_rank_no_overlap_penalizes_missing_on_union (test_evaluation_metrics.MetricTests.test_rank_no_overlap_penalizes_missing_on_union) ... ok
+test_rank_partial_overlap_and_short_candidate (test_evaluation_metrics.MetricTests.test_rank_partial_overlap_and_short_candidate) ... ok
+test_rank_ties_are_lexical (test_evaluation_metrics.MetricTests.test_rank_ties_are_lexical) ... ok
+test_reduction_denominators_and_growth (test_evaluation_metrics.MetricTests.test_reduction_denominators_and_growth) ... ok
+test_statistics_known_sample (test_evaluation_metrics.MetricTests.test_statistics_known_sample) ... ok
+test_tvd_equal_disjoint_and_scaled (test_evaluation_metrics.MetricTests.test_tvd_equal_disjoint_and_scaled) ... ok
+test_unexpected_class_and_empty_class_denominators (test_evaluation_metrics.MetricTests.test_unexpected_class_and_empty_class_denominators) ... ok
+test_interruption_preserves_metadata_and_reaps_child (test_jena_executor.ExecutionTests.test_interruption_preserves_metadata_and_reaps_child) ... ok
+test_invalid_result_remains_failure_with_raw_output (test_jena_executor.ExecutionTests.test_invalid_result_remains_failure_with_raw_output) ... ok
+test_missing_program_and_output_collision (test_jena_executor.ExecutionTests.test_missing_program_and_output_collision) ... ok
+test_nonzero_exit_is_never_empty_success (test_jena_executor.ExecutionTests.test_nonzero_exit_is_never_empty_success) ... ok
+test_success_preserves_raw_bytes_command_and_metadata (test_jena_executor.ExecutionTests.test_success_preserves_raw_bytes_command_and_metadata) ... ok
+test_timeout_is_recorded_and_process_terminated (test_jena_executor.ExecutionTests.test_timeout_is_recorded_and_process_terminated) ... ok
+test_typo_in_store_path_never_creates_database (test_jena_executor.ExecutionTests.test_typo_in_store_path_never_creates_database) ... ok
+test_ci_opt_in_requires_justification_and_keeps_negative_limit (test_performance_statistics.PerformanceStatisticsTests.test_ci_opt_in_requires_justification_and_keeps_negative_limit) ... ok
+test_empty_singleton_zero_and_missing (test_performance_statistics.PerformanceStatisticsTests.test_empty_singleton_zero_and_missing) ... ok
+test_inclusive_quartiles_and_cv (test_performance_statistics.PerformanceStatisticsTests.test_inclusive_quartiles_and_cv) ... ok
+test_student_t_against_reference_critical_values (test_performance_statistics.PerformanceStatisticsTests.test_student_t_against_reference_critical_values) ... ok
+test_aggregate_label_counts_preserve_mixed_classes_and_stable_iris (test_pipeline.PipelineTests.test_aggregate_label_counts_preserve_mixed_classes_and_stable_iris) ... ok
+test_aggregate_label_counts_preserve_unique_classes (test_pipeline.PipelineTests.test_aggregate_label_counts_preserve_unique_classes) ... ok
+test_baseline_manifest_has_exact_triple_count (test_pipeline.PipelineTests.test_baseline_manifest_has_exact_triple_count) ... ok
+test_normalized_mode_integrates_all_policies_and_excludes_ambiguous_fixture (test_pipeline.PipelineTests.test_normalized_mode_integrates_all_policies_and_excludes_ambiguous_fixture)
+Smoke test the shared temporal layer through all six pruning policies. ... ok
+test_sampling_is_repeatable_for_the_same_seed (test_pipeline.PipelineTests.test_sampling_is_repeatable_for_the_same_seed) ... ok
+test_all_sensitivity_configurations_generate_tiny_r04_manifests (test_pipeline_instrumentation.InstrumentationTests.test_all_sensitivity_configurations_generate_tiny_r04_manifests) ... ok
+test_exclusive_timer_clock_and_nested_phase_rejection (test_pipeline_instrumentation.InstrumentationTests.test_exclusive_timer_clock_and_nested_phase_rejection) ... ok
+test_invalid_parameters_fail_before_input_passes (test_pipeline_instrumentation.InstrumentationTests.test_invalid_parameters_fail_before_input_passes) ... ok
+test_per_repetition_identity_guard_rejects_changed_inputs_and_rules (test_pipeline_instrumentation.InstrumentationTests.test_per_repetition_identity_guard_rejects_changed_inputs_and_rules) ... ok
+test_six_policy_rdf_bytes_match_stage3 (test_pipeline_instrumentation.InstrumentationTests.test_six_policy_rdf_bytes_match_stage3) ... ok
+test_invalid_hours_are_rejected (test_sparql_results.SelectTests.test_invalid_hours_are_rejected) ... ok
+test_invalid_numeric_literals (test_sparql_results.SelectTests.test_invalid_numeric_literals) ... ok
+test_malformed_unbound_duplicate_and_string_count (test_sparql_results.SelectTests.test_malformed_unbound_duplicate_and_string_count) ... ok
+test_narrow_legacy_table_import_and_truncation (test_sparql_results.SelectTests.test_narrow_legacy_table_import_and_truncation) ... ok
+test_stored_count_zero_is_a_valid_count (test_sparql_results.SelectTests.test_stored_count_zero_is_a_valid_count) ... ok
+test_top_order_and_type_are_checked (test_sparql_results.SelectTests.test_top_order_and_type_are_checked) ... ok
+test_valid_structured_counts_and_empty (test_sparql_results.SelectTests.test_valid_structured_counts_and_empty) ... ok
+test_wrong_variables_missing_bindings_and_invalid_json (test_sparql_results.SelectTests.test_wrong_variables_missing_bindings_and_invalid_json) ... ok
+test_batch_keeps_baseline_budget_and_original_spec (test_stage6_audit.FinalAuditTests.test_batch_keeps_baseline_budget_and_original_spec) ... ok
+test_canonical_labels_retain_cp1252_web_attacks (test_stage6_audit.FinalAuditTests.test_canonical_labels_retain_cp1252_web_attacks) ... ok
+test_mixed_sampling_probabilities_are_not_pooled (test_stage6_audit.FinalAuditTests.test_mixed_sampling_probabilities_are_not_pooled) ... ok
+test_plan_cli_overrides_are_validated_and_do_not_execute (test_stage6_audit.FinalAuditTests.test_plan_cli_overrides_are_validated_and_do_not_execute) ... Benchmark failed: Unknown --config-id; inspect the dry-run schedule
+ok
+test_preflight_excludes_ambiguous_and_counts_invalid_once (test_stage6_audit.FinalAuditTests.test_preflight_excludes_ambiguous_and_counts_invalid_once) ... ok
+aggregate-measured-001: success
+baseline-measured-001: success
+test_run_cli_persists_selected_design_and_original_spec (test_stage6_audit.FinalAuditTests.test_run_cli_persists_selected_design_and_original_spec) ... ok
+test_sampling_seed_reproducible_within_eligibility_mode (test_stage6_audit.FinalAuditTests.test_sampling_seed_reproducible_within_eligibility_mode) ... ok
+test_short_ranking_exposes_fixed_n_and_baseline_recall (test_stage6_audit.FinalAuditTests.test_short_ranking_exposes_fixed_n_and_baseline_recall) ... ok
+test_logical_lengths_include_other_files_and_all_generations (test_tdb_storage.StorageTests.test_logical_lengths_include_other_files_and_all_generations) ... ok
+test_missing_root_is_not_zero_size (test_tdb_storage.StorageTests.test_missing_root_is_not_zero_size) ... ok
+test_audit_reports_wednesday_neighbors_and_is_deterministic (test_temporal_audit.TemporalAuditTests.test_audit_reports_wednesday_neighbors_and_is_deterministic) ... ok
+test_configured_early_hours_are_corrected_without_using_label (test_temporal_audit.TemporalAuditTests.test_configured_early_hours_are_corrected_without_using_label) ... ok
+test_non_chronological_morning_record_is_preserved (test_temporal_audit.TemporalAuditTests.test_non_chronological_morning_record_is_preserved) ... ok
+test_parser_keeps_local_civil_time_with_and_without_seconds (test_temporal_audit.TemporalAuditTests.test_parser_keeps_local_civil_time_with_and_without_seconds) ... ok
+test_wednesday_line_exceptions_do_not_use_label_or_row_order (test_temporal_audit.TemporalAuditTests.test_wednesday_line_exceptions_do_not_use_label_or_row_order) ... ok
+
+----------------------------------------------------------------------
+Ran 88 tests in 59.320s
+
+OK
+{"status": "success", "reports": ["reports/report-769b7a9cca2647b7b6382d8381fbf5c3"]}
