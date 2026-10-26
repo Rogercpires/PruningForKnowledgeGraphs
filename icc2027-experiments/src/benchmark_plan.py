@@ -1,9 +1,11 @@
 """Validated sensitivity design and reproducible schedule. No execution here."""
 import copy
+import json
 import math
 import random
+from pathlib import Path
 
-from icc2027_pipeline import validate_config
+from icc2027_pipeline import normalized_label, validate_config
 from performance_statistics import validate_ci
 
 
@@ -20,6 +22,10 @@ def configurations(spec):
         grid = spec["sensitivity"]
         result = [{"id": "baseline", "config": {"technique": "baseline"}}]
         if grid.get("labels"):
+            canonical = json.loads((Path(__file__).resolve().parents[1] / "configs/labels-all-attacks.json").read_text(encoding="utf-8"))["labels"]
+            known = {normalized_label(v) for v in canonical} | {"benign"}
+            if any(normalized_label(v) not in known for v in grid["labels"]):
+                raise ValueError("Unknown CICIDS2017 sensitivity labels; use canonical labels-all-attacks.json")
             result.append({"id": "labels", "config": {"technique": "labels", "labels": grid["labels"]}})
         for probability in grid["sample_probabilities"]:
             for seed in grid["sample_seeds"]:
@@ -98,3 +104,21 @@ def schedule(spec):
                 for repetition in range(1, count + 1):
                     add(config, kind, repetition, config["id"])
     return jobs
+
+
+def select_design(spec, configuration_ids=None, measured_repetitions=None, warmup_repetitions=None):
+    """Explicit batch selection; preserve estimates and always retain its Baseline."""
+    result = copy.deepcopy(spec)
+    configs = configurations(result)
+    if configuration_ids:
+        selected = set(configuration_ids)
+        if selected - {c["id"] for c in configs}:
+            raise ValueError("Unknown --config-id; inspect the dry-run schedule")
+        selected.update(c["id"] for c in configs if c["config"]["technique"] == "baseline")
+        result["configurations"] = [c for c in configs if c["id"] in selected]
+    if measured_repetitions is not None:
+        result["protocol"]["measured_repetitions"] = measured_repetitions
+    if warmup_repetitions is not None:
+        result["protocol"]["warmup_repetitions"] = warmup_repetitions
+    validate_spec(result)
+    return result

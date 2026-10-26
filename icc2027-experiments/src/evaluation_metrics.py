@@ -100,6 +100,9 @@ def compare_rankings(baseline: Mapping[str, float], candidate: Mapping[str, floa
     return {
         "n": n, "baseline_size": len(a), "candidate_size": len(b),
         "overlap_count": len(common), "overlap": len(common) / n if a else None,
+        "overlap_denominator": n, "overlap_definition": "fixed_requested_n",
+        "baseline_recall": len(common) / len(a) if a else None,
+        "baseline_recall_denominator": len(a),
         "same_ranking": a == b if a else None,
         "common_mean_position_shift": statistics.mean(abs(pa[k] - pb[k]) for k in common) if common else None,
         "union_mean_position_shift": statistics.mean(abs(pa.get(k, n + 1) - pb.get(k, n + 1)) for k in union) if a else None,

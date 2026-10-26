@@ -252,6 +252,23 @@ For an initial pilot, copy the JSON spec and replace the grid with an explicit
 the protocol controls and record a separate campaign. No campaign was launched
 on the full CICIDS2017 dataset during Stage 4.
 
+Stage 6 also supports `--config-id ID` (repeatable),
+`--measured-repetitions N` and `--warmup-repetitions N` on both `plan` and `run`.
+Baseline is retained automatically. These overrides preserve the original spec,
+persist the resolved design and leave conservative storage estimates unchanged.
+Use identical selectors in planning and execution. See STAGE6_OPERATIONS.md for
+capacity-aware batch examples. The complete 180-task design still requires its
+full declared capacity; batches retained over time also consume cumulative space.
+
+New generator preflight counters have `counting_version: 2`: invalid timestamps
+count once and excluded ambiguous rows are excluded from eligible/attack counts.
+R04 interpretation, selection and emitted RDF are unchanged; previous manifests
+remain historical evidence. Sampling draws still depend on eligible row order:
+the same seed is reproducible only within the same interpretation and inputs.
+Per-flow instrumentation overhead remains included, without speculative subtraction
+of the auditor's microbenchmark extrapolation. Native-throughput comparisons need
+a separately versioned measurement profile.
+
 ```powershell
 python -B .\icc2027-experiments\src\benchmark_runner.py resume `
   --campaign "$bench\sensitivity-r01"

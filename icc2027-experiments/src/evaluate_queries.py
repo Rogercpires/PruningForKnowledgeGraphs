@@ -365,11 +365,19 @@ def calculate(bundle: dict, manifests: dict[str, dict]) -> dict:
             "hour": distribution_comparison(answer(baseline, "hour"), answer(policy, "hour"), probability),
         })
     sample = [r for r in reports if r["technique"] == "sample"]
-    summary = {f"{kind}_{metric}": describe([r[kind][metric] for r in sample])
-               for kind in ("protocol", "hour") for metric in ("tvd_pct", "estimated_count_l1_error_pct")}
-    summary["retained_attack_classes"] = describe([r["attack_preservation"]["retained_class_count"] for r in sample])
-    return {"schema_version": 1, "baseline_id": baseline["id"], "graph_scope": bundle["graph_scope"],
-            "ontology_scope": bundle["ontology_scope"], "policies": reports, "sampling_statistics": summary}
+    def statistics_for(rows):
+        result = {f"{kind}_{metric}": describe([r[kind][metric] for r in rows])
+                  for kind in ("protocol", "hour") for metric in ("tvd_pct", "estimated_count_l1_error_pct")}
+        result["retained_attack_classes"] = describe([r["attack_preservation"]["retained_class_count"] for r in rows])
+        return result
+    probabilities = sorted({manifests[r["id"]]["config"]["sample_probability"] for r in sample})
+    stratified = {str(p): statistics_for([r for r in sample if manifests[r["id"]]["config"]["sample_probability"] == p])
+                  for p in probabilities}
+    summary = statistics_for(sample) if len(probabilities) <= 1 else None
+    return {"schema_version": 2, "baseline_id": baseline["id"], "graph_scope": bundle["graph_scope"],
+            "ontology_scope": bundle["ontology_scope"], "policies": reports, "sampling_statistics": summary,
+            "sampling_statistics_by_probability": stratified,
+            "sampling_statistics_unavailable_reason": "mixed_probabilities_use_stratified_statistics" if summary is None else None}
 
 
 def write_csv(path: Path, columns: list[str], rows: list[dict]) -> None:
@@ -454,7 +462,9 @@ def export_reports(bundle: dict, manifests: dict[str, dict], output: Path) -> di
     write_csv(output / "class-preservation.csv", ["policy", "class", "baseline_attack_count", "observed_represented_attack_count", "retention", "inclusion_probability", "estimated_attack_count", "estimated_standard_error"], class_rows)
     write_csv(output / "category-errors.csv", ["policy", "query", "category", "baseline", "observed", "absolute_error", "relative_error", "inclusion_probability", "estimated_count", "estimated_standard_error"], category_rows)
     write_csv(output / "sampling-statistics.csv", ["metric", "n_total", "n_defined", "n_undefined", "mean", "median", "sample_stdev", "min", "max"],
-              [{"metric": name, **values} for name, values in report["sampling_statistics"].items()])
+              [{"metric": name, **values} for name, values in (report["sampling_statistics"] or {}).items()])
+    write_csv(output / "sampling-statistics-by-probability.csv", ["probability", "metric", "n_total", "n_defined", "n_undefined", "mean", "median", "sample_stdev", "min", "max"],
+              [{"probability": p, "metric": name, **values} for p, group in report["sampling_statistics_by_probability"].items() for name, values in group.items()])
     write_csv(output / "storage-logical.csv", ["policy", "TotalBytes", "TotalMiB", *COMPONENTS, "OtherBytes"], storage_rows)
     write_json(output / "storage-logical.json", {p["id"]: p["storage"] for p in bundle["policies"]})
     return report

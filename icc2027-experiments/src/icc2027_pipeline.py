@@ -127,11 +127,10 @@ def temporal_preflight(inputs: Iterable[Path], temporal_mode: str, rules: dict, 
     counts, attack_labels = Counter(), Counter()
     for path in inputs:
         for line_no, row in source_rows(path):
-            timestamp = parse_local_timestamp(row.get("Timestamp", ""))
             if not row.get("Source IP") or not row.get("Destination IP") or not row.get("Label"):
                 counts["invalid_structural_rows"] += 1
                 continue
-            _, _, classification, _ = temporal_value(path, line_no, row, temporal_mode, rules, ambiguous_policy)
+            timestamp, _, classification, _ = temporal_value(path, line_no, row, temporal_mode, rules, ambiguous_policy)
             counts[classification] += 1
             if classification == "ambiguous" and ambiguous_policy == "exclude":
                 counts["ambiguous_excluded"] += 1
@@ -139,9 +138,8 @@ def temporal_preflight(inputs: Iterable[Path], temporal_mode: str, rules: dict, 
                 counts["eligible_flows"] += 1
                 if row["Label"].casefold() != "benign":
                     attack_labels[row["Label"]] += 1
-            else:
-                counts["invalid"] += 1
     return {
+        "counting_version": 2,
         "corrected": counts["corrected"], "preserved": counts["preserved"],
         "ambiguous": counts["ambiguous"], "ambiguous_excluded": counts["ambiguous_excluded"],
         "invalid": counts["invalid"] + counts["invalid_structural_rows"],

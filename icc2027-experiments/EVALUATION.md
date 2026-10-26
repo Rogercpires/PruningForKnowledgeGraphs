@@ -212,6 +212,21 @@ are pooled as independent seed replicates.
 
 ## Reports and compatibility
 
+Stage 6 emits metrics JSON schema 2; input bundles remain schema 1 and archived
+reports are not rewritten. Rankings explicitly include `overlap_denominator=N`,
+`overlap_definition=fixed_requested_n`, `baseline_recall` and its denominator
+(the actual Baseline top-N size). Fixed-N overlap and legacy CSV columns retain
+their original definition. For an identical two-item ranking and N=20, fixed-N
+overlap is 0.1 and Baseline recall is 1.0; the two quantities answer different
+questions. Recall is undefined for an empty Baseline.
+
+`sampling_statistics_by_probability` and
+`sampling-statistics-by-probability.csv` always separate Bernoulli probabilities.
+For mixed probabilities, `sampling_statistics` is null with an explicit reason
+and its legacy CSV contains only headers. For a single probability, previous
+summary values and CSV remain compatible. Downstream schema-1 consumers must
+accept schema 2 and select strata rather than pooling different probabilities.
+
 - `metrics.json`: complete precision, per-policy statuses, population metrics,
   class preservation, rankings, category errors, HT and Sampling statistics.
 - `query-preservation-summary.csv` and `query-preservation-extended-r04.csv`:

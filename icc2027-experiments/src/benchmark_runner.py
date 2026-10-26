@@ -15,7 +15,7 @@ from time import perf_counter
 
 from benchmark_backend import JenaBenchmarkBackend
 from benchmark_environment import campaign_lock, disk_budget, hardware, pid_alive
-from benchmark_plan import configurations, schedule, validate_spec
+from benchmark_plan import configurations, schedule, select_design, validate_spec
 from benchmark_reports import consolidate
 from evaluate_queries import child, provenance, read_json
 from icc2027_pipeline import DEFAULT_TEMPORAL_RULES, discover_inputs, sha256
@@ -302,6 +302,9 @@ def main(argv=None):
         cmd.add_argument("--spec", type=Path, required=True)
         cmd.add_argument("--csv-root", type=Path, required=True)
         cmd.add_argument("--output", type=Path, required=True)
+        cmd.add_argument("--config-id", action="append", help="Select configurations by ID; Baseline is automatically retained")
+        cmd.add_argument("--measured-repetitions", type=int)
+        cmd.add_argument("--warmup-repetitions", type=int)
         if name == "run":
             cmd.add_argument("--jena-home", type=Path, required=True)
             cmd.add_argument("--java", default="java")
@@ -314,11 +317,13 @@ def main(argv=None):
             cmd.add_argument("--retry-failed", action="store_true")
     args = parser.parse_args(argv)
     try:
+        if args.command in {"plan", "run"}:
+            spec = select_design(read_json(args.spec), args.config_id, args.measured_repetitions, args.warmup_repetitions)
         if args.command == "plan":
-            write_json(args.output, plan_campaign(read_json(args.spec), args.csv_root, args.output.parent))
+            write_json(args.output, plan_campaign(spec, args.csv_root, args.output.parent))
             return 0
         if args.command == "run":
-            create_campaign(read_json(args.spec), args.csv_root, args.output, args.jena_home, args.java, args.jvm_arg, args.rules, args.spec)
+            create_campaign(spec, args.csv_root, args.output, args.jena_home, args.java, args.jvm_arg, args.rules, args.spec)
             state = execute_campaign(args.output)
         elif args.command == "resume":
             state = execute_campaign(args.campaign, args.retry_failed)
