@@ -1,0 +1,158 @@
+{
+  "schema_version": 2,
+  "run_id": "sample-001-normalized-r04-20261024-r03",
+  "generator": {
+    "name": "icc2027_pipeline.py",
+    "python": "3.12.0 (tags/v3.12.0:0fb18b0, Oct  2 2023, 13:03:39) [MSC v.1935 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26200-SP0"
+  },
+  "config": {
+    "technique": "sample",
+    "sample_probability": 0.01,
+    "seed": 1003
+  },
+  "input_csvs": [
+    {
+      "path": "C:\\UFRGS\\ICC2027_CSV\\Monday-WorkingHours.pcap_ISCX.csv",
+      "sha256": "96f26aea87d513073769b48ce204c2921791149e1c6225f7db65a3fed7973820",
+      "bytes": 268649908
+    },
+    {
+      "path": "C:\\UFRGS\\ICC2027_CSV\\Tuesday-WorkingHours.pcap_ISCX.csv",
+      "sha256": "ae9c88e10c41a8eb1ff454ae98bc513454925097d0b0b57180f94e79de445815",
+      "bytes": 174696560
+    },
+    {
+      "path": "C:\\UFRGS\\ICC2027_CSV\\Wednesday-workingHours.pcap_ISCX.csv",
+      "sha256": "ed538e85b84181e8897dedb3d37d365982f44b27eccd67c477581a8b65f3d170",
+      "bytes": 285642925
+    },
+    {
+      "path": "C:\\UFRGS\\ICC2027_CSV\\Thursday-WorkingHours-Morning-WebAttacks.pcap_ISCX.csv",
+      "sha256": "e3deaff483d18b53b100a441dff9b8919416df8876b4edcc0f0d1e4bf48397d0",
+      "bytes": 92030223
+    },
+    {
+      "path": "C:\\UFRGS\\ICC2027_CSV\\Thursday-WorkingHours-Afternoon-Infilteration.pcap_ISCX.csv",
+      "sha256": "d74238e054023c8bd4d8056650463cadb25c100fb0e26ebd4272c07b5c022c4b",
+      "bytes": 108723183
+    },
+    {
+      "path": "C:\\UFRGS\\ICC2027_CSV\\Friday-WorkingHours-Morning.pcap_ISCX.csv",
+      "sha256": "c061cd98f39d8054aeaed6244a5129a20b3985983d0d022b860ae8aa07fe8d21",
+      "bytes": 75386737
+    },
+    {
+      "path": "C:\\UFRGS\\ICC2027_CSV\\Friday-WorkingHours-Afternoon-PortScan.pcap_ISCX.csv",
+      "sha256": "7e2ddaa80a5849ba629463296b6128436c161b4a32e8034bb5beae06b0c45e08",
+      "bytes": 101874777
+    },
+    {
+      "path": "C:\\UFRGS\\ICC2027_CSV\\Friday-WorkingHours-Afternoon-DDos.pcap_ISCX.csv",
+      "sha256": "1f779b4f0d78f9225554c4de53b5a2c07912b60dcd136ee4c5c1d0d2496b7cc4",
+      "bytes": 96101069
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "Monday-WorkingHours.nt.gz",
+      "sha256": "e40f5197fe90a0ece4ccb60261597795f14bcb1558d8fb5d7ae4a01da12cb3a8",
+      "bytes": 320871,
+      "selected_flows": 5315,
+      "emitted_triples": 58465
+    },
+    {
+      "path": "Tuesday-WorkingHours.nt.gz",
+      "sha256": "c4d40cc8c155d364c4fb8320db3e8606737cde87399c7608b7b34753b432b3b5",
+      "bytes": 261032,
+      "selected_flows": 4473,
+      "emitted_triples": 49203
+    },
+    {
+      "path": "Wednesday-workingHours.nt.gz",
+      "sha256": "616fd8ccb20e7f3f88be4d6bac6d04319ab9948f8ccaa283a9cd07a5ae87521d",
+      "bytes": 372333,
+      "selected_flows": 6850,
+      "emitted_triples": 75350
+    },
+    {
+      "path": "Thursday-WorkingHours-Morning-WebAttacks.nt.gz",
+      "sha256": "b35ea314db8efa4b18c819ec6fd3913f655a9def397859f95e5f6ee434b46f43",
+      "bytes": 95613,
+      "selected_flows": 1678,
+      "emitted_triples": 18458
+    },
+    {
+      "path": "Thursday-WorkingHours-Afternoon-Infilteration.nt.gz",
+      "sha256": "7589d597c75f9c2dc24a7f63933016e28b80ead577d65bea1bbdef5342dc8085",
+      "bytes": 158233,
+      "selected_flows": 2928,
+      "emitted_triples": 32208
+    },
+    {
+      "path": "Friday-WorkingHours-Morning.nt.gz",
+      "sha256": "b17dd2f0c560174b5c3d8e46119cfca1f07fa8c3fbf53781a044e430ccfce192",
+      "bytes": 108558,
+      "selected_flows": 1931,
+      "emitted_triples": 21241
+    },
+    {
+      "path": "Friday-WorkingHours-Afternoon-PortScan.nt.gz",
+      "sha256": "4b2bc8de8337ca843d79920fe11b3376575a22d8a2151be69f7b9d6cc343f19a",
+      "bytes": 148173,
+      "selected_flows": 2908,
+      "emitted_triples": 31988
+    },
+    {
+      "path": "Friday-WorkingHours-Afternoon-DDos.nt.gz",
+      "sha256": "e6d7acf7a63505de9d73dd0da9836e3dc90b395ef2ad2c88bae3485b1e6db28f",
+      "bytes": 111839,
+      "selected_flows": 2207,
+      "emitted_triples": 24277
+    }
+  ],
+  "temporal_interpretation": {
+    "mode": "normalized",
+    "ambiguous_policy": "exclude",
+    "rules_version": "2026-10-22.2-r04",
+    "rules_sha256": "5b0ffc8205a415cefdc3df3eb61e3474685b7fedf0ded3815abc00210c0df892",
+    "timezone_convention": {
+      "source_timezone": "unknown",
+      "representation": "local civil time without UTC offset",
+      "bucket_method": "Floor the proposed local civil timestamp to the configured number of seconds; do not convert to an epoch."
+    },
+    "input_counts": {
+      "corrected": 1471709,
+      "preserved": 1359032,
+      "ambiguous": 2,
+      "ambiguous_excluded": 2,
+      "invalid": 288602,
+      "eligible_flows": 2830743,
+      "labelled_attacks": 557646,
+      "attack_classes": 14
+    }
+  },
+  "metrics": {
+    "selected_flows": 28290,
+    "emitted_triples": 311190,
+    "label_counts": {
+      "BENIGN": 22746,
+      "Bot": 16,
+      "DDoS": 1266,
+      "DoS GoldenEye": 111,
+      "DoS Hulk": 2277,
+      "DoS Slowhttptest": 51,
+      "DoS slowloris": 59,
+      "FTP-Patator": 84,
+      "PortScan": 1587,
+      "SSH-Patator": 71,
+      "Web Attack – Brute Force": 15,
+      "Web Attack – Sql Injection": 1,
+      "Web Attack – XSS": 6
+    },
+    "input_verification_seconds": 1.168739,
+    "temporal_preflight_seconds": 107.630951,
+    "generation_seconds": 84.767869,
+    "total_seconds": 193.567957
+  }
+}

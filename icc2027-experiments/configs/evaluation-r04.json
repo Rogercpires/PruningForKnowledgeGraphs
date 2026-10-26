@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "baseline_id": "baseline",
+  "expected_policy_count": 13,
+  "graph_scope": "default",
+  "ontology_scope": "not_verified",
+  "policies": [
+    {
+      "id": "baseline",
+      "label": "Baseline",
+      "manifest": "baseline-normalized-r04-20261023-r01/manifest.json",
+      "tdb": "baseline-normalized-r04-r01"
+    },
+    {
+      "id": "aggregation-60s",
+      "label": "Aggregation 60s",
+      "manifest": "aggregate-60s-normalized-r04-20261023-r01/manifest.json",
+      "tdb": "aggregate-60s-normalized-r04-r01"
+    },
+    {
+      "id": "temporal-6h",
+      "label": "Temporal 6h",
+      "manifest": "temporal-6h-normalized-r04-20261024-r01/manifest.json",
+      "tdb": "temporal-6h-normalized-r04-r01"
+    },
+    {
+      "id": "temporal-12h",
+      "label": "Temporal 12h",
+      "manifest": "temporal-12h-normalized-r04-20261024-r01/manifest.json",
+      "tdb": "temporal-12h-normalized-r04-r01"
+    },
+    {
+      "id": "temporal-24h",
+      "label": "Temporal 24h",
+      "manifest": "temporal-24h-normalized-r04-20261023-r01/manifest.json",
+      "tdb": "temporal-24h-normalized-r04-r01"
+    },
+    {
+      "id": "temporal-48h",
+      "label": "Temporal 48h",
+      "manifest": "temporal-48h-normalized-r04-20261024-r01/manifest.json",
+      "tdb": "temporal-48h-normalized-r04-r01"
+    },
+    {
+      "id": "label-based",
+      "label": "Label-Based",
+      "manifest": "labels-all-attacks-normalized-r04-20261024-r01/manifest.json",
+      "tdb": "labels-all-attacks-normalized-r04-r01"
+    },
+    {
+      "id": "top-k-20",
+      "label": "Top-K 20",
+      "manifest": "topk-20-normalized-r04-20261024-r01/manifest.json",
+      "tdb": "topk-20-normalized-r04-r01"
+    },
+    {
+      "id": "sampling-r01",
+      "label": "Sampling r01",
+      "manifest": "sample-001-normalized-r04-20261024-r01/manifest.json",
+      "tdb": "sample-001-normalized-r04-r01"
+    },
+    {
+      "id": "sampling-r02",
+      "label": "Sampling r02",
+      "manifest": "sample-001-normalized-r04-20261024-r02/manifest.json",
+      "tdb": "sample-001-normalized-r04-r02"
+    },
+    {
+      "id": "sampling-r03",
+      "label": "Sampling r03",
+      "manifest": "sample-001-normalized-r04-20261024-r03/manifest.json",
+      "tdb": "sample-001-normalized-r04-r03"
+    },
+    {
+      "id": "sampling-r04",
+      "label": "Sampling r04",
+      "manifest": "sample-001-normalized-r04-20261024-r04/manifest.json",
+      "tdb": "sample-001-normalized-r04-r04"
+    },
+    {
+      "id": "sampling-r05",
+      "label": "Sampling r05",
+      "manifest": "sample-001-normalized-r04-20261024-r05/manifest.json",
+      "tdb": "sample-001-normalized-r04-r05"
+    }
+  ]
+}

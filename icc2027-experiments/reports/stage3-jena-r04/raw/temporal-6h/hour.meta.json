@@ -1,0 +1,29 @@
+{
+  "command": [
+    "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath\\java.EXE",
+    "-Xmx4g",
+    "-Dlog4j.configurationFile=C:\\Apache\\apache-jena-5.6.0\\log4j2.properties",
+    "-cp",
+    "C:\\Apache\\apache-jena-5.6.0\\lib\\*",
+    "tdb2.tdbquery",
+    "--loc=C:\\UFRGS\\ICC2027_TDB2\\temporal-6h-normalized-r04-r01",
+    "--query=icc2027-experiments\\evaluations\\stage3-jena-r04-20261025-r01\\queries\\03-attack-flows-per-hour-flow.rq",
+    "--results=JSON"
+  ],
+  "started_utc": "2026-10-26T02:32:27.116367+00:00",
+  "timeout_seconds": 300.0,
+  "returncode": 0,
+  "status": "success",
+  "error": null,
+  "result": {
+    "2017-07-07T11": 242,
+    "2017-07-07T12": 252,
+    "2017-07-07T13": 185,
+    "2017-07-07T14": 138680,
+    "2017-07-07T15": 43930,
+    "2017-07-07T16": 104162
+  },
+  "duration_seconds": 11.184497599955648,
+  "stdout_sha256": "ce125c67b2e2f75ebc5c88dcf5593e796f97edf5f9a81f820d285aaa37eb2649",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

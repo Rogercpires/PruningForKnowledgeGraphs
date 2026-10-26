@@ -1,0 +1,74 @@
+COMMAND: C:\Python312\python.exe -B -m unittest discover -s icc2027-experiments/tests -v
+test_aggregation_counts_are_not_instances (test_evaluate_queries.EvaluationTests.test_aggregation_counts_are_not_instances) ... ok
+test_cli_failure_nonzero_without_creating_database (test_evaluate_queries.EvaluationTests.test_cli_failure_nonzero_without_creating_database) ... Evaluation failed: Existing TDB2 store not found: C:\TEMP\roger.pires\tmpqhyj13r0\missing\baseline
+ok
+test_corrupt_saved_raw_output_fails_checksum (test_evaluate_queries.EvaluationTests.test_corrupt_saved_raw_output_fails_checksum) ... ok
+test_exact_comparison_command_and_same_results (test_evaluate_queries.EvaluationTests.test_exact_comparison_command_and_same_results) ... ok
+test_failure_is_not_an_empty_answer (test_evaluate_queries.EvaluationTests.test_failure_is_not_an_empty_answer) ... ok
+test_input_population_mismatch_and_duplicate_ids_fail (test_evaluate_queries.EvaluationTests.test_input_population_mismatch_and_duplicate_ids_fail) ... ok
+test_missing_saved_query_is_not_success (test_evaluate_queries.EvaluationTests.test_missing_saved_query_is_not_success) ... ok
+test_missing_tdb_path_and_overwrite_are_rejected (test_evaluate_queries.EvaluationTests.test_missing_tdb_path_and_overwrite_are_rejected) ... ok
+test_replay_compatibility_and_no_jena_dependency (test_evaluate_queries.EvaluationTests.test_replay_compatibility_and_no_jena_dependency) ... ok
+test_representation_selects_aggregate_queries (test_evaluate_queries.EvaluationTests.test_representation_selects_aggregate_queries) ... ok
+test_wrong_graph_detected_by_population (test_evaluate_queries.EvaluationTests.test_wrong_graph_detected_by_population) ... ok
+test_absent_classes_distinguish_instances_from_classes (test_evaluation_metrics.MetricTests.test_absent_classes_distinguish_instances_from_classes) ... ok
+test_bad_counts_fail_explicitly (test_evaluation_metrics.MetricTests.test_bad_counts_fail_explicitly) ... ok
+test_empty_distributions_are_not_zero_error (test_evaluation_metrics.MetricTests.test_empty_distributions_are_not_zero_error) ... ok
+test_errors_small_counts (test_evaluation_metrics.MetricTests.test_errors_small_counts) ... ok
+test_ht_design_simulation_without_real_csvs (test_evaluation_metrics.MetricTests.test_ht_design_simulation_without_real_csvs) ... ok
+test_ht_estimates_and_small_counts (test_evaluation_metrics.MetricTests.test_ht_estimates_and_small_counts) ... ok
+test_ht_rejects_other_policies_and_bad_probabilities (test_evaluation_metrics.MetricTests.test_ht_rejects_other_policies_and_bad_probabilities) ... ok
+test_l1_counts_uses_union_and_baseline_population (test_evaluation_metrics.MetricTests.test_l1_counts_uses_union_and_baseline_population) ... ok
+test_l1_on_proportions_is_twice_tvd (test_evaluation_metrics.MetricTests.test_l1_on_proportions_is_twice_tvd) ... ok
+test_rank_empty_baseline_is_undefined (test_evaluation_metrics.MetricTests.test_rank_empty_baseline_is_undefined) ... ok
+test_rank_no_overlap_penalizes_missing_on_union (test_evaluation_metrics.MetricTests.test_rank_no_overlap_penalizes_missing_on_union) ... ok
+test_rank_partial_overlap_and_short_candidate (test_evaluation_metrics.MetricTests.test_rank_partial_overlap_and_short_candidate) ... ok
+test_rank_ties_are_lexical (test_evaluation_metrics.MetricTests.test_rank_ties_are_lexical) ... ok
+test_reduction_denominators_and_growth (test_evaluation_metrics.MetricTests.test_reduction_denominators_and_growth) ... ok
+test_statistics_known_sample (test_evaluation_metrics.MetricTests.test_statistics_known_sample) ... ok
+test_tvd_equal_disjoint_and_scaled (test_evaluation_metrics.MetricTests.test_tvd_equal_disjoint_and_scaled) ... ok
+test_unexpected_class_and_empty_class_denominators (test_evaluation_metrics.MetricTests.test_unexpected_class_and_empty_class_denominators) ... ok
+test_invalid_result_remains_failure_with_raw_output (test_jena_executor.ExecutionTests.test_invalid_result_remains_failure_with_raw_output) ... ok
+test_missing_program_and_output_collision (test_jena_executor.ExecutionTests.test_missing_program_and_output_collision) ... ok
+test_nonzero_exit_is_never_empty_success (test_jena_executor.ExecutionTests.test_nonzero_exit_is_never_empty_success) ... ok
+test_success_preserves_raw_bytes_command_and_metadata (test_jena_executor.ExecutionTests.test_success_preserves_raw_bytes_command_and_metadata) ... ok
+test_timeout_is_recorded_and_process_terminated (test_jena_executor.ExecutionTests.test_timeout_is_recorded_and_process_terminated) ... ok
+test_typo_in_store_path_never_creates_database (test_jena_executor.ExecutionTests.test_typo_in_store_path_never_creates_database) ... ok
+test_aggregate_label_counts_preserve_mixed_classes_and_stable_iris (test_pipeline.PipelineTests.test_aggregate_label_counts_preserve_mixed_classes_and_stable_iris) ... ok
+test_aggregate_label_counts_preserve_unique_classes (test_pipeline.PipelineTests.test_aggregate_label_counts_preserve_unique_classes) ... ok
+test_baseline_manifest_has_exact_triple_count (test_pipeline.PipelineTests.test_baseline_manifest_has_exact_triple_count) ... ok
+test_normalized_mode_integrates_all_policies_and_excludes_ambiguous_fixture (test_pipeline.PipelineTests.test_normalized_mode_integrates_all_policies_and_excludes_ambiguous_fixture)
+Smoke test the shared temporal layer through all six pruning policies. ... ok
+test_sampling_is_repeatable_for_the_same_seed (test_pipeline.PipelineTests.test_sampling_is_repeatable_for_the_same_seed) ... ok
+test_invalid_hours_are_rejected (test_sparql_results.SelectTests.test_invalid_hours_are_rejected) ... ok
+test_invalid_numeric_literals (test_sparql_results.SelectTests.test_invalid_numeric_literals) ... ok
+test_malformed_unbound_duplicate_and_string_count (test_sparql_results.SelectTests.test_malformed_unbound_duplicate_and_string_count) ... ok
+test_narrow_legacy_table_import_and_truncation (test_sparql_results.SelectTests.test_narrow_legacy_table_import_and_truncation) ... ok
+test_stored_count_zero_is_a_valid_count (test_sparql_results.SelectTests.test_stored_count_zero_is_a_valid_count) ... ok
+test_top_order_and_type_are_checked (test_sparql_results.SelectTests.test_top_order_and_type_are_checked) ... ok
+test_valid_structured_counts_and_empty (test_sparql_results.SelectTests.test_valid_structured_counts_and_empty) ... ok
+test_wrong_variables_missing_bindings_and_invalid_json (test_sparql_results.SelectTests.test_wrong_variables_missing_bindings_and_invalid_json) ... ok
+test_logical_lengths_include_other_files_and_all_generations (test_tdb_storage.StorageTests.test_logical_lengths_include_other_files_and_all_generations) ... ok
+test_missing_root_is_not_zero_size (test_tdb_storage.StorageTests.test_missing_root_is_not_zero_size) ... ok
+test_audit_reports_wednesday_neighbors_and_is_deterministic (test_temporal_audit.TemporalAuditTests.test_audit_reports_wednesday_neighbors_and_is_deterministic) ... ok
+test_configured_early_hours_are_corrected_without_using_label (test_temporal_audit.TemporalAuditTests.test_configured_early_hours_are_corrected_without_using_label) ... ok
+test_non_chronological_morning_record_is_preserved (test_temporal_audit.TemporalAuditTests.test_non_chronological_morning_record_is_preserved) ... ok
+test_parser_keeps_local_civil_time_with_and_without_seconds (test_temporal_audit.TemporalAuditTests.test_parser_keeps_local_civil_time_with_and_without_seconds) ... ok
+test_wednesday_line_exceptions_do_not_use_label_or_row_order (test_temporal_audit.TemporalAuditTests.test_wednesday_line_exceptions_do_not_use_label_or_row_order) ... ok
+
+----------------------------------------------------------------------
+Ran 54 tests in 3.671s
+
+OK
+
+COMMAND: C:\Python312\python.exe -B -m unittest discover -s icc2027-experiments/tests/integration -v
+test_queries_on_flow_and_aggregate_representations (test_jena_in_memory.InstalledJenaTests.test_queries_on_flow_and_aggregate_representations) ... skipped 'Set ICC2027_JENA_HOME for installed Jena integration'
+test_39_actual_jena_answers_match_archived_exploratory_answers (test_reference_reports.ReferenceRegressionTests.test_39_actual_jena_answers_match_archived_exploratory_answers) ... ok
+test_aggregation_topk_and_five_sampling_seeds (test_reference_reports.ReferenceRegressionTests.test_aggregation_topk_and_five_sampling_seeds) ... ok
+test_offline_replay_is_stable_across_python_hash_seeds (test_reference_reports.ReferenceRegressionTests.test_offline_replay_is_stable_across_python_hash_seeds) ... ok
+test_reproduced_csvs_match_exploratory_reports (test_reference_reports.ReferenceRegressionTests.test_reproduced_csvs_match_exploratory_reports) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 2.156s
+
+OK (skipped=1)

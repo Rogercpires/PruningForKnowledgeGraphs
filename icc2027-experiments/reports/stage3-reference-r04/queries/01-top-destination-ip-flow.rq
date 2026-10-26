@@ -1,0 +1,10 @@
+PREFIX ex: <http://example.org/ns#>
+
+SELECT ?destination (COUNT(?flow) AS ?flows)
+WHERE {
+    ?flow a ex:NetworkFlow ;
+          ex:hasDestinationAddress ?destination .
+}
+GROUP BY ?destination
+ORDER BY DESC(?flows) ?destination
+LIMIT 20

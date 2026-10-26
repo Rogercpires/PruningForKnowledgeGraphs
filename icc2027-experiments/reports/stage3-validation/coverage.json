@@ -1,0 +1,33 @@
+{
+  "method": "Python 3.12 stdlib trace executable-line counts; child processes not included",
+  "modules": {
+    "evaluation_metrics.py": {
+      "executable_lines": 91,
+      "covered_lines": 86,
+      "line_coverage_pct": 94.50549450549451
+    },
+    "sparql_results.py": {
+      "executable_lines": 90,
+      "covered_lines": 79,
+      "line_coverage_pct": 87.77777777777777
+    },
+    "jena_executor.py": {
+      "executable_lines": 74,
+      "covered_lines": 48,
+      "line_coverage_pct": 64.86486486486487
+    },
+    "tdb_storage.py": {
+      "executable_lines": 22,
+      "covered_lines": 20,
+      "line_coverage_pct": 90.9090909090909
+    },
+    "evaluate_queries.py": {
+      "executable_lines": 463,
+      "covered_lines": 384,
+      "line_coverage_pct": 82.93736501079914
+    }
+  },
+  "total_lines": 740,
+  "covered_lines": 617,
+  "line_coverage_pct": 83.37837837837837
+}

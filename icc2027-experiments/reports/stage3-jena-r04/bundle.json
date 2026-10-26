@@ -1,0 +1,4614 @@
+{
+  "schema_version": 1,
+  "baseline_id": "baseline",
+  "graph_scope": "default",
+  "ontology_scope": "not_verified",
+  "provenance": {
+    "created_utc": "2026-10-26T02:28:44.124029+00:00",
+    "python": "3.12.0 (tags/v3.12.0:0fb18b0, Oct  2 2023, 13:03:39) [MSC v.1935 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "argv": [
+      "icc2027-experiments/src/evaluate_queries.py",
+      "run",
+      "--registry",
+      "icc2027-experiments/configs/evaluation-r04.json",
+      "--runs-root",
+      "C:\\UFRGS\\ICC2027_Runs",
+      "--tdb-root",
+      "C:\\UFRGS\\ICC2027_TDB2",
+      "--jena-home",
+      "C:\\Apache\\apache-jena-5.6.0",
+      "--jvm-arg=-Xmx4g",
+      "--timeout",
+      "300",
+      "--output",
+      "icc2027-experiments/evaluations/stage3-jena-r04-20261025-r01"
+    ],
+    "git_commit": "8630fe683e5589f5effb101b655348b43fcd0aff",
+    "git_dirty": true,
+    "module_sha256": {
+      "evaluate_queries.py": "a53c54e499be710816627e8b6a60138d5d7ccec68ecfedc86331a96044348a0c",
+      "evaluation_metrics.py": "9396e016f8e27166cc7b8ee973772188f00aa91962e28d3c1f93e2f33e7123ef",
+      "icc2027_pipeline.py": "7c2f0cd8024dd1e1859510a89fd935c2e114b97b17a7b6d00f72f7a2bcbd2692",
+      "jena_executor.py": "02e72c57fceaf2910906f3c26ba3a3862424a0d55fc69d937a6671b2ff9eb651",
+      "sparql_results.py": "cf1e431cab422aaa5b4865bb8adbc474b7d8bdd0c928371ef7a7954c1acabaef",
+      "tdb_storage.py": "31262bb40f35647577d1d14fff68aaf595774a36972d2766e36fd41d24e96415",
+      "temporal_audit.py": "ee4ed69a829726b4babe5c203bdf1ffd3b48530cc8b636b076c68c95d6dd1862"
+    }
+  },
+  "policies": [
+    {
+      "id": "baseline",
+      "label": "Baseline",
+      "manifest_file": "manifests/baseline.json",
+      "manifest_sha256": "a530d1720a6e0ac6e76c2f8e903796430490156a81a72e7b98587c733b18a00b",
+      "tdb_path": "C:\\UFRGS\\ICC2027_TDB2\\baseline-normalized-r04-r01",
+      "queries": {
+        "top": {
+          "command": [
+            "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath\\java.EXE",
+            "-Xmx4g",
+            "-Dlog4j.configurationFile=C:\\Apache\\apache-jena-5.6.0\\log4j2.properties",
+            "-cp",
+            "C:\\Apache\\apache-jena-5.6.0\\lib\\*",
+            "tdb2.tdbquery",
+            "--loc=C:\\UFRGS\\ICC2027_TDB2\\baseline-normalized-r04-r01",
+            "--query=icc2027-experiments\\evaluations\\stage3-jena-r04-20261025-r01\\queries\\01-top-destination-ip-flow.rq",
+            "--results=JSON"
+          ],
+          "started_utc": "2026-10-26T02:28:46.740278+00:00",
+          "timeout_seconds": 300.0,
+          "returncode": 0,
+          "status": "success",
+          "error": null,
+          "result": {
+            "http://kg/cicids/ip/192.168.10.3": 685451,
+            "http://kg/cicids/ip/192.168.10.50": 583962,
+            "http://kg/cicids/ip/192.168.10.1": 294077,
+            "http://kg/cicids/ip/192.168.10.25": 78575,
+            "http://kg/cicids/ip/192.168.10.5": 56425,
+            "http://kg/cicids/ip/172.16.0.1": 48298,
+            "http://kg/cicids/ip/192.168.10.15": 40057,
+            "http://kg/cicids/ip/192.168.10.9": 39330,
+            "http://kg/cicids/ip/192.168.10.14": 39037,
+            "http://kg/cicids/ip/192.168.10.12": 38155,
+            "http://kg/cicids/ip/192.168.10.16": 35385,
+            "http://kg/cicids/ip/192.168.10.8": 32823,
+            "http://kg/cicids/ip/192.168.10.17": 31909,
+            "http://kg/cicids/ip/192.168.10.19": 29710,
+            "http://kg/cicids/ip/192.168.10.51": 25608,
+            "http://kg/cicids/ip/178.255.83.1": 20223,
+            "http://kg/cicids/ip/23.50.75.27": 10659,
+            "http://kg/cicids/ip/72.21.91.29": 10378,
+            "http://kg/cicids/ip/162.208.20.178": 10247,
+            "http://kg/cicids/ip/50.63.243.230": 8713
+          },
+          "duration_seconds": 59.76902670005802,
+          "stdout_sha256": "0680f276f4900a4814e833f27b97d9669ac0d9ccb8642b6562bbb9ccb78cee8d",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "format": "sparql-json",
+          "stdout_file": "raw/baseline/top.stdout",
+          "query_file": "queries/01-top-destination-ip-flow.rq",
+          "query_sha256": "12ef74828f03d1767c01eef34740d41a659ee2a0885067439566c4e1533d8023",
+          "query_provenance": "executed_snapshot"
+        },
+        "protocol": {
+          "command": [
+            "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath\\java.EXE",
+            "-Xmx4g",
+            "-Dlog4j.configurationFile=C:\\Apache\\apache-jena-5.6.0\\log4j2.properties",
+            "-cp",
+            "C:\\Apache\\apache-jena-5.6.0\\lib\\*",
+            "tdb2.tdbquery",
+            "--loc=C:\\UFRGS\\ICC2027_TDB2\\baseline-normalized-r04-r01",
+            "--query=icc2027-experiments\\evaluations\\stage3-jena-r04-20261025-r01\\queries\\02-flows-by-protocol-flow.rq",
+            "--results=JSON"
+          ],
+          "started_utc": "2026-10-26T02:29:46.518597+00:00",
+          "timeout_seconds": 300.0,
+          "returncode": 0,
+          "status": "success",
+          "error": null,
+          "result": {
+            "0": 1696,
+            "17": 999493,
+            "6": 1829552
+          },
+          "duration_seconds": 51.655726300086826,
+          "stdout_sha256": "4c9213d95b37ce8ccb947f2a1a65284343968e44b9d386fcd065d6f71e8ca0cc",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "format": "sparql-json",
+          "stdout_file": "raw/baseline/protocol.stdout",
+          "query_file": "queries/02-flows-by-protocol-flow.rq",
+          "query_sha256": "9fe231541ed2aef668ffadfe53d993858136cc0330915f818a16fdac26fd10d4",
+          "query_provenance": "executed_snapshot"
+        },
+        "hour": {
+          "command": [
+            "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath\\java.EXE",
+            "-Xmx4g",
+            "-Dlog4j.configurationFile=C:\\Apache\\apache-jena-5.6.0\\log4j2.properties",
+            "-cp",
+            "C:\\Apache\\apache-jena-5.6.0\\lib\\*",
+            "tdb2.tdbquery",
+            "--loc=C:\\UFRGS\\ICC2027_TDB2\\baseline-normalized-r04-r01",
+            "--query=icc2027-experiments\\evaluations\\stage3-jena-r04-20261025-r01\\queries\\03-attack-flows-per-hour-flow.rq",
+            "--results=JSON"
+          ],
+          "started_utc": "2026-10-26T02:30:38.184072+00:00",
+          "timeout_seconds": 300.0,
+          "returncode": 0,
+          "status": "success",
+          "error": null,
+          "result": {
+            "2017-07-04T09": 5266,
+            "2017-07-04T10": 2672,
+            "2017-07-04T14": 4899,
+            "2017-07-04T15": 998,
+            "2017-07-05T02": 5,
+            "2017-07-05T09": 3201,
+            "2017-07-05T10": 229420,
+            "2017-07-05T11": 20035,
+            "2017-07-05T15": 11,
+            "2017-07-06T09": 1500,
+            "2017-07-06T10": 680,
+            "2017-07-06T14": 18,
+            "2017-07-06T15": 18,
+            "2017-07-07T09": 2,
+            "2017-07-07T10": 1448,
+            "2017-07-07T11": 264,
+            "2017-07-07T12": 252,
+            "2017-07-07T13": 185,
+            "2017-07-07T14": 138680,
+            "2017-07-07T15": 43930,
+            "2017-07-07T16": 104162
+          },
+          "duration_seconds": 33.68311700003687,
+          "stdout_sha256": "deb7abaf0719625b23a5959f4b3e21c5bcbd842c1ef020c7fe197479c36bbf7d",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "format": "sparql-json",
+          "stdout_file": "raw/baseline/hour.stdout",
+          "query_file": "queries/03-attack-flows-per-hour-flow.rq",
+          "query_sha256": "42cf92f5bca048ccb8666c8930cbec22df6c31ac7d04ee24c013d9e1f921d7e4",
+          "query_provenance": "executed_snapshot"
+        },
+        "stored": {
+          "command": [
+            "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath\\java.EXE",
+            "-Xmx4g",
+            "-Dlog4j.configurationFile=C:\\Apache\\apache-jena-5.6.0\\log4j2.properties",
+            "-cp",
+            "C:\\Apache\\apache-jena-5.6.0\\lib\\*",
+            "tdb2.tdbquery",
+            "--loc=C:\\UFRGS\\ICC2027_TDB2\\baseline-normalized-r04-r01",
+            "--query=icc2027-experiments\\evaluations\\stage3-jena-r04-20261025-r01\\queries\\stored-triples-default.rq",
+            "--results=JSON"
+          ],
+          "started_utc": "2026-10-26T02:31:11.881922+00:00",
+          "timeout_seconds": 300.0,
+          "returncode": 0,
+          "status": "success",
+          "error": null,
+          "result": {
+            "default_graph": 25495798
+          },
+          "duration_seconds": 7.534744699951261,
+          "stdout_sha256": "ded3781a57396b6f35e0b2d88c8da799df74aabc412b1bad1113418e908df6fa",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "format": "sparql-json",
+          "stdout_file": "raw/baseline/stored.stdout",
+          "query_file": "queries/stored-triples-default.rq",
+          "query_sha256": "22d180ded68edd3ff84ade607b04c72b141536b8c9ae2bd732be7f991903126d",
+          "query_provenance": "executed_snapshot"
+        }
+      },
+      "storage": {
+        "kind": "logical_file_lengths",
+        "root": "C:\\UFRGS\\ICC2027_TDB2\\baseline-normalized-r04-r01",
+        "total_bytes": 4004798446,
+        "total_mib": 3819.2734203338623,
+        "components_bytes": {
+          "SPO.dat": 1233125376,
+          "POS.dat": 1149239296,
+          "OSP.dat": 1149239296,
+          "nodes.dat": 109051904,
+          "nodes-data.obj": 187981476
+        },
+        "other_bytes": 176161098,
+        "files": [
+          {
+            "path": "Data-0001/GOSP.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/GOSP.dat",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/GOSP.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/GPOS.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/GPOS.dat",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/GPOS.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/GPU.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/GPU.dat",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/GPU.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/GSPO.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/GSPO.dat",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/GSPO.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/journal.jrnl",
+            "bytes": 0
+          },
+          {
+            "path": "Data-0001/nodes-data.bdf",
+            "bytes": 16
+          },
+          {
+            "path": "Data-0001/nodes-data.obj",
+            "bytes": 187981476
+          },
+          {
+            "path": "Data-0001/nodes.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/nodes.dat",
+            "bytes": 109051904
+          },
+          {
+            "path": "Data-0001/nodes.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/OSP.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/OSP.dat",
+            "bytes": 1149239296
+          },
+          {
+            "path": "Data-0001/OSP.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/OSPG.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/OSPG.dat",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/OSPG.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/POS.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/POS.dat",
+            "bytes": 1149239296
+          },
+          {
+            "path": "Data-0001/POS.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/POSG.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/POSG.dat",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/POSG.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/prefixes-data.bdf",
+            "bytes": 16
+          },
+          {
+            "path": "Data-0001/prefixes-data.obj",
+            "bytes": 0
+          },
+          {
+            "path": "Data-0001/prefixes.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/prefixes.dat",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/prefixes.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/SPO.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/SPO.dat",
+            "bytes": 1233125376
+          },
+          {
+            "path": "Data-0001/SPO.idn",
+            "bytes": 16777216
+          },
+          {
+            "path": "Data-0001/SPOG.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/SPOG.dat",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/SPOG.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/tdb.lock",
+            "bytes": 5
+          },
+          {
+            "path": "tdb.lock",
+            "bytes": 5
+          }
+        ]
+      }
+    },
+    {
+      "id": "aggregation-60s",
+      "label": "Aggregation 60s",
+      "manifest_file": "manifests/aggregation-60s.json",
+      "manifest_sha256": "2ad7a515bab7ef28471c1b01e0f36220df0cc30624e800bfde34ae097e909005",
+      "tdb_path": "C:\\UFRGS\\ICC2027_TDB2\\aggregate-60s-normalized-r04-r01",
+      "queries": {
+        "top": {
+          "command": [
+            "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath\\java.EXE",
+            "-Xmx4g",
+            "-Dlog4j.configurationFile=C:\\Apache\\apache-jena-5.6.0\\log4j2.properties",
+            "-cp",
+            "C:\\Apache\\apache-jena-5.6.0\\lib\\*",
+            "tdb2.tdbquery",
+            "--loc=C:\\UFRGS\\ICC2027_TDB2\\aggregate-60s-normalized-r04-r01",
+            "--query=icc2027-experiments\\evaluations\\stage3-jena-r04-20261025-r01\\queries\\01-top-destination-ip-aggregate.rq",
+            "--results=JSON"
+          ],
+          "started_utc": "2026-10-26T02:31:19.441193+00:00",
+          "timeout_seconds": 300.0,
+          "returncode": 0,
+          "status": "success",
+          "error": null,
+          "result": {
+            "http://kg/cicids/ip/192.168.10.3": 685451,
+            "http://kg/cicids/ip/192.168.10.50": 583962,
+            "http://kg/cicids/ip/192.168.10.1": 294077,
+            "http://kg/cicids/ip/192.168.10.25": 78575,
+            "http://kg/cicids/ip/192.168.10.5": 56425,
+            "http://kg/cicids/ip/172.16.0.1": 48298,
+            "http://kg/cicids/ip/192.168.10.15": 40057,
+            "http://kg/cicids/ip/192.168.10.9": 39330,
+            "http://kg/cicids/ip/192.168.10.14": 39037,
+            "http://kg/cicids/ip/192.168.10.12": 38155,
+            "http://kg/cicids/ip/192.168.10.16": 35385,
+            "http://kg/cicids/ip/192.168.10.8": 32823,
+            "http://kg/cicids/ip/192.168.10.17": 31909,
+            "http://kg/cicids/ip/192.168.10.19": 29710,
+            "http://kg/cicids/ip/192.168.10.51": 25608,
+            "http://kg/cicids/ip/178.255.83.1": 20223,
+            "http://kg/cicids/ip/23.50.75.27": 10659,
+            "http://kg/cicids/ip/72.21.91.29": 10378,
+            "http://kg/cicids/ip/162.208.20.178": 10247,
+            "http://kg/cicids/ip/50.63.243.230": 8713
+          },
+          "duration_seconds": 12.259603400016204,
+          "stdout_sha256": "0680f276f4900a4814e833f27b97d9669ac0d9ccb8642b6562bbb9ccb78cee8d",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "format": "sparql-json",
+          "stdout_file": "raw/aggregation-60s/top.stdout",
+          "query_file": "queries/01-top-destination-ip-aggregate.rq",
+          "query_sha256": "facf8d80b9658d17de21317f9697ba9bcd6fc086ed9830a026eff858842cbe12",
+          "query_provenance": "executed_snapshot"
+        },
+        "protocol": {
+          "command": [
+            "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath\\java.EXE",
+            "-Xmx4g",
+            "-Dlog4j.configurationFile=C:\\Apache\\apache-jena-5.6.0\\log4j2.properties",
+            "-cp",
+            "C:\\Apache\\apache-jena-5.6.0\\lib\\*",
+            "tdb2.tdbquery",
+            "--loc=C:\\UFRGS\\ICC2027_TDB2\\aggregate-60s-normalized-r04-r01",
+            "--query=icc2027-experiments\\evaluations\\stage3-jena-r04-20261025-r01\\queries\\02-flows-by-protocol-aggregate.rq",
+            "--results=JSON"
+          ],
+          "started_utc": "2026-10-26T02:31:31.710031+00:00",
+          "timeout_seconds": 300.0,
+          "returncode": 0,
+          "status": "success",
+          "error": null,
+          "result": {
+            "0": 1696,
+            "17": 999493,
+            "6": 1829552
+          },
+          "duration_seconds": 8.79755249992013,
+          "stdout_sha256": "4c9213d95b37ce8ccb947f2a1a65284343968e44b9d386fcd065d6f71e8ca0cc",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "format": "sparql-json",
+          "stdout_file": "raw/aggregation-60s/protocol.stdout",
+          "query_file": "queries/02-flows-by-protocol-aggregate.rq",
+          "query_sha256": "ee03d4471748e6354364de6122b24b4fc3bf4201930d3c34a0133f3838f6c69a",
+          "query_provenance": "executed_snapshot"
+        },
+        "hour": {
+          "command": [
+            "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath\\java.EXE",
+            "-Xmx4g",
+            "-Dlog4j.configurationFile=C:\\Apache\\apache-jena-5.6.0\\log4j2.properties",
+            "-cp",
+            "C:\\Apache\\apache-jena-5.6.0\\lib\\*",
+            "tdb2.tdbquery",
+            "--loc=C:\\UFRGS\\ICC2027_TDB2\\aggregate-60s-normalized-r04-r01",
+            "--query=icc2027-experiments\\evaluations\\stage3-jena-r04-20261025-r01\\queries\\03-attack-flows-per-hour-aggregate.rq",
+            "--results=JSON"
+          ],
+          "started_utc": "2026-10-26T02:31:40.515021+00:00",
+          "timeout_seconds": 300.0,
+          "returncode": 0,
+          "status": "success",
+          "error": null,
+          "result": {
+            "2017-07-04T09": 5266,
+            "2017-07-04T10": 2672,
+            "2017-07-04T14": 4899,
+            "2017-07-04T15": 998,
+            "2017-07-05T02": 5,
+            "2017-07-05T09": 3201,
+            "2017-07-05T10": 229420,
+            "2017-07-05T11": 20035,
+            "2017-07-05T15": 11,
+            "2017-07-06T09": 1500,
+            "2017-07-06T10": 680,
+            "2017-07-06T14": 18,
+            "2017-07-06T15": 18,
+            "2017-07-07T09": 2,
+            "2017-07-07T10": 1448,
+            "2017-07-07T11": 264,
+            "2017-07-07T12": 252,
+            "2017-07-07T13": 185,
+            "2017-07-07T14": 138680,
+            "2017-07-07T15": 43930,
+            "2017-07-07T16": 104162
+          },
+          "duration_seconds": 11.543045999947935,
+          "stdout_sha256": "deb7abaf0719625b23a5959f4b3e21c5bcbd842c1ef020c7fe197479c36bbf7d",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "format": "sparql-json",
+          "stdout_file": "raw/aggregation-60s/hour.stdout",
+          "query_file": "queries/03-attack-flows-per-hour-aggregate.rq",
+          "query_sha256": "ed14d281b1956bc1b280b13ff96f49205b1bc1372c9b5c9287e2c555dd209248",
+          "query_provenance": "executed_snapshot"
+        },
+        "stored": {
+          "command": [
+            "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath\\java.EXE",
+            "-Xmx4g",
+            "-Dlog4j.configurationFile=C:\\Apache\\apache-jena-5.6.0\\log4j2.properties",
+            "-cp",
+            "C:\\Apache\\apache-jena-5.6.0\\lib\\*",
+            "tdb2.tdbquery",
+            "--loc=C:\\UFRGS\\ICC2027_TDB2\\aggregate-60s-normalized-r04-r01",
+            "--query=icc2027-experiments\\evaluations\\stage3-jena-r04-20261025-r01\\queries\\stored-triples-default.rq",
+            "--results=JSON"
+          ],
+          "started_utc": "2026-10-26T02:31:52.068140+00:00",
+          "timeout_seconds": 300.0,
+          "returncode": 0,
+          "status": "success",
+          "error": null,
+          "result": {
+            "default_graph": 10368312
+          },
+          "duration_seconds": 4.6478616000385955,
+          "stdout_sha256": "1cf907f1eaa9ef665e9362d5c9c419e6139253d402b634a9bde3f4d304e1ca00",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "format": "sparql-json",
+          "stdout_file": "raw/aggregation-60s/stored.stdout",
+          "query_file": "queries/stored-triples-default.rq",
+          "query_sha256": "22d180ded68edd3ff84ade607b04c72b141536b8c9ae2bd732be7f991903126d",
+          "query_provenance": "executed_snapshot"
+        }
+      },
+      "storage": {
+        "kind": "logical_file_lengths",
+        "root": "C:\\UFRGS\\ICC2027_TDB2\\aggregate-60s-normalized-r04-r01",
+        "total_bytes": 1884709460,
+        "total_mib": 1797.3990058898926,
+        "components_bytes": {
+          "SPO.dat": 503316480,
+          "POS.dat": 486539264,
+          "OSP.dat": 486539264,
+          "nodes.dat": 67108864,
+          "nodes-data.obj": 173433096
+        },
+        "other_bytes": 167772492,
+        "files": [
+          {
+            "path": "Data-0001/GOSP.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/GOSP.dat",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/GOSP.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/GPOS.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/GPOS.dat",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/GPOS.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/GPU.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/GPU.dat",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/GPU.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/GSPO.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/GSPO.dat",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/GSPO.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/journal.jrnl",
+            "bytes": 0
+          },
+          {
+            "path": "Data-0001/nodes-data.bdf",
+            "bytes": 16
+          },
+          {
+            "path": "Data-0001/nodes-data.obj",
+            "bytes": 173433096
+          },
+          {
+            "path": "Data-0001/nodes.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/nodes.dat",
+            "bytes": 67108864
+          },
+          {
+            "path": "Data-0001/nodes.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/OSP.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/OSP.dat",
+            "bytes": 486539264
+          },
+          {
+            "path": "Data-0001/OSP.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/OSPG.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/OSPG.dat",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/OSPG.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/POS.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/POS.dat",
+            "bytes": 486539264
+          },
+          {
+            "path": "Data-0001/POS.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/POSG.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/POSG.dat",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/POSG.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/prefixes-data.bdf",
+            "bytes": 16
+          },
+          {
+            "path": "Data-0001/prefixes-data.obj",
+            "bytes": 0
+          },
+          {
+            "path": "Data-0001/prefixes.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/prefixes.dat",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/prefixes.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/SPO.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/SPO.dat",
+            "bytes": 503316480
+          },
+          {
+            "path": "Data-0001/SPO.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/SPOG.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/SPOG.dat",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/SPOG.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/tdb.lock",
+            "bytes": 6
+          },
+          {
+            "path": "tdb.lock",
+            "bytes": 6
+          }
+        ]
+      }
+    },
+    {
+      "id": "temporal-6h",
+      "label": "Temporal 6h",
+      "manifest_file": "manifests/temporal-6h.json",
+      "manifest_sha256": "3b0e7749225b8ac1ace4fbfbb6773d9b6c5bda7afb7e25b0b1b94a5d752a2a66",
+      "tdb_path": "C:\\UFRGS\\ICC2027_TDB2\\temporal-6h-normalized-r04-r01",
+      "queries": {
+        "top": {
+          "command": [
+            "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath\\java.EXE",
+            "-Xmx4g",
+            "-Dlog4j.configurationFile=C:\\Apache\\apache-jena-5.6.0\\log4j2.properties",
+            "-cp",
+            "C:\\Apache\\apache-jena-5.6.0\\lib\\*",
+            "tdb2.tdbquery",
+            "--loc=C:\\UFRGS\\ICC2027_TDB2\\temporal-6h-normalized-r04-r01",
+            "--query=icc2027-experiments\\evaluations\\stage3-jena-r04-20261025-r01\\queries\\01-top-destination-ip-flow.rq",
+            "--results=JSON"
+          ],
+          "started_utc": "2026-10-26T02:31:56.742829+00:00",
+          "timeout_seconds": 300.0,
+          "returncode": 0,
+          "status": "success",
+          "error": null,
+          "result": {
+            "http://kg/cicids/ip/192.168.10.50": 290656,
+            "http://kg/cicids/ip/192.168.10.3": 88311,
+            "http://kg/cicids/ip/192.168.10.1": 35913,
+            "http://kg/cicids/ip/172.16.0.1": 32307,
+            "http://kg/cicids/ip/192.168.10.15": 5045,
+            "http://kg/cicids/ip/192.168.10.14": 4772,
+            "http://kg/cicids/ip/192.168.10.5": 4512,
+            "http://kg/cicids/ip/192.168.10.12": 4350,
+            "http://kg/cicids/ip/192.168.10.16": 4220,
+            "http://kg/cicids/ip/192.168.10.9": 4016,
+            "http://kg/cicids/ip/192.168.10.17": 3995,
+            "http://kg/cicids/ip/192.168.10.8": 3921,
+            "http://kg/cicids/ip/192.168.10.19": 3114,
+            "http://kg/cicids/ip/178.255.83.1": 2803,
+            "http://kg/cicids/ip/192.168.10.25": 2549,
+            "http://kg/cicids/ip/61.251.165.12": 1787,
+            "http://kg/cicids/ip/205.174.165.73": 1457,
+            "http://kg/cicids/ip/162.213.33.50": 1372,
+            "http://kg/cicids/ip/50.63.243.230": 1309,
+            "http://kg/cicids/ip/72.21.91.29": 1305
+          },
+          "duration_seconds": 16.463283200049773,
+          "stdout_sha256": "05847bc70e34fc7dde9f5fb1fde20fe4c924eec418c96339f8732bf60244a76f",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "format": "sparql-json",
+          "stdout_file": "raw/temporal-6h/top.stdout",
+          "query_file": "queries/01-top-destination-ip-flow.rq",
+          "query_sha256": "12ef74828f03d1767c01eef34740d41a659ee2a0885067439566c4e1533d8023",
+          "query_provenance": "executed_snapshot"
+        },
+        "protocol": {
+          "command": [
+            "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath\\java.EXE",
+            "-Xmx4g",
+            "-Dlog4j.configurationFile=C:\\Apache\\apache-jena-5.6.0\\log4j2.properties",
+            "-cp",
+            "C:\\Apache\\apache-jena-5.6.0\\lib\\*",
+            "tdb2.tdbquery",
+            "--loc=C:\\UFRGS\\ICC2027_TDB2\\temporal-6h-normalized-r04-r01",
+            "--query=icc2027-experiments\\evaluations\\stage3-jena-r04-20261025-r01\\queries\\02-flows-by-protocol-flow.rq",
+            "--results=JSON"
+          ],
+          "started_utc": "2026-10-26T02:32:13.210788+00:00",
+          "timeout_seconds": 300.0,
+          "returncode": 0,
+          "status": "success",
+          "error": null,
+          "result": {
+            "0": 226,
+            "17": 125682,
+            "6": 453907
+          },
+          "duration_seconds": 13.897304399986751,
+          "stdout_sha256": "04471eaf39c5da1719bc3b6e1dd15d5bf2fe1a2f078b5a7a6b507d6192e1d3d0",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "format": "sparql-json",
+          "stdout_file": "raw/temporal-6h/protocol.stdout",
+          "query_file": "queries/02-flows-by-protocol-flow.rq",
+          "query_sha256": "9fe231541ed2aef668ffadfe53d993858136cc0330915f818a16fdac26fd10d4",
+          "query_provenance": "executed_snapshot"
+        },
+        "hour": {
+          "command": [
+            "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath\\java.EXE",
+            "-Xmx4g",
+            "-Dlog4j.configurationFile=C:\\Apache\\apache-jena-5.6.0\\log4j2.properties",
+            "-cp",
+            "C:\\Apache\\apache-jena-5.6.0\\lib\\*",
+            "tdb2.tdbquery",
+            "--loc=C:\\UFRGS\\ICC2027_TDB2\\temporal-6h-normalized-r04-r01",
+            "--query=icc2027-experiments\\evaluations\\stage3-jena-r04-20261025-r01\\queries\\03-attack-flows-per-hour-flow.rq",
+            "--results=JSON"
+          ],
+          "started_utc": "2026-10-26T02:32:27.116367+00:00",
+          "timeout_seconds": 300.0,
+          "returncode": 0,
+          "status": "success",
+          "error": null,
+          "result": {
+            "2017-07-07T11": 242,
+            "2017-07-07T12": 252,
+            "2017-07-07T13": 185,
+            "2017-07-07T14": 138680,
+            "2017-07-07T15": 43930,
+            "2017-07-07T16": 104162
+          },
+          "duration_seconds": 11.184497599955648,
+          "stdout_sha256": "ce125c67b2e2f75ebc5c88dcf5593e796f97edf5f9a81f820d285aaa37eb2649",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "format": "sparql-json",
+          "stdout_file": "raw/temporal-6h/hour.stdout",
+          "query_file": "queries/03-attack-flows-per-hour-flow.rq",
+          "query_sha256": "42cf92f5bca048ccb8666c8930cbec22df6c31ac7d04ee24c013d9e1f921d7e4",
+          "query_provenance": "executed_snapshot"
+        },
+        "stored": {
+          "command": [
+            "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath\\java.EXE",
+            "-Xmx4g",
+            "-Dlog4j.configurationFile=C:\\Apache\\apache-jena-5.6.0\\log4j2.properties",
+            "-cp",
+            "C:\\Apache\\apache-jena-5.6.0\\lib\\*",
+            "tdb2.tdbquery",
+            "--loc=C:\\UFRGS\\ICC2027_TDB2\\temporal-6h-normalized-r04-r01",
+            "--query=icc2027-experiments\\evaluations\\stage3-jena-r04-20261025-r01\\queries\\stored-triples-default.rq",
+            "--results=JSON"
+          ],
+          "started_utc": "2026-10-26T02:32:38.308119+00:00",
+          "timeout_seconds": 300.0,
+          "returncode": 0,
+          "status": "success",
+          "error": null,
+          "result": {
+            "default_graph": 5225001
+          },
+          "duration_seconds": 2.744622900034301,
+          "stdout_sha256": "61a64e85a9954d03108729f2217801b8849d2a20309fbde14bfdfb3e920f748a",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "format": "sparql-json",
+          "stdout_file": "raw/temporal-6h/stored.stdout",
+          "query_file": "queries/stored-triples-default.rq",
+          "query_sha256": "22d180ded68edd3ff84ade607b04c72b141536b8c9ae2bd732be7f991903126d",
+          "query_provenance": "executed_snapshot"
+        }
+      },
+      "storage": {
+        "kind": "logical_file_lengths",
+        "root": "C:\\UFRGS\\ICC2027_TDB2\\temporal-6h-normalized-r04-r01",
+        "total_bytes": 982554549,
+        "total_mib": 937.0370378494263,
+        "components_bytes": {
+          "SPO.dat": 260046848,
+          "POS.dat": 243269632,
+          "OSP.dat": 243269632,
+          "nodes.dat": 25165824,
+          "nodes-data.obj": 43030121
+        },
+        "other_bytes": 167772492,
+        "files": [
+          {
+            "path": "Data-0001/GOSP.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/GOSP.dat",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/GOSP.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/GPOS.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/GPOS.dat",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/GPOS.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/GPU.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/GPU.dat",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/GPU.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/GSPO.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/GSPO.dat",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/GSPO.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/journal.jrnl",
+            "bytes": 0
+          },
+          {
+            "path": "Data-0001/nodes-data.bdf",
+            "bytes": 16
+          },
+          {
+            "path": "Data-0001/nodes-data.obj",
+            "bytes": 43030121
+          },
+          {
+            "path": "Data-0001/nodes.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/nodes.dat",
+            "bytes": 25165824
+          },
+          {
+            "path": "Data-0001/nodes.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/OSP.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/OSP.dat",
+            "bytes": 243269632
+          },
+          {
+            "path": "Data-0001/OSP.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/OSPG.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/OSPG.dat",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/OSPG.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/POS.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/POS.dat",
+            "bytes": 243269632
+          },
+          {
+            "path": "Data-0001/POS.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/POSG.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/POSG.dat",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/POSG.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/prefixes-data.bdf",
+            "bytes": 16
+          },
+          {
+            "path": "Data-0001/prefixes-data.obj",
+            "bytes": 0
+          },
+          {
+            "path": "Data-0001/prefixes.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/prefixes.dat",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/prefixes.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/SPO.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/SPO.dat",
+            "bytes": 260046848
+          },
+          {
+            "path": "Data-0001/SPO.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/SPOG.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/SPOG.dat",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/SPOG.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/tdb.lock",
+            "bytes": 6
+          },
+          {
+            "path": "tdb.lock",
+            "bytes": 6
+          }
+        ]
+      }
+    },
+    {
+      "id": "temporal-12h",
+      "label": "Temporal 12h",
+      "manifest_file": "manifests/temporal-12h.json",
+      "manifest_sha256": "75679f9da58aa89f6072acb403f83a5d78d96778e1a1acf6de6ed949ea0d9d10",
+      "tdb_path": "C:\\UFRGS\\ICC2027_TDB2\\temporal-12h-normalized-r04-r01",
+      "queries": {
+        "top": {
+          "command": [
+            "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath\\java.EXE",
+            "-Xmx4g",
+            "-Dlog4j.configurationFile=C:\\Apache\\apache-jena-5.6.0\\log4j2.properties",
+            "-cp",
+            "C:\\Apache\\apache-jena-5.6.0\\lib\\*",
+            "tdb2.tdbquery",
+            "--loc=C:\\UFRGS\\ICC2027_TDB2\\temporal-12h-normalized-r04-r01",
+            "--query=icc2027-experiments\\evaluations\\stage3-jena-r04-20261025-r01\\queries\\01-top-destination-ip-flow.rq",
+            "--results=JSON"
+          ],
+          "started_utc": "2026-10-26T02:32:41.066713+00:00",
+          "timeout_seconds": 300.0,
+          "returncode": 0,
+          "status": "success",
+          "error": null,
+          "result": {
+            "http://kg/cicids/ip/192.168.10.50": 291633,
+            "http://kg/cicids/ip/192.168.10.3": 131526,
+            "http://kg/cicids/ip/192.168.10.1": 53736,
+            "http://kg/cicids/ip/172.16.0.1": 32307,
+            "http://kg/cicids/ip/192.168.10.5": 7917,
+            "http://kg/cicids/ip/192.168.10.15": 7520,
+            "http://kg/cicids/ip/192.168.10.9": 6560,
+            "http://kg/cicids/ip/192.168.10.14": 6321,
+            "http://kg/cicids/ip/192.168.10.12": 6312,
+            "http://kg/cicids/ip/192.168.10.16": 5885,
+            "http://kg/cicids/ip/192.168.10.8": 5134,
+            "http://kg/cicids/ip/192.168.10.17": 5133,
+            "http://kg/cicids/ip/192.168.10.19": 4967,
+            "http://kg/cicids/ip/192.168.10.25": 4186,
+            "http://kg/cicids/ip/178.255.83.1": 3859,
+            "http://kg/cicids/ip/205.174.165.73": 2223,
+            "http://kg/cicids/ip/50.63.243.230": 2016,
+            "http://kg/cicids/ip/162.208.20.178": 1967,
+            "http://kg/cicids/ip/72.21.91.29": 1953,
+            "http://kg/cicids/ip/61.251.165.12": 1787
+          },
+          "duration_seconds": 17.216013600002043,
+          "stdout_sha256": "fb674e10411fa222e033d1c81d89df348df5294ee930012e8eff319dbe51d50b",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "format": "sparql-json",
+          "stdout_file": "raw/temporal-12h/top.stdout",
+          "query_file": "queries/01-top-destination-ip-flow.rq",
+          "query_sha256": "12ef74828f03d1767c01eef34740d41a659ee2a0885067439566c4e1533d8023",
+          "query_provenance": "executed_snapshot"
+        },
+        "protocol": {
+          "command": [
+            "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath\\java.EXE",
+            "-Xmx4g",
+            "-Dlog4j.configurationFile=C:\\Apache\\apache-jena-5.6.0\\log4j2.properties",
+            "-cp",
+            "C:\\Apache\\apache-jena-5.6.0\\lib\\*",
+            "tdb2.tdbquery",
+            "--loc=C:\\UFRGS\\ICC2027_TDB2\\temporal-12h-normalized-r04-r01",
+            "--query=icc2027-experiments\\evaluations\\stage3-jena-r04-20261025-r01\\queries\\02-flows-by-protocol-flow.rq",
+            "--results=JSON"
+          ],
+          "started_utc": "2026-10-26T02:32:58.292847+00:00",
+          "timeout_seconds": 300.0,
+          "returncode": 0,
+          "status": "success",
+          "error": null,
+          "result": {
+            "0": 307,
+            "17": 188662,
+            "6": 514276
+          },
+          "duration_seconds": 14.92288140009623,
+          "stdout_sha256": "6d9ab5f83fc42f125edb025d510e105e9a8933dcdf04baa4560ff57a2d664655",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "format": "sparql-json",
+          "stdout_file": "raw/temporal-12h/protocol.stdout",
+          "query_file": "queries/02-flows-by-protocol-flow.rq",
+          "query_sha256": "9fe231541ed2aef668ffadfe53d993858136cc0330915f818a16fdac26fd10d4",
+          "query_provenance": "executed_snapshot"
+        },
+        "hour": {
+          "command": [
+            "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath\\java.EXE",
+            "-Xmx4g",
+            "-Dlog4j.configurationFile=C:\\Apache\\apache-jena-5.6.0\\log4j2.properties",
+            "-cp",
+            "C:\\Apache\\apache-jena-5.6.0\\lib\\*",
+            "tdb2.tdbquery",
+            "--loc=C:\\UFRGS\\ICC2027_TDB2\\temporal-12h-normalized-r04-r01",
+            "--query=icc2027-experiments\\evaluations\\stage3-jena-r04-20261025-r01\\queries\\03-attack-flows-per-hour-flow.rq",
+            "--results=JSON"
+          ],
+          "started_utc": "2026-10-26T02:33:13.219055+00:00",
+          "timeout_seconds": 300.0,
+          "returncode": 0,
+          "status": "success",
+          "error": null,
+          "result": {
+            "2017-07-07T09": 2,
+            "2017-07-07T10": 1448,
+            "2017-07-07T11": 264,
+            "2017-07-07T12": 252,
+            "2017-07-07T13": 185,
+            "2017-07-07T14": 138680,
+            "2017-07-07T15": 43930,
+            "2017-07-07T16": 104162
+          },
+          "duration_seconds": 11.114091699942946,
+          "stdout_sha256": "42cd971d56dc6da2f1c50160f7641d30e893e0d1c45f4f86a0f68ada8b8725d4",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "format": "sparql-json",
+          "stdout_file": "raw/temporal-12h/hour.stdout",
+          "query_file": "queries/03-attack-flows-per-hour-flow.rq",
+          "query_sha256": "42cf92f5bca048ccb8666c8930cbec22df6c31ac7d04ee24c013d9e1f921d7e4",
+          "query_provenance": "executed_snapshot"
+        },
+        "stored": {
+          "command": [
+            "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath\\java.EXE",
+            "-Xmx4g",
+            "-Dlog4j.configurationFile=C:\\Apache\\apache-jena-5.6.0\\log4j2.properties",
+            "-cp",
+            "C:\\Apache\\apache-jena-5.6.0\\lib\\*",
+            "tdb2.tdbquery",
+            "--loc=C:\\UFRGS\\ICC2027_TDB2\\temporal-12h-normalized-r04-r01",
+            "--query=icc2027-experiments\\evaluations\\stage3-jena-r04-20261025-r01\\queries\\stored-triples-default.rq",
+            "--results=JSON"
+          ],
+          "started_utc": "2026-10-26T02:33:24.333886+00:00",
+          "timeout_seconds": 300.0,
+          "returncode": 0,
+          "status": "success",
+          "error": null,
+          "result": {
+            "default_graph": 6337535
+          },
+          "duration_seconds": 2.84913719992619,
+          "stdout_sha256": "80cd3b2729bb11ec5b895147122a47f3c7eddb178cd6a70dade78bc3649e0dae",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "format": "sparql-json",
+          "stdout_file": "raw/temporal-12h/stored.stdout",
+          "query_file": "queries/stored-triples-default.rq",
+          "query_sha256": "22d180ded68edd3ff84ade607b04c72b141536b8c9ae2bd732be7f991903126d",
+          "query_provenance": "executed_snapshot"
+        }
+      },
+      "storage": {
+        "kind": "logical_file_lengths",
+        "root": "C:\\UFRGS\\ICC2027_TDB2\\temporal-12h-normalized-r04-r01",
+        "total_bytes": 1150036402,
+        "total_mib": 1096.7601795196533,
+        "components_bytes": {
+          "SPO.dat": 310378496,
+          "POS.dat": 293601280,
+          "OSP.dat": 293601280,
+          "nodes.dat": 33554432,
+          "nodes-data.obj": 51128422
+        },
+        "other_bytes": 167772492,
+        "files": [
+          {
+            "path": "Data-0001/GOSP.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/GOSP.dat",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/GOSP.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/GPOS.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/GPOS.dat",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/GPOS.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/GPU.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/GPU.dat",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/GPU.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/GSPO.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/GSPO.dat",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/GSPO.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/journal.jrnl",
+            "bytes": 0
+          },
+          {
+            "path": "Data-0001/nodes-data.bdf",
+            "bytes": 16
+          },
+          {
+            "path": "Data-0001/nodes-data.obj",
+            "bytes": 51128422
+          },
+          {
+            "path": "Data-0001/nodes.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/nodes.dat",
+            "bytes": 33554432
+          },
+          {
+            "path": "Data-0001/nodes.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/OSP.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/OSP.dat",
+            "bytes": 293601280
+          },
+          {
+            "path": "Data-0001/OSP.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/OSPG.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/OSPG.dat",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/OSPG.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/POS.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/POS.dat",
+            "bytes": 293601280
+          },
+          {
+            "path": "Data-0001/POS.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/POSG.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/POSG.dat",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/POSG.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/prefixes-data.bdf",
+            "bytes": 16
+          },
+          {
+            "path": "Data-0001/prefixes-data.obj",
+            "bytes": 0
+          },
+          {
+            "path": "Data-0001/prefixes.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/prefixes.dat",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/prefixes.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/SPO.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/SPO.dat",
+            "bytes": 310378496
+          },
+          {
+            "path": "Data-0001/SPO.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/SPOG.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/SPOG.dat",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/SPOG.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/tdb.lock",
+            "bytes": 6
+          },
+          {
+            "path": "tdb.lock",
+            "bytes": 6
+          }
+        ]
+      }
+    },
+    {
+      "id": "temporal-24h",
+      "label": "Temporal 24h",
+      "manifest_file": "manifests/temporal-24h.json",
+      "manifest_sha256": "9db59b6ecdeee69cda3e4857adc823df38bea3492370fc76fe4c34e0862be950",
+      "tdb_path": "C:\\UFRGS\\ICC2027_TDB2\\temporal-24h-normalized-r04-r01",
+      "queries": {
+        "top": {
+          "command": [
+            "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath\\java.EXE",
+            "-Xmx4g",
+            "-Dlog4j.configurationFile=C:\\Apache\\apache-jena-5.6.0\\log4j2.properties",
+            "-cp",
+            "C:\\Apache\\apache-jena-5.6.0\\lib\\*",
+            "tdb2.tdbquery",
+            "--loc=C:\\UFRGS\\ICC2027_TDB2\\temporal-24h-normalized-r04-r01",
+            "--query=icc2027-experiments\\evaluations\\stage3-jena-r04-20261025-r01\\queries\\01-top-destination-ip-flow.rq",
+            "--results=JSON"
+          ],
+          "started_utc": "2026-10-26T02:33:27.202405+00:00",
+          "timeout_seconds": 300.0,
+          "returncode": 0,
+          "status": "success",
+          "error": null,
+          "result": {
+            "http://kg/cicids/ip/192.168.10.50": 291637,
+            "http://kg/cicids/ip/192.168.10.3": 131891,
+            "http://kg/cicids/ip/192.168.10.1": 53874,
+            "http://kg/cicids/ip/172.16.0.1": 32307,
+            "http://kg/cicids/ip/192.168.10.5": 7918,
+            "http://kg/cicids/ip/192.168.10.15": 7520,
+            "http://kg/cicids/ip/192.168.10.9": 6567,
+            "http://kg/cicids/ip/192.168.10.14": 6465,
+            "http://kg/cicids/ip/192.168.10.12": 6312,
+            "http://kg/cicids/ip/192.168.10.16": 5913,
+            "http://kg/cicids/ip/192.168.10.17": 5137,
+            "http://kg/cicids/ip/192.168.10.8": 5134,
+            "http://kg/cicids/ip/192.168.10.19": 4972,
+            "http://kg/cicids/ip/192.168.10.25": 4186,
+            "http://kg/cicids/ip/178.255.83.1": 3883,
+            "http://kg/cicids/ip/205.174.165.73": 2224,
+            "http://kg/cicids/ip/50.63.243.230": 2041,
+            "http://kg/cicids/ip/162.208.20.178": 1967,
+            "http://kg/cicids/ip/72.21.91.29": 1959,
+            "http://kg/cicids/ip/61.251.165.12": 1787
+          },
+          "duration_seconds": 18.04622139991261,
+          "stdout_sha256": "c9fa12ecbc983a56521d1735544efe4ab62436f9184c32844133044d1cb17c93",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "format": "sparql-json",
+          "stdout_file": "raw/temporal-24h/top.stdout",
+          "query_file": "queries/01-top-destination-ip-flow.rq",
+          "query_sha256": "12ef74828f03d1767c01eef34740d41a659ee2a0885067439566c4e1533d8023",
+          "query_provenance": "executed_snapshot"
+        },
+        "protocol": {
+          "command": [
+            "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath\\java.EXE",
+            "-Xmx4g",
+            "-Dlog4j.configurationFile=C:\\Apache\\apache-jena-5.6.0\\log4j2.properties",
+            "-cp",
+            "C:\\Apache\\apache-jena-5.6.0\\lib\\*",
+            "tdb2.tdbquery",
+            "--loc=C:\\UFRGS\\ICC2027_TDB2\\temporal-24h-normalized-r04-r01",
+            "--query=icc2027-experiments\\evaluations\\stage3-jena-r04-20261025-r01\\queries\\02-flows-by-protocol-flow.rq",
+            "--results=JSON"
+          ],
+          "started_utc": "2026-10-26T02:33:45.255173+00:00",
+          "timeout_seconds": 300.0,
+          "returncode": 0,
+          "status": "success",
+          "error": null,
+          "result": {
+            "0": 313,
+            "17": 189154,
+            "6": 514849
+          },
+          "duration_seconds": 14.227363100042567,
+          "stdout_sha256": "86585af1c706490ca8e7c13c9d0e2247919ed8bdaa3472d6a55659da7338f316",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "format": "sparql-json",
+          "stdout_file": "raw/temporal-24h/protocol.stdout",
+          "query_file": "queries/02-flows-by-protocol-flow.rq",
+          "query_sha256": "9fe231541ed2aef668ffadfe53d993858136cc0330915f818a16fdac26fd10d4",
+          "query_provenance": "executed_snapshot"
+        },
+        "hour": {
+          "command": [
+            "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath\\java.EXE",
+            "-Xmx4g",
+            "-Dlog4j.configurationFile=C:\\Apache\\apache-jena-5.6.0\\log4j2.properties",
+            "-cp",
+            "C:\\Apache\\apache-jena-5.6.0\\lib\\*",
+            "tdb2.tdbquery",
+            "--loc=C:\\UFRGS\\ICC2027_TDB2\\temporal-24h-normalized-r04-r01",
+            "--query=icc2027-experiments\\evaluations\\stage3-jena-r04-20261025-r01\\queries\\03-attack-flows-per-hour-flow.rq",
+            "--results=JSON"
+          ],
+          "started_utc": "2026-10-26T02:33:59.486854+00:00",
+          "timeout_seconds": 300.0,
+          "returncode": 0,
+          "status": "success",
+          "error": null,
+          "result": {
+            "2017-07-07T09": 2,
+            "2017-07-07T10": 1448,
+            "2017-07-07T11": 264,
+            "2017-07-07T12": 252,
+            "2017-07-07T13": 185,
+            "2017-07-07T14": 138680,
+            "2017-07-07T15": 43930,
+            "2017-07-07T16": 104162
+          },
+          "duration_seconds": 10.764191500027664,
+          "stdout_sha256": "42cd971d56dc6da2f1c50160f7641d30e893e0d1c45f4f86a0f68ada8b8725d4",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "format": "sparql-json",
+          "stdout_file": "raw/temporal-24h/hour.stdout",
+          "query_file": "queries/03-attack-flows-per-hour-flow.rq",
+          "query_sha256": "42cf92f5bca048ccb8666c8930cbec22df6c31ac7d04ee24c013d9e1f921d7e4",
+          "query_provenance": "executed_snapshot"
+        },
+        "stored": {
+          "command": [
+            "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath\\java.EXE",
+            "-Xmx4g",
+            "-Dlog4j.configurationFile=C:\\Apache\\apache-jena-5.6.0\\log4j2.properties",
+            "-cp",
+            "C:\\Apache\\apache-jena-5.6.0\\lib\\*",
+            "tdb2.tdbquery",
+            "--loc=C:\\UFRGS\\ICC2027_TDB2\\temporal-24h-normalized-r04-r01",
+            "--query=icc2027-experiments\\evaluations\\stage3-jena-r04-20261025-r01\\queries\\stored-triples-default.rq",
+            "--results=JSON"
+          ],
+          "started_utc": "2026-10-26T02:34:10.255436+00:00",
+          "timeout_seconds": 300.0,
+          "returncode": 0,
+          "status": "success",
+          "error": null,
+          "result": {
+            "default_graph": 6347194
+          },
+          "duration_seconds": 2.7974839999806136,
+          "stdout_sha256": "b1bffd33280a35da5ad3b3ccedc988c4518fc19cd88a498e76abbbdd4d635b2a",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "format": "sparql-json",
+          "stdout_file": "raw/temporal-24h/stored.stdout",
+          "query_file": "queries/stored-triples-default.rq",
+          "query_sha256": "22d180ded68edd3ff84ade607b04c72b141536b8c9ae2bd732be7f991903126d",
+          "query_provenance": "executed_snapshot"
+        }
+      },
+      "storage": {
+        "kind": "logical_file_lengths",
+        "root": "C:\\UFRGS\\ICC2027_TDB2\\temporal-24h-normalized-r04-r01",
+        "total_bytes": 1150127110,
+        "total_mib": 1096.846685409546,
+        "components_bytes": {
+          "SPO.dat": 310378496,
+          "POS.dat": 293601280,
+          "OSP.dat": 293601280,
+          "nodes.dat": 33554432,
+          "nodes-data.obj": 51219132
+        },
+        "other_bytes": 167772490,
+        "files": [
+          {
+            "path": "Data-0001/GOSP.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/GOSP.dat",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/GOSP.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/GPOS.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/GPOS.dat",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/GPOS.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/GPU.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/GPU.dat",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/GPU.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/GSPO.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/GSPO.dat",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/GSPO.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/journal.jrnl",
+            "bytes": 0
+          },
+          {
+            "path": "Data-0001/nodes-data.bdf",
+            "bytes": 16
+          },
+          {
+            "path": "Data-0001/nodes-data.obj",
+            "bytes": 51219132
+          },
+          {
+            "path": "Data-0001/nodes.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/nodes.dat",
+            "bytes": 33554432
+          },
+          {
+            "path": "Data-0001/nodes.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/OSP.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/OSP.dat",
+            "bytes": 293601280
+          },
+          {
+            "path": "Data-0001/OSP.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/OSPG.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/OSPG.dat",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/OSPG.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/POS.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/POS.dat",
+            "bytes": 293601280
+          },
+          {
+            "path": "Data-0001/POS.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/POSG.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/POSG.dat",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/POSG.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/prefixes-data.bdf",
+            "bytes": 16
+          },
+          {
+            "path": "Data-0001/prefixes-data.obj",
+            "bytes": 0
+          },
+          {
+            "path": "Data-0001/prefixes.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/prefixes.dat",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/prefixes.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/SPO.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/SPO.dat",
+            "bytes": 310378496
+          },
+          {
+            "path": "Data-0001/SPO.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/SPOG.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/SPOG.dat",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/SPOG.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/tdb.lock",
+            "bytes": 5
+          },
+          {
+            "path": "tdb.lock",
+            "bytes": 5
+          }
+        ]
+      }
+    },
+    {
+      "id": "temporal-48h",
+      "label": "Temporal 48h",
+      "manifest_file": "manifests/temporal-48h.json",
+      "manifest_sha256": "a1c4ee153511a9aa197454f8ad35e9988b6ad04e610c2a1e71e9578162f2902c",
+      "tdb_path": "C:\\UFRGS\\ICC2027_TDB2\\temporal-48h-normalized-r04-r01",
+      "queries": {
+        "top": {
+          "command": [
+            "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath\\java.EXE",
+            "-Xmx4g",
+            "-Dlog4j.configurationFile=C:\\Apache\\apache-jena-5.6.0\\log4j2.properties",
+            "-cp",
+            "C:\\Apache\\apache-jena-5.6.0\\lib\\*",
+            "tdb2.tdbquery",
+            "--loc=C:\\UFRGS\\ICC2027_TDB2\\temporal-48h-normalized-r04-r01",
+            "--query=icc2027-experiments\\evaluations\\stage3-jena-r04-20261025-r01\\queries\\01-top-destination-ip-flow.rq",
+            "--results=JSON"
+          ],
+          "started_utc": "2026-10-26T02:34:13.067897+00:00",
+          "timeout_seconds": 300.0,
+          "returncode": 0,
+          "status": "success",
+          "error": null,
+          "result": {
+            "http://kg/cicids/ip/192.168.10.50": 302927,
+            "http://kg/cicids/ip/192.168.10.3": 257414,
+            "http://kg/cicids/ip/192.168.10.1": 108515,
+            "http://kg/cicids/ip/172.16.0.1": 34297,
+            "http://kg/cicids/ip/192.168.10.5": 26243,
+            "http://kg/cicids/ip/192.168.10.15": 23214,
+            "http://kg/cicids/ip/192.168.10.14": 20425,
+            "http://kg/cicids/ip/192.168.10.9": 18131,
+            "http://kg/cicids/ip/192.168.10.17": 15789,
+            "http://kg/cicids/ip/192.168.10.16": 15727,
+            "http://kg/cicids/ip/192.168.10.12": 15720,
+            "http://kg/cicids/ip/192.168.10.19": 15381,
+            "http://kg/cicids/ip/192.168.10.25": 15122,
+            "http://kg/cicids/ip/192.168.10.8": 13829,
+            "http://kg/cicids/ip/178.255.83.1": 8352,
+            "http://kg/cicids/ip/192.168.10.51": 8280,
+            "http://kg/cicids/ip/72.21.91.29": 4141,
+            "http://kg/cicids/ip/50.63.243.230": 3893,
+            "http://kg/cicids/ip/162.213.33.50": 3413,
+            "http://kg/cicids/ip/23.60.139.27": 3343
+          },
+          "duration_seconds": 27.903392299893312,
+          "stdout_sha256": "95c823af73890f1f97fdb7c5e340c6ad6bcd8d4f0595cd2e12353208a36b2e87",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "format": "sparql-json",
+          "stdout_file": "raw/temporal-48h/top.stdout",
+          "query_file": "queries/01-top-destination-ip-flow.rq",
+          "query_sha256": "12ef74828f03d1767c01eef34740d41a659ee2a0885067439566c4e1533d8023",
+          "query_provenance": "executed_snapshot"
+        },
+        "protocol": {
+          "command": [
+            "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath\\java.EXE",
+            "-Xmx4g",
+            "-Dlog4j.configurationFile=C:\\Apache\\apache-jena-5.6.0\\log4j2.properties",
+            "-cp",
+            "C:\\Apache\\apache-jena-5.6.0\\lib\\*",
+            "tdb2.tdbquery",
+            "--loc=C:\\UFRGS\\ICC2027_TDB2\\temporal-48h-normalized-r04-r01",
+            "--query=icc2027-experiments\\evaluations\\stage3-jena-r04-20261025-r01\\queries\\02-flows-by-protocol-flow.rq",
+            "--results=JSON"
+          ],
+          "started_utc": "2026-10-26T02:34:40.977180+00:00",
+          "timeout_seconds": 300.0,
+          "returncode": 0,
+          "status": "success",
+          "error": null,
+          "result": {
+            "0": 742,
+            "17": 373489,
+            "6": 790157
+          },
+          "duration_seconds": 23.444496299955063,
+          "stdout_sha256": "7abdc80fbb2635320e5f673cb0947f7f7e233e625c22997363b62d622322d38d",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "format": "sparql-json",
+          "stdout_file": "raw/temporal-48h/protocol.stdout",
+          "query_file": "queries/02-flows-by-protocol-flow.rq",
+          "query_sha256": "9fe231541ed2aef668ffadfe53d993858136cc0330915f818a16fdac26fd10d4",
+          "query_provenance": "executed_snapshot"
+        },
+        "hour": {
+          "command": [
+            "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath\\java.EXE",
+            "-Xmx4g",
+            "-Dlog4j.configurationFile=C:\\Apache\\apache-jena-5.6.0\\log4j2.properties",
+            "-cp",
+            "C:\\Apache\\apache-jena-5.6.0\\lib\\*",
+            "tdb2.tdbquery",
+            "--loc=C:\\UFRGS\\ICC2027_TDB2\\temporal-48h-normalized-r04-r01",
+            "--query=icc2027-experiments\\evaluations\\stage3-jena-r04-20261025-r01\\queries\\03-attack-flows-per-hour-flow.rq",
+            "--results=JSON"
+          ],
+          "started_utc": "2026-10-26T02:35:04.427210+00:00",
+          "timeout_seconds": 300.0,
+          "returncode": 0,
+          "status": "success",
+          "error": null,
+          "result": {
+            "2017-07-06T09": 1500,
+            "2017-07-06T10": 680,
+            "2017-07-06T14": 18,
+            "2017-07-06T15": 18,
+            "2017-07-07T09": 2,
+            "2017-07-07T10": 1448,
+            "2017-07-07T11": 264,
+            "2017-07-07T12": 252,
+            "2017-07-07T13": 185,
+            "2017-07-07T14": 138680,
+            "2017-07-07T15": 43930,
+            "2017-07-07T16": 104162
+          },
+          "duration_seconds": 13.683474200079218,
+          "stdout_sha256": "59aef0a3b71abcff0936d549783f6d469fa1a9e090012b9deb89dbb49dc3ea4d",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "format": "sparql-json",
+          "stdout_file": "raw/temporal-48h/hour.stdout",
+          "query_file": "queries/03-attack-flows-per-hour-flow.rq",
+          "query_sha256": "42cf92f5bca048ccb8666c8930cbec22df6c31ac7d04ee24c013d9e1f921d7e4",
+          "query_provenance": "executed_snapshot"
+        },
+        "stored": {
+          "command": [
+            "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath\\java.EXE",
+            "-Xmx4g",
+            "-Dlog4j.configurationFile=C:\\Apache\\apache-jena-5.6.0\\log4j2.properties",
+            "-cp",
+            "C:\\Apache\\apache-jena-5.6.0\\lib\\*",
+            "tdb2.tdbquery",
+            "--loc=C:\\UFRGS\\ICC2027_TDB2\\temporal-48h-normalized-r04-r01",
+            "--query=icc2027-experiments\\evaluations\\stage3-jena-r04-20261025-r01\\queries\\stored-triples-default.rq",
+            "--results=JSON"
+          ],
+          "started_utc": "2026-10-26T02:35:18.116347+00:00",
+          "timeout_seconds": 300.0,
+          "returncode": 0,
+          "status": "success",
+          "error": null,
+          "result": {
+            "default_graph": 10491874
+          },
+          "duration_seconds": 4.473937900038436,
+          "stdout_sha256": "ed90b0dbaca70e908f8938376c8b5e29782d516a0ddd25887457572333703543",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "format": "sparql-json",
+          "stdout_file": "raw/temporal-48h/stored.stdout",
+          "query_file": "queries/stored-triples-default.rq",
+          "query_sha256": "22d180ded68edd3ff84ade607b04c72b141536b8c9ae2bd732be7f991903126d",
+          "query_provenance": "executed_snapshot"
+        }
+      },
+      "storage": {
+        "kind": "logical_file_lengths",
+        "root": "C:\\UFRGS\\ICC2027_TDB2\\temporal-48h-normalized-r04-r01",
+        "total_bytes": 1766615562,
+        "total_mib": 1684.7758884429932,
+        "components_bytes": {
+          "SPO.dat": 511705088,
+          "POS.dat": 478150656,
+          "OSP.dat": 478150656,
+          "nodes.dat": 41943040,
+          "nodes-data.obj": 88893630
+        },
+        "other_bytes": 167772492,
+        "files": [
+          {
+            "path": "Data-0001/GOSP.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/GOSP.dat",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/GOSP.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/GPOS.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/GPOS.dat",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/GPOS.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/GPU.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/GPU.dat",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/GPU.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/GSPO.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/GSPO.dat",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/GSPO.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/journal.jrnl",
+            "bytes": 0
+          },
+          {
+            "path": "Data-0001/nodes-data.bdf",
+            "bytes": 16
+          },
+          {
+            "path": "Data-0001/nodes-data.obj",
+            "bytes": 88893630
+          },
+          {
+            "path": "Data-0001/nodes.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/nodes.dat",
+            "bytes": 41943040
+          },
+          {
+            "path": "Data-0001/nodes.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/OSP.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/OSP.dat",
+            "bytes": 478150656
+          },
+          {
+            "path": "Data-0001/OSP.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/OSPG.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/OSPG.dat",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/OSPG.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/POS.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/POS.dat",
+            "bytes": 478150656
+          },
+          {
+            "path": "Data-0001/POS.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/POSG.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/POSG.dat",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/POSG.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/prefixes-data.bdf",
+            "bytes": 16
+          },
+          {
+            "path": "Data-0001/prefixes-data.obj",
+            "bytes": 0
+          },
+          {
+            "path": "Data-0001/prefixes.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/prefixes.dat",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/prefixes.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/SPO.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/SPO.dat",
+            "bytes": 511705088
+          },
+          {
+            "path": "Data-0001/SPO.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/SPOG.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/SPOG.dat",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/SPOG.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/tdb.lock",
+            "bytes": 6
+          },
+          {
+            "path": "tdb.lock",
+            "bytes": 6
+          }
+        ]
+      }
+    },
+    {
+      "id": "label-based",
+      "label": "Label-Based",
+      "manifest_file": "manifests/label-based.json",
+      "manifest_sha256": "f5cd936da372d21a295d39717f22b3dd58b638ef0425f608a9f8fced897acbcc",
+      "tdb_path": "C:\\UFRGS\\ICC2027_TDB2\\labels-all-attacks-normalized-r04-r01",
+      "queries": {
+        "top": {
+          "command": [
+            "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath\\java.EXE",
+            "-Xmx4g",
+            "-Dlog4j.configurationFile=C:\\Apache\\apache-jena-5.6.0\\log4j2.properties",
+            "-cp",
+            "C:\\Apache\\apache-jena-5.6.0\\lib\\*",
+            "tdb2.tdbquery",
+            "--loc=C:\\UFRGS\\ICC2027_TDB2\\labels-all-attacks-normalized-r04-r01",
+            "--query=icc2027-experiments\\evaluations\\stage3-jena-r04-20261025-r01\\queries\\01-top-destination-ip-flow.rq",
+            "--results=JSON"
+          ],
+          "started_utc": "2026-10-26T02:35:22.604185+00:00",
+          "timeout_seconds": 300.0,
+          "returncode": 0,
+          "status": "success",
+          "error": null,
+          "result": {
+            "http://kg/cicids/ip/192.168.10.50": 555630,
+            "http://kg/cicids/ip/205.174.165.73": 1293,
+            "http://kg/cicids/ip/192.168.10.15": 209,
+            "http://kg/cicids/ip/192.168.10.9": 146,
+            "http://kg/cicids/ip/192.168.10.14": 139,
+            "http://kg/cicids/ip/192.168.10.5": 108,
+            "http://kg/cicids/ip/192.168.10.8": 103,
+            "http://kg/cicids/ip/192.168.10.51": 11,
+            "http://kg/cicids/ip/172.16.0.1": 3,
+            "http://kg/cicids/ip/52.6.13.28": 2,
+            "http://kg/cicids/ip/52.7.235.158": 2
+          },
+          "duration_seconds": 13.817908399971202,
+          "stdout_sha256": "86c67b1ff20cdcb777fc7973a43020db246d1b61c100ba1e98affa20c310a5f1",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "format": "sparql-json",
+          "stdout_file": "raw/label-based/top.stdout",
+          "query_file": "queries/01-top-destination-ip-flow.rq",
+          "query_sha256": "12ef74828f03d1767c01eef34740d41a659ee2a0885067439566c4e1533d8023",
+          "query_provenance": "executed_snapshot"
+        },
+        "protocol": {
+          "command": [
+            "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath\\java.EXE",
+            "-Xmx4g",
+            "-Dlog4j.configurationFile=C:\\Apache\\apache-jena-5.6.0\\log4j2.properties",
+            "-cp",
+            "C:\\Apache\\apache-jena-5.6.0\\lib\\*",
+            "tdb2.tdbquery",
+            "--loc=C:\\UFRGS\\ICC2027_TDB2\\labels-all-attacks-normalized-r04-r01",
+            "--query=icc2027-experiments\\evaluations\\stage3-jena-r04-20261025-r01\\queries\\02-flows-by-protocol-flow.rq",
+            "--results=JSON"
+          ],
+          "started_utc": "2026-10-26T02:35:36.431146+00:00",
+          "timeout_seconds": 300.0,
+          "returncode": 0,
+          "status": "success",
+          "error": null,
+          "result": {
+            "0": 6,
+            "17": 1,
+            "6": 557639
+          },
+          "duration_seconds": 11.32403549994342,
+          "stdout_sha256": "0bb5d43edd116a05bbb18e24e616a94c21bd6db45f5880c683b73df14bff23dc",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "format": "sparql-json",
+          "stdout_file": "raw/label-based/protocol.stdout",
+          "query_file": "queries/02-flows-by-protocol-flow.rq",
+          "query_sha256": "9fe231541ed2aef668ffadfe53d993858136cc0330915f818a16fdac26fd10d4",
+          "query_provenance": "executed_snapshot"
+        },
+        "hour": {
+          "command": [
+            "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath\\java.EXE",
+            "-Xmx4g",
+            "-Dlog4j.configurationFile=C:\\Apache\\apache-jena-5.6.0\\log4j2.properties",
+            "-cp",
+            "C:\\Apache\\apache-jena-5.6.0\\lib\\*",
+            "tdb2.tdbquery",
+            "--loc=C:\\UFRGS\\ICC2027_TDB2\\labels-all-attacks-normalized-r04-r01",
+            "--query=icc2027-experiments\\evaluations\\stage3-jena-r04-20261025-r01\\queries\\03-attack-flows-per-hour-flow.rq",
+            "--results=JSON"
+          ],
+          "started_utc": "2026-10-26T02:35:47.757331+00:00",
+          "timeout_seconds": 300.0,
+          "returncode": 0,
+          "status": "success",
+          "error": null,
+          "result": {
+            "2017-07-04T09": 5266,
+            "2017-07-04T10": 2672,
+            "2017-07-04T14": 4899,
+            "2017-07-04T15": 998,
+            "2017-07-05T02": 5,
+            "2017-07-05T09": 3201,
+            "2017-07-05T10": 229420,
+            "2017-07-05T11": 20035,
+            "2017-07-05T15": 11,
+            "2017-07-06T09": 1500,
+            "2017-07-06T10": 680,
+            "2017-07-06T14": 18,
+            "2017-07-06T15": 18,
+            "2017-07-07T09": 2,
+            "2017-07-07T10": 1448,
+            "2017-07-07T11": 264,
+            "2017-07-07T12": 252,
+            "2017-07-07T13": 185,
+            "2017-07-07T14": 138680,
+            "2017-07-07T15": 43930,
+            "2017-07-07T16": 104162
+          },
+          "duration_seconds": 13.912381700007245,
+          "stdout_sha256": "deb7abaf0719625b23a5959f4b3e21c5bcbd842c1ef020c7fe197479c36bbf7d",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "format": "sparql-json",
+          "stdout_file": "raw/label-based/hour.stdout",
+          "query_file": "queries/03-attack-flows-per-hour-flow.rq",
+          "query_sha256": "42cf92f5bca048ccb8666c8930cbec22df6c31ac7d04ee24c013d9e1f921d7e4",
+          "query_provenance": "executed_snapshot"
+        },
+        "stored": {
+          "command": [
+            "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath\\java.EXE",
+            "-Xmx4g",
+            "-Dlog4j.configurationFile=C:\\Apache\\apache-jena-5.6.0\\log4j2.properties",
+            "-cp",
+            "C:\\Apache\\apache-jena-5.6.0\\lib\\*",
+            "tdb2.tdbquery",
+            "--loc=C:\\UFRGS\\ICC2027_TDB2\\labels-all-attacks-normalized-r04-r01",
+            "--query=icc2027-experiments\\evaluations\\stage3-jena-r04-20261025-r01\\queries\\stored-triples-default.rq",
+            "--results=JSON"
+          ],
+          "started_utc": "2026-10-26T02:36:01.674960+00:00",
+          "timeout_seconds": 300.0,
+          "returncode": 0,
+          "status": "success",
+          "error": null,
+          "result": {
+            "default_graph": 5018827
+          },
+          "duration_seconds": 2.5153914000838995,
+          "stdout_sha256": "dd918c4d262ec207865bbbc4214883d8062013665f7ede843a240d20d183b922",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "format": "sparql-json",
+          "stdout_file": "raw/label-based/stored.stdout",
+          "query_file": "queries/stored-triples-default.rq",
+          "query_sha256": "22d180ded68edd3ff84ade607b04c72b141536b8c9ae2bd732be7f991903126d",
+          "query_provenance": "executed_snapshot"
+        }
+      },
+      "storage": {
+        "kind": "logical_file_lengths",
+        "root": "C:\\UFRGS\\ICC2027_TDB2\\labels-all-attacks-normalized-r04-r01",
+        "total_bytes": 943969107,
+        "total_mib": 900.2390928268433,
+        "components_bytes": {
+          "SPO.dat": 243269632,
+          "POS.dat": 234881024,
+          "OSP.dat": 234881024,
+          "nodes.dat": 25165824,
+          "nodes-data.obj": 37999111
+        },
+        "other_bytes": 167772492,
+        "files": [
+          {
+            "path": "Data-0001/GOSP.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/GOSP.dat",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/GOSP.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/GPOS.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/GPOS.dat",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/GPOS.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/GPU.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/GPU.dat",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/GPU.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/GSPO.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/GSPO.dat",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/GSPO.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/journal.jrnl",
+            "bytes": 0
+          },
+          {
+            "path": "Data-0001/nodes-data.bdf",
+            "bytes": 16
+          },
+          {
+            "path": "Data-0001/nodes-data.obj",
+            "bytes": 37999111
+          },
+          {
+            "path": "Data-0001/nodes.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/nodes.dat",
+            "bytes": 25165824
+          },
+          {
+            "path": "Data-0001/nodes.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/OSP.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/OSP.dat",
+            "bytes": 234881024
+          },
+          {
+            "path": "Data-0001/OSP.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/OSPG.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/OSPG.dat",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/OSPG.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/POS.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/POS.dat",
+            "bytes": 234881024
+          },
+          {
+            "path": "Data-0001/POS.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/POSG.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/POSG.dat",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/POSG.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/prefixes-data.bdf",
+            "bytes": 16
+          },
+          {
+            "path": "Data-0001/prefixes-data.obj",
+            "bytes": 0
+          },
+          {
+            "path": "Data-0001/prefixes.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/prefixes.dat",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/prefixes.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/SPO.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/SPO.dat",
+            "bytes": 243269632
+          },
+          {
+            "path": "Data-0001/SPO.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/SPOG.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/SPOG.dat",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/SPOG.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/tdb.lock",
+            "bytes": 6
+          },
+          {
+            "path": "tdb.lock",
+            "bytes": 6
+          }
+        ]
+      }
+    },
+    {
+      "id": "top-k-20",
+      "label": "Top-K 20",
+      "manifest_file": "manifests/top-k-20.json",
+      "manifest_sha256": "8e6549815797e88485ae6cd98bef05b91c7052f7fe631bd5546b6704851a94b1",
+      "tdb_path": "C:\\UFRGS\\ICC2027_TDB2\\topk-20-normalized-r04-r01",
+      "queries": {
+        "top": {
+          "command": [
+            "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath\\java.EXE",
+            "-Xmx4g",
+            "-Dlog4j.configurationFile=C:\\Apache\\apache-jena-5.6.0\\log4j2.properties",
+            "-cp",
+            "C:\\Apache\\apache-jena-5.6.0\\lib\\*",
+            "tdb2.tdbquery",
+            "--loc=C:\\UFRGS\\ICC2027_TDB2\\topk-20-normalized-r04-r01",
+            "--query=icc2027-experiments\\evaluations\\stage3-jena-r04-20261025-r01\\queries\\01-top-destination-ip-flow.rq",
+            "--results=JSON"
+          ],
+          "started_utc": "2026-10-26T02:36:04.207309+00:00",
+          "timeout_seconds": 300.0,
+          "returncode": 0,
+          "status": "success",
+          "error": null,
+          "result": {
+            "http://kg/cicids/ip/192.168.10.3": 685451,
+            "http://kg/cicids/ip/192.168.10.50": 583962,
+            "http://kg/cicids/ip/192.168.10.1": 294075,
+            "http://kg/cicids/ip/192.168.10.25": 78264,
+            "http://kg/cicids/ip/192.168.10.5": 56425,
+            "http://kg/cicids/ip/172.16.0.1": 48294,
+            "http://kg/cicids/ip/192.168.10.15": 40057,
+            "http://kg/cicids/ip/192.168.10.9": 39330,
+            "http://kg/cicids/ip/192.168.10.14": 39037,
+            "http://kg/cicids/ip/192.168.10.12": 37757,
+            "http://kg/cicids/ip/192.168.10.16": 35193,
+            "http://kg/cicids/ip/192.168.10.8": 32114,
+            "http://kg/cicids/ip/192.168.10.17": 31720,
+            "http://kg/cicids/ip/192.168.10.19": 29353,
+            "http://kg/cicids/ip/192.168.10.51": 25590,
+            "http://kg/cicids/ip/178.255.83.1": 20193,
+            "http://kg/cicids/ip/23.50.75.27": 10616,
+            "http://kg/cicids/ip/72.21.91.29": 10280,
+            "http://kg/cicids/ip/162.208.20.178": 10161,
+            "http://kg/cicids/ip/50.63.243.230": 8707
+          },
+          "duration_seconds": 47.80454329994973,
+          "stdout_sha256": "84caa57b204128f87335d09f2f6c9d419b794cd76b0171c83db6d4d4fda7b369",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "format": "sparql-json",
+          "stdout_file": "raw/top-k-20/top.stdout",
+          "query_file": "queries/01-top-destination-ip-flow.rq",
+          "query_sha256": "12ef74828f03d1767c01eef34740d41a659ee2a0885067439566c4e1533d8023",
+          "query_provenance": "executed_snapshot"
+        },
+        "protocol": {
+          "command": [
+            "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath\\java.EXE",
+            "-Xmx4g",
+            "-Dlog4j.configurationFile=C:\\Apache\\apache-jena-5.6.0\\log4j2.properties",
+            "-cp",
+            "C:\\Apache\\apache-jena-5.6.0\\lib\\*",
+            "tdb2.tdbquery",
+            "--loc=C:\\UFRGS\\ICC2027_TDB2\\topk-20-normalized-r04-r01",
+            "--query=icc2027-experiments\\evaluations\\stage3-jena-r04-20261025-r01\\queries\\02-flows-by-protocol-flow.rq",
+            "--results=JSON"
+          ],
+          "started_utc": "2026-10-26T02:36:52.020960+00:00",
+          "timeout_seconds": 300.0,
+          "returncode": 0,
+          "status": "success",
+          "error": null,
+          "result": {
+            "0": 1578,
+            "17": 977977,
+            "6": 1224115
+          },
+          "duration_seconds": 41.27087489992846,
+          "stdout_sha256": "d5a647f1ffb43dccdc05fdf7f97df0e37f26a9b2545209e2cef024934f33c494",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "format": "sparql-json",
+          "stdout_file": "raw/top-k-20/protocol.stdout",
+          "query_file": "queries/02-flows-by-protocol-flow.rq",
+          "query_sha256": "9fe231541ed2aef668ffadfe53d993858136cc0330915f818a16fdac26fd10d4",
+          "query_provenance": "executed_snapshot"
+        },
+        "hour": {
+          "command": [
+            "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath\\java.EXE",
+            "-Xmx4g",
+            "-Dlog4j.configurationFile=C:\\Apache\\apache-jena-5.6.0\\log4j2.properties",
+            "-cp",
+            "C:\\Apache\\apache-jena-5.6.0\\lib\\*",
+            "tdb2.tdbquery",
+            "--loc=C:\\UFRGS\\ICC2027_TDB2\\topk-20-normalized-r04-r01",
+            "--query=icc2027-experiments\\evaluations\\stage3-jena-r04-20261025-r01\\queries\\03-attack-flows-per-hour-flow.rq",
+            "--results=JSON"
+          ],
+          "started_utc": "2026-10-26T02:37:33.299297+00:00",
+          "timeout_seconds": 300.0,
+          "returncode": 0,
+          "status": "success",
+          "error": null,
+          "result": {
+            "2017-07-04T09": 5266,
+            "2017-07-04T10": 2672,
+            "2017-07-04T14": 4899,
+            "2017-07-04T15": 998,
+            "2017-07-05T02": 5,
+            "2017-07-05T09": 3201,
+            "2017-07-05T10": 229420,
+            "2017-07-05T11": 20035,
+            "2017-07-05T15": 11,
+            "2017-07-06T09": 1500,
+            "2017-07-06T10": 680,
+            "2017-07-06T14": 18,
+            "2017-07-06T15": 18,
+            "2017-07-07T10": 1448,
+            "2017-07-07T11": 262,
+            "2017-07-07T12": 252,
+            "2017-07-07T13": 185,
+            "2017-07-07T14": 138680,
+            "2017-07-07T15": 43930,
+            "2017-07-07T16": 104162
+          },
+          "duration_seconds": 22.375935700023547,
+          "stdout_sha256": "5a62ee193f76f3a0e3c1b5001ba854408ecc86c952c4f2354996d5aed5016440",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "format": "sparql-json",
+          "stdout_file": "raw/top-k-20/hour.stdout",
+          "query_file": "queries/03-attack-flows-per-hour-flow.rq",
+          "query_sha256": "42cf92f5bca048ccb8666c8930cbec22df6c31ac7d04ee24c013d9e1f921d7e4",
+          "query_provenance": "executed_snapshot"
+        },
+        "stored": {
+          "command": [
+            "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath\\java.EXE",
+            "-Xmx4g",
+            "-Dlog4j.configurationFile=C:\\Apache\\apache-jena-5.6.0\\log4j2.properties",
+            "-cp",
+            "C:\\Apache\\apache-jena-5.6.0\\lib\\*",
+            "tdb2.tdbquery",
+            "--loc=C:\\UFRGS\\ICC2027_TDB2\\topk-20-normalized-r04-r01",
+            "--query=icc2027-experiments\\evaluations\\stage3-jena-r04-20261025-r01\\queries\\stored-triples-default.rq",
+            "--results=JSON"
+          ],
+          "started_utc": "2026-10-26T02:37:55.679328+00:00",
+          "timeout_seconds": 300.0,
+          "returncode": 0,
+          "status": "success",
+          "error": null,
+          "result": {
+            "default_graph": 19850070
+          },
+          "duration_seconds": 5.062471300014295,
+          "stdout_sha256": "aaf7a150aaa2c9738eccca86f4a179069f6ba9c26bc2b4f387685f350b38c2eb",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "format": "sparql-json",
+          "stdout_file": "raw/top-k-20/stored.stdout",
+          "query_file": "queries/stored-triples-default.rq",
+          "query_sha256": "22d180ded68edd3ff84ade607b04c72b141536b8c9ae2bd732be7f991903126d",
+          "query_provenance": "executed_snapshot"
+        }
+      },
+      "storage": {
+        "kind": "logical_file_lengths",
+        "root": "C:\\UFRGS\\ICC2027_TDB2\\topk-20-normalized-r04-r01",
+        "total_bytes": 3150394601,
+        "total_mib": 3004.4504175186157,
+        "components_bytes": {
+          "SPO.dat": 964689920,
+          "POS.dat": 897581056,
+          "OSP.dat": 897581056,
+          "nodes.dat": 75497472,
+          "nodes-data.obj": 147272605
+        },
+        "other_bytes": 167772492,
+        "files": [
+          {
+            "path": "Data-0001/GOSP.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/GOSP.dat",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/GOSP.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/GPOS.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/GPOS.dat",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/GPOS.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/GPU.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/GPU.dat",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/GPU.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/GSPO.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/GSPO.dat",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/GSPO.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/journal.jrnl",
+            "bytes": 0
+          },
+          {
+            "path": "Data-0001/nodes-data.bdf",
+            "bytes": 16
+          },
+          {
+            "path": "Data-0001/nodes-data.obj",
+            "bytes": 147272605
+          },
+          {
+            "path": "Data-0001/nodes.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/nodes.dat",
+            "bytes": 75497472
+          },
+          {
+            "path": "Data-0001/nodes.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/OSP.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/OSP.dat",
+            "bytes": 897581056
+          },
+          {
+            "path": "Data-0001/OSP.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/OSPG.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/OSPG.dat",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/OSPG.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/POS.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/POS.dat",
+            "bytes": 897581056
+          },
+          {
+            "path": "Data-0001/POS.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/POSG.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/POSG.dat",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/POSG.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/prefixes-data.bdf",
+            "bytes": 16
+          },
+          {
+            "path": "Data-0001/prefixes-data.obj",
+            "bytes": 0
+          },
+          {
+            "path": "Data-0001/prefixes.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/prefixes.dat",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/prefixes.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/SPO.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/SPO.dat",
+            "bytes": 964689920
+          },
+          {
+            "path": "Data-0001/SPO.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/SPOG.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/SPOG.dat",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/SPOG.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/tdb.lock",
+            "bytes": 6
+          },
+          {
+            "path": "tdb.lock",
+            "bytes": 6
+          }
+        ]
+      }
+    },
+    {
+      "id": "sampling-r01",
+      "label": "Sampling r01",
+      "manifest_file": "manifests/sampling-r01.json",
+      "manifest_sha256": "d8501d8c911fdffbbdab052902cd5499cbeb282210a2cfed06943e6e3bfba9db",
+      "tdb_path": "C:\\UFRGS\\ICC2027_TDB2\\sample-001-normalized-r04-r01",
+      "queries": {
+        "top": {
+          "command": [
+            "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath\\java.EXE",
+            "-Xmx4g",
+            "-Dlog4j.configurationFile=C:\\Apache\\apache-jena-5.6.0\\log4j2.properties",
+            "-cp",
+            "C:\\Apache\\apache-jena-5.6.0\\lib\\*",
+            "tdb2.tdbquery",
+            "--loc=C:\\UFRGS\\ICC2027_TDB2\\sample-001-normalized-r04-r01",
+            "--query=icc2027-experiments\\evaluations\\stage3-jena-r04-20261025-r01\\queries\\01-top-destination-ip-flow.rq",
+            "--results=JSON"
+          ],
+          "started_utc": "2026-10-26T02:38:00.761005+00:00",
+          "timeout_seconds": 300.0,
+          "returncode": 0,
+          "status": "success",
+          "error": null,
+          "result": {
+            "http://kg/cicids/ip/192.168.10.3": 6914,
+            "http://kg/cicids/ip/192.168.10.50": 5786,
+            "http://kg/cicids/ip/192.168.10.1": 3036,
+            "http://kg/cicids/ip/192.168.10.25": 774,
+            "http://kg/cicids/ip/192.168.10.5": 521,
+            "http://kg/cicids/ip/172.16.0.1": 487,
+            "http://kg/cicids/ip/192.168.10.14": 425,
+            "http://kg/cicids/ip/192.168.10.15": 395,
+            "http://kg/cicids/ip/192.168.10.12": 394,
+            "http://kg/cicids/ip/192.168.10.9": 366,
+            "http://kg/cicids/ip/192.168.10.16": 329,
+            "http://kg/cicids/ip/192.168.10.17": 321,
+            "http://kg/cicids/ip/192.168.10.8": 312,
+            "http://kg/cicids/ip/192.168.10.19": 280,
+            "http://kg/cicids/ip/192.168.10.51": 249,
+            "http://kg/cicids/ip/178.255.83.1": 213,
+            "http://kg/cicids/ip/23.50.75.27": 113,
+            "http://kg/cicids/ip/72.21.91.29": 112,
+            "http://kg/cicids/ip/50.63.243.230": 93,
+            "http://kg/cicids/ip/162.208.20.178": 92
+          },
+          "duration_seconds": 3.8056227000197396,
+          "stdout_sha256": "3c141fefb99e252acf83413649562aad37780d4d1d65ab0d81ed3bd2578a87e3",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "format": "sparql-json",
+          "stdout_file": "raw/sampling-r01/top.stdout",
+          "query_file": "queries/01-top-destination-ip-flow.rq",
+          "query_sha256": "12ef74828f03d1767c01eef34740d41a659ee2a0885067439566c4e1533d8023",
+          "query_provenance": "executed_snapshot"
+        },
+        "protocol": {
+          "command": [
+            "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath\\java.EXE",
+            "-Xmx4g",
+            "-Dlog4j.configurationFile=C:\\Apache\\apache-jena-5.6.0\\log4j2.properties",
+            "-cp",
+            "C:\\Apache\\apache-jena-5.6.0\\lib\\*",
+            "tdb2.tdbquery",
+            "--loc=C:\\UFRGS\\ICC2027_TDB2\\sample-001-normalized-r04-r01",
+            "--query=icc2027-experiments\\evaluations\\stage3-jena-r04-20261025-r01\\queries\\02-flows-by-protocol-flow.rq",
+            "--results=JSON"
+          ],
+          "started_utc": "2026-10-26T02:38:04.571334+00:00",
+          "timeout_seconds": 300.0,
+          "returncode": 0,
+          "status": "success",
+          "error": null,
+          "result": {
+            "0": 15,
+            "17": 10164,
+            "6": 18045
+          },
+          "duration_seconds": 3.2427373999962583,
+          "stdout_sha256": "08820311f3bc9e5e414a1e9a318ea95263356fa7aa1a4fa6a4fa67402e38f4f9",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "format": "sparql-json",
+          "stdout_file": "raw/sampling-r01/protocol.stdout",
+          "query_file": "queries/02-flows-by-protocol-flow.rq",
+          "query_sha256": "9fe231541ed2aef668ffadfe53d993858136cc0330915f818a16fdac26fd10d4",
+          "query_provenance": "executed_snapshot"
+        },
+        "hour": {
+          "command": [
+            "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath\\java.EXE",
+            "-Xmx4g",
+            "-Dlog4j.configurationFile=C:\\Apache\\apache-jena-5.6.0\\log4j2.properties",
+            "-cp",
+            "C:\\Apache\\apache-jena-5.6.0\\lib\\*",
+            "tdb2.tdbquery",
+            "--loc=C:\\UFRGS\\ICC2027_TDB2\\sample-001-normalized-r04-r01",
+            "--query=icc2027-experiments\\evaluations\\stage3-jena-r04-20261025-r01\\queries\\03-attack-flows-per-hour-flow.rq",
+            "--results=JSON"
+          ],
+          "started_utc": "2026-10-26T02:38:07.821378+00:00",
+          "timeout_seconds": 300.0,
+          "returncode": 0,
+          "status": "success",
+          "error": null,
+          "result": {
+            "2017-07-04T09": 53,
+            "2017-07-04T10": 29,
+            "2017-07-04T14": 41,
+            "2017-07-04T15": 15,
+            "2017-07-05T09": 24,
+            "2017-07-05T10": 2303,
+            "2017-07-05T11": 204,
+            "2017-07-06T09": 9,
+            "2017-07-06T10": 6,
+            "2017-07-06T15": 1,
+            "2017-07-07T10": 17,
+            "2017-07-07T11": 1,
+            "2017-07-07T13": 5,
+            "2017-07-07T14": 1383,
+            "2017-07-07T15": 420,
+            "2017-07-07T16": 1017
+          },
+          "duration_seconds": 3.104781400063075,
+          "stdout_sha256": "6735b5c21949a037a9f3d3f962545417ebd0b7d2eb64e4796fcd7289edea87c4",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "format": "sparql-json",
+          "stdout_file": "raw/sampling-r01/hour.stdout",
+          "query_file": "queries/03-attack-flows-per-hour-flow.rq",
+          "query_sha256": "42cf92f5bca048ccb8666c8930cbec22df6c31ac7d04ee24c013d9e1f921d7e4",
+          "query_provenance": "executed_snapshot"
+        },
+        "stored": {
+          "command": [
+            "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath\\java.EXE",
+            "-Xmx4g",
+            "-Dlog4j.configurationFile=C:\\Apache\\apache-jena-5.6.0\\log4j2.properties",
+            "-cp",
+            "C:\\Apache\\apache-jena-5.6.0\\lib\\*",
+            "tdb2.tdbquery",
+            "--loc=C:\\UFRGS\\ICC2027_TDB2\\sample-001-normalized-r04-r01",
+            "--query=icc2027-experiments\\evaluations\\stage3-jena-r04-20261025-r01\\queries\\stored-triples-default.rq",
+            "--results=JSON"
+          ],
+          "started_utc": "2026-10-26T02:38:10.931706+00:00",
+          "timeout_seconds": 300.0,
+          "returncode": 0,
+          "status": "success",
+          "error": null,
+          "result": {
+            "default_graph": 258427
+          },
+          "duration_seconds": 1.9625482999254018,
+          "stdout_sha256": "b68f83b2c0594e501b908821ab971646f59e726ca6818c70b3a8fe53e5ffaa79",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "format": "sparql-json",
+          "stdout_file": "raw/sampling-r01/stored.stdout",
+          "query_file": "queries/stored-triples-default.rq",
+          "query_sha256": "22d180ded68edd3ff84ade607b04c72b141536b8c9ae2bd732be7f991903126d",
+          "query_provenance": "executed_snapshot"
+        }
+      },
+      "storage": {
+        "kind": "logical_file_lengths",
+        "root": "C:\\UFRGS\\ICC2027_TDB2\\sample-001-normalized-r04-r01",
+        "total_bytes": 228525735,
+        "total_mib": 217.93912410736084,
+        "components_bytes": {
+          "SPO.dat": 16777216,
+          "POS.dat": 16777216,
+          "OSP.dat": 16777216,
+          "nodes.dat": 8388608,
+          "nodes-data.obj": 2032989
+        },
+        "other_bytes": 167772490,
+        "files": [
+          {
+            "path": "Data-0001/GOSP.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/GOSP.dat",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/GOSP.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/GPOS.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/GPOS.dat",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/GPOS.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/GPU.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/GPU.dat",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/GPU.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/GSPO.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/GSPO.dat",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/GSPO.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/journal.jrnl",
+            "bytes": 0
+          },
+          {
+            "path": "Data-0001/nodes-data.bdf",
+            "bytes": 16
+          },
+          {
+            "path": "Data-0001/nodes-data.obj",
+            "bytes": 2032989
+          },
+          {
+            "path": "Data-0001/nodes.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/nodes.dat",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/nodes.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/OSP.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/OSP.dat",
+            "bytes": 16777216
+          },
+          {
+            "path": "Data-0001/OSP.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/OSPG.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/OSPG.dat",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/OSPG.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/POS.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/POS.dat",
+            "bytes": 16777216
+          },
+          {
+            "path": "Data-0001/POS.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/POSG.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/POSG.dat",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/POSG.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/prefixes-data.bdf",
+            "bytes": 16
+          },
+          {
+            "path": "Data-0001/prefixes-data.obj",
+            "bytes": 0
+          },
+          {
+            "path": "Data-0001/prefixes.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/prefixes.dat",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/prefixes.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/SPO.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/SPO.dat",
+            "bytes": 16777216
+          },
+          {
+            "path": "Data-0001/SPO.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/SPOG.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/SPOG.dat",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/SPOG.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/tdb.lock",
+            "bytes": 5
+          },
+          {
+            "path": "tdb.lock",
+            "bytes": 5
+          }
+        ]
+      }
+    },
+    {
+      "id": "sampling-r02",
+      "label": "Sampling r02",
+      "manifest_file": "manifests/sampling-r02.json",
+      "manifest_sha256": "60f82fcea951d5dd18103b30dc0a9829ac59864aac4ce22023c72b14e020dad5",
+      "tdb_path": "C:\\UFRGS\\ICC2027_TDB2\\sample-001-normalized-r04-r02",
+      "queries": {
+        "top": {
+          "command": [
+            "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath\\java.EXE",
+            "-Xmx4g",
+            "-Dlog4j.configurationFile=C:\\Apache\\apache-jena-5.6.0\\log4j2.properties",
+            "-cp",
+            "C:\\Apache\\apache-jena-5.6.0\\lib\\*",
+            "tdb2.tdbquery",
+            "--loc=C:\\UFRGS\\ICC2027_TDB2\\sample-001-normalized-r04-r02",
+            "--query=icc2027-experiments\\evaluations\\stage3-jena-r04-20261025-r01\\queries\\01-top-destination-ip-flow.rq",
+            "--results=JSON"
+          ],
+          "started_utc": "2026-10-26T02:38:12.907810+00:00",
+          "timeout_seconds": 300.0,
+          "returncode": 0,
+          "status": "success",
+          "error": null,
+          "result": {
+            "http://kg/cicids/ip/192.168.10.3": 6914,
+            "http://kg/cicids/ip/192.168.10.50": 5844,
+            "http://kg/cicids/ip/192.168.10.1": 3028,
+            "http://kg/cicids/ip/192.168.10.25": 765,
+            "http://kg/cicids/ip/192.168.10.5": 575,
+            "http://kg/cicids/ip/172.16.0.1": 472,
+            "http://kg/cicids/ip/192.168.10.15": 442,
+            "http://kg/cicids/ip/192.168.10.14": 409,
+            "http://kg/cicids/ip/192.168.10.12": 387,
+            "http://kg/cicids/ip/192.168.10.9": 358,
+            "http://kg/cicids/ip/192.168.10.8": 351,
+            "http://kg/cicids/ip/192.168.10.17": 323,
+            "http://kg/cicids/ip/192.168.10.19": 309,
+            "http://kg/cicids/ip/192.168.10.16": 307,
+            "http://kg/cicids/ip/192.168.10.51": 221,
+            "http://kg/cicids/ip/178.255.83.1": 215,
+            "http://kg/cicids/ip/72.21.91.29": 129,
+            "http://kg/cicids/ip/162.208.20.178": 105,
+            "http://kg/cicids/ip/23.50.75.27": 95,
+            "http://kg/cicids/ip/50.63.243.230": 91
+          },
+          "duration_seconds": 4.068585600005463,
+          "stdout_sha256": "9c88ce99413b41cdc3cf405ba3dc338069fa181000a4f3780625b699f6823a91",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "format": "sparql-json",
+          "stdout_file": "raw/sampling-r02/top.stdout",
+          "query_file": "queries/01-top-destination-ip-flow.rq",
+          "query_sha256": "12ef74828f03d1767c01eef34740d41a659ee2a0885067439566c4e1533d8023",
+          "query_provenance": "executed_snapshot"
+        },
+        "protocol": {
+          "command": [
+            "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath\\java.EXE",
+            "-Xmx4g",
+            "-Dlog4j.configurationFile=C:\\Apache\\apache-jena-5.6.0\\log4j2.properties",
+            "-cp",
+            "C:\\Apache\\apache-jena-5.6.0\\lib\\*",
+            "tdb2.tdbquery",
+            "--loc=C:\\UFRGS\\ICC2027_TDB2\\sample-001-normalized-r04-r02",
+            "--query=icc2027-experiments\\evaluations\\stage3-jena-r04-20261025-r01\\queries\\02-flows-by-protocol-flow.rq",
+            "--results=JSON"
+          ],
+          "started_utc": "2026-10-26T02:38:16.987653+00:00",
+          "timeout_seconds": 300.0,
+          "returncode": 0,
+          "status": "success",
+          "error": null,
+          "result": {
+            "0": 17,
+            "17": 10149,
+            "6": 18103
+          },
+          "duration_seconds": 3.2781032999046147,
+          "stdout_sha256": "e0806db3cc35e9ba57d1c8f7e6b60764e52e99c0c41f70e02092b366e93381cf",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "format": "sparql-json",
+          "stdout_file": "raw/sampling-r02/protocol.stdout",
+          "query_file": "queries/02-flows-by-protocol-flow.rq",
+          "query_sha256": "9fe231541ed2aef668ffadfe53d993858136cc0330915f818a16fdac26fd10d4",
+          "query_provenance": "executed_snapshot"
+        },
+        "hour": {
+          "command": [
+            "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath\\java.EXE",
+            "-Xmx4g",
+            "-Dlog4j.configurationFile=C:\\Apache\\apache-jena-5.6.0\\log4j2.properties",
+            "-cp",
+            "C:\\Apache\\apache-jena-5.6.0\\lib\\*",
+            "tdb2.tdbquery",
+            "--loc=C:\\UFRGS\\ICC2027_TDB2\\sample-001-normalized-r04-r02",
+            "--query=icc2027-experiments\\evaluations\\stage3-jena-r04-20261025-r01\\queries\\03-attack-flows-per-hour-flow.rq",
+            "--results=JSON"
+          ],
+          "started_utc": "2026-10-26T02:38:20.272202+00:00",
+          "timeout_seconds": 300.0,
+          "returncode": 0,
+          "status": "success",
+          "error": null,
+          "result": {
+            "2017-07-04T09": 53,
+            "2017-07-04T10": 29,
+            "2017-07-04T14": 44,
+            "2017-07-04T15": 15,
+            "2017-07-05T09": 40,
+            "2017-07-05T10": 2326,
+            "2017-07-05T11": 197,
+            "2017-07-06T09": 16,
+            "2017-07-06T10": 8,
+            "2017-07-07T10": 26,
+            "2017-07-07T11": 3,
+            "2017-07-07T12": 1,
+            "2017-07-07T13": 2,
+            "2017-07-07T14": 1389,
+            "2017-07-07T15": 388,
+            "2017-07-07T16": 1059
+          },
+          "duration_seconds": 2.861317400005646,
+          "stdout_sha256": "268fbdc18892acf0d69ca6b92c298a0133833d44a5efc1609e673cadd3c2d8bb",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "format": "sparql-json",
+          "stdout_file": "raw/sampling-r02/hour.stdout",
+          "query_file": "queries/03-attack-flows-per-hour-flow.rq",
+          "query_sha256": "42cf92f5bca048ccb8666c8930cbec22df6c31ac7d04ee24c013d9e1f921d7e4",
+          "query_provenance": "executed_snapshot"
+        },
+        "stored": {
+          "command": [
+            "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath\\java.EXE",
+            "-Xmx4g",
+            "-Dlog4j.configurationFile=C:\\Apache\\apache-jena-5.6.0\\log4j2.properties",
+            "-cp",
+            "C:\\Apache\\apache-jena-5.6.0\\lib\\*",
+            "tdb2.tdbquery",
+            "--loc=C:\\UFRGS\\ICC2027_TDB2\\sample-001-normalized-r04-r02",
+            "--query=icc2027-experiments\\evaluations\\stage3-jena-r04-20261025-r01\\queries\\stored-triples-default.rq",
+            "--results=JSON"
+          ],
+          "started_utc": "2026-10-26T02:38:23.138155+00:00",
+          "timeout_seconds": 300.0,
+          "returncode": 0,
+          "status": "success",
+          "error": null,
+          "result": {
+            "default_graph": 258831
+          },
+          "duration_seconds": 1.8909178999019787,
+          "stdout_sha256": "65da296af7b5a13773be42c9f4cd14e7a965aa1b281752bbaaaadf53fe2111e2",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "format": "sparql-json",
+          "stdout_file": "raw/sampling-r02/stored.stdout",
+          "query_file": "queries/stored-triples-default.rq",
+          "query_sha256": "22d180ded68edd3ff84ade607b04c72b141536b8c9ae2bd732be7f991903126d",
+          "query_provenance": "executed_snapshot"
+        }
+      },
+      "storage": {
+        "kind": "logical_file_lengths",
+        "root": "C:\\UFRGS\\ICC2027_TDB2\\sample-001-normalized-r04-r02",
+        "total_bytes": 228530519,
+        "total_mib": 217.94368648529053,
+        "components_bytes": {
+          "SPO.dat": 16777216,
+          "POS.dat": 16777216,
+          "OSP.dat": 16777216,
+          "nodes.dat": 8388608,
+          "nodes-data.obj": 2037773
+        },
+        "other_bytes": 167772490,
+        "files": [
+          {
+            "path": "Data-0001/GOSP.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/GOSP.dat",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/GOSP.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/GPOS.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/GPOS.dat",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/GPOS.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/GPU.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/GPU.dat",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/GPU.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/GSPO.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/GSPO.dat",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/GSPO.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/journal.jrnl",
+            "bytes": 0
+          },
+          {
+            "path": "Data-0001/nodes-data.bdf",
+            "bytes": 16
+          },
+          {
+            "path": "Data-0001/nodes-data.obj",
+            "bytes": 2037773
+          },
+          {
+            "path": "Data-0001/nodes.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/nodes.dat",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/nodes.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/OSP.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/OSP.dat",
+            "bytes": 16777216
+          },
+          {
+            "path": "Data-0001/OSP.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/OSPG.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/OSPG.dat",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/OSPG.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/POS.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/POS.dat",
+            "bytes": 16777216
+          },
+          {
+            "path": "Data-0001/POS.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/POSG.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/POSG.dat",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/POSG.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/prefixes-data.bdf",
+            "bytes": 16
+          },
+          {
+            "path": "Data-0001/prefixes-data.obj",
+            "bytes": 0
+          },
+          {
+            "path": "Data-0001/prefixes.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/prefixes.dat",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/prefixes.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/SPO.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/SPO.dat",
+            "bytes": 16777216
+          },
+          {
+            "path": "Data-0001/SPO.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/SPOG.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/SPOG.dat",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/SPOG.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/tdb.lock",
+            "bytes": 5
+          },
+          {
+            "path": "tdb.lock",
+            "bytes": 5
+          }
+        ]
+      }
+    },
+    {
+      "id": "sampling-r03",
+      "label": "Sampling r03",
+      "manifest_file": "manifests/sampling-r03.json",
+      "manifest_sha256": "44d113fa061297a9879301c15e51e663d9f366f32ea81a6419618d395212f239",
+      "tdb_path": "C:\\UFRGS\\ICC2027_TDB2\\sample-001-normalized-r04-r03",
+      "queries": {
+        "top": {
+          "command": [
+            "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath\\java.EXE",
+            "-Xmx4g",
+            "-Dlog4j.configurationFile=C:\\Apache\\apache-jena-5.6.0\\log4j2.properties",
+            "-cp",
+            "C:\\Apache\\apache-jena-5.6.0\\lib\\*",
+            "tdb2.tdbquery",
+            "--loc=C:\\UFRGS\\ICC2027_TDB2\\sample-001-normalized-r04-r03",
+            "--query=icc2027-experiments\\evaluations\\stage3-jena-r04-20261025-r01\\queries\\01-top-destination-ip-flow.rq",
+            "--results=JSON"
+          ],
+          "started_utc": "2026-10-26T02:38:25.038866+00:00",
+          "timeout_seconds": 300.0,
+          "returncode": 0,
+          "status": "success",
+          "error": null,
+          "result": {
+            "http://kg/cicids/ip/192.168.10.3": 6851,
+            "http://kg/cicids/ip/192.168.10.50": 5805,
+            "http://kg/cicids/ip/192.168.10.1": 2921,
+            "http://kg/cicids/ip/192.168.10.25": 765,
+            "http://kg/cicids/ip/192.168.10.5": 549,
+            "http://kg/cicids/ip/172.16.0.1": 463,
+            "http://kg/cicids/ip/192.168.10.14": 406,
+            "http://kg/cicids/ip/192.168.10.9": 399,
+            "http://kg/cicids/ip/192.168.10.15": 372,
+            "http://kg/cicids/ip/192.168.10.12": 363,
+            "http://kg/cicids/ip/192.168.10.16": 361,
+            "http://kg/cicids/ip/192.168.10.8": 329,
+            "http://kg/cicids/ip/192.168.10.17": 317,
+            "http://kg/cicids/ip/192.168.10.19": 298,
+            "http://kg/cicids/ip/192.168.10.51": 246,
+            "http://kg/cicids/ip/178.255.83.1": 225,
+            "http://kg/cicids/ip/72.21.91.29": 120,
+            "http://kg/cicids/ip/23.50.75.27": 117,
+            "http://kg/cicids/ip/162.208.20.178": 112,
+            "http://kg/cicids/ip/50.63.243.230": 82
+          },
+          "duration_seconds": 3.6471899000462145,
+          "stdout_sha256": "51bf641eec3b41b7c22eb23c7880926a492cff9cc56f148f6354e7c7e68aabac",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "format": "sparql-json",
+          "stdout_file": "raw/sampling-r03/top.stdout",
+          "query_file": "queries/01-top-destination-ip-flow.rq",
+          "query_sha256": "12ef74828f03d1767c01eef34740d41a659ee2a0885067439566c4e1533d8023",
+          "query_provenance": "executed_snapshot"
+        },
+        "protocol": {
+          "command": [
+            "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath\\java.EXE",
+            "-Xmx4g",
+            "-Dlog4j.configurationFile=C:\\Apache\\apache-jena-5.6.0\\log4j2.properties",
+            "-cp",
+            "C:\\Apache\\apache-jena-5.6.0\\lib\\*",
+            "tdb2.tdbquery",
+            "--loc=C:\\UFRGS\\ICC2027_TDB2\\sample-001-normalized-r04-r03",
+            "--query=icc2027-experiments\\evaluations\\stage3-jena-r04-20261025-r01\\queries\\02-flows-by-protocol-flow.rq",
+            "--results=JSON"
+          ],
+          "started_utc": "2026-10-26T02:38:28.699922+00:00",
+          "timeout_seconds": 300.0,
+          "returncode": 0,
+          "status": "success",
+          "error": null,
+          "result": {
+            "0": 19,
+            "17": 9948,
+            "6": 18323
+          },
+          "duration_seconds": 3.022491900017485,
+          "stdout_sha256": "701027f54a0e39b2192cb21f3762d6c174cfae8691c939a265332708ca35a375",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "format": "sparql-json",
+          "stdout_file": "raw/sampling-r03/protocol.stdout",
+          "query_file": "queries/02-flows-by-protocol-flow.rq",
+          "query_sha256": "9fe231541ed2aef668ffadfe53d993858136cc0330915f818a16fdac26fd10d4",
+          "query_provenance": "executed_snapshot"
+        },
+        "hour": {
+          "command": [
+            "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath\\java.EXE",
+            "-Xmx4g",
+            "-Dlog4j.configurationFile=C:\\Apache\\apache-jena-5.6.0\\log4j2.properties",
+            "-cp",
+            "C:\\Apache\\apache-jena-5.6.0\\lib\\*",
+            "tdb2.tdbquery",
+            "--loc=C:\\UFRGS\\ICC2027_TDB2\\sample-001-normalized-r04-r03",
+            "--query=icc2027-experiments\\evaluations\\stage3-jena-r04-20261025-r01\\queries\\03-attack-flows-per-hour-flow.rq",
+            "--results=JSON"
+          ],
+          "started_utc": "2026-10-26T02:38:31.727835+00:00",
+          "timeout_seconds": 300.0,
+          "returncode": 0,
+          "status": "success",
+          "error": null,
+          "result": {
+            "2017-07-04T09": 61,
+            "2017-07-04T10": 23,
+            "2017-07-04T14": 61,
+            "2017-07-04T15": 10,
+            "2017-07-05T09": 31,
+            "2017-07-05T10": 2263,
+            "2017-07-05T11": 204,
+            "2017-07-06T09": 15,
+            "2017-07-06T10": 7,
+            "2017-07-07T10": 13,
+            "2017-07-07T11": 3,
+            "2017-07-07T13": 1,
+            "2017-07-07T14": 1385,
+            "2017-07-07T15": 415,
+            "2017-07-07T16": 1052
+          },
+          "duration_seconds": 3.086282499949448,
+          "stdout_sha256": "9e9a43eb61c7e5b68b65c19a355ea3bb48e1d2a549b5e74e41b51a7f86b421ca",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "format": "sparql-json",
+          "stdout_file": "raw/sampling-r03/hour.stdout",
+          "query_file": "queries/03-attack-flows-per-hour-flow.rq",
+          "query_sha256": "42cf92f5bca048ccb8666c8930cbec22df6c31ac7d04ee24c013d9e1f921d7e4",
+          "query_provenance": "executed_snapshot"
+        },
+        "stored": {
+          "command": [
+            "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath\\java.EXE",
+            "-Xmx4g",
+            "-Dlog4j.configurationFile=C:\\Apache\\apache-jena-5.6.0\\log4j2.properties",
+            "-cp",
+            "C:\\Apache\\apache-jena-5.6.0\\lib\\*",
+            "tdb2.tdbquery",
+            "--loc=C:\\UFRGS\\ICC2027_TDB2\\sample-001-normalized-r04-r03",
+            "--query=icc2027-experiments\\evaluations\\stage3-jena-r04-20261025-r01\\queries\\stored-triples-default.rq",
+            "--results=JSON"
+          ],
+          "started_utc": "2026-10-26T02:38:34.821563+00:00",
+          "timeout_seconds": 300.0,
+          "returncode": 0,
+          "status": "success",
+          "error": null,
+          "result": {
+            "default_graph": 259105
+          },
+          "duration_seconds": 1.9922117000678554,
+          "stdout_sha256": "7bef3d53ef5c33f2e6b5a01fdb73e924974b355e269c16ff7749fc23f3fb747a",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "format": "sparql-json",
+          "stdout_file": "raw/sampling-r03/stored.stdout",
+          "query_file": "queries/stored-triples-default.rq",
+          "query_sha256": "22d180ded68edd3ff84ade607b04c72b141536b8c9ae2bd732be7f991903126d",
+          "query_provenance": "executed_snapshot"
+        }
+      },
+      "storage": {
+        "kind": "logical_file_lengths",
+        "root": "C:\\UFRGS\\ICC2027_TDB2\\sample-001-normalized-r04-r03",
+        "total_bytes": 228535907,
+        "total_mib": 217.94882488250732,
+        "components_bytes": {
+          "SPO.dat": 16777216,
+          "POS.dat": 16777216,
+          "OSP.dat": 16777216,
+          "nodes.dat": 8388608,
+          "nodes-data.obj": 2043161
+        },
+        "other_bytes": 167772490,
+        "files": [
+          {
+            "path": "Data-0001/GOSP.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/GOSP.dat",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/GOSP.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/GPOS.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/GPOS.dat",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/GPOS.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/GPU.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/GPU.dat",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/GPU.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/GSPO.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/GSPO.dat",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/GSPO.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/journal.jrnl",
+            "bytes": 0
+          },
+          {
+            "path": "Data-0001/nodes-data.bdf",
+            "bytes": 16
+          },
+          {
+            "path": "Data-0001/nodes-data.obj",
+            "bytes": 2043161
+          },
+          {
+            "path": "Data-0001/nodes.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/nodes.dat",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/nodes.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/OSP.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/OSP.dat",
+            "bytes": 16777216
+          },
+          {
+            "path": "Data-0001/OSP.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/OSPG.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/OSPG.dat",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/OSPG.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/POS.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/POS.dat",
+            "bytes": 16777216
+          },
+          {
+            "path": "Data-0001/POS.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/POSG.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/POSG.dat",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/POSG.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/prefixes-data.bdf",
+            "bytes": 16
+          },
+          {
+            "path": "Data-0001/prefixes-data.obj",
+            "bytes": 0
+          },
+          {
+            "path": "Data-0001/prefixes.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/prefixes.dat",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/prefixes.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/SPO.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/SPO.dat",
+            "bytes": 16777216
+          },
+          {
+            "path": "Data-0001/SPO.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/SPOG.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/SPOG.dat",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/SPOG.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/tdb.lock",
+            "bytes": 5
+          },
+          {
+            "path": "tdb.lock",
+            "bytes": 5
+          }
+        ]
+      }
+    },
+    {
+      "id": "sampling-r04",
+      "label": "Sampling r04",
+      "manifest_file": "manifests/sampling-r04.json",
+      "manifest_sha256": "a97f9fc5f0e11d3e325ace0b1562f04cd141a842bbfd1ac9b8134b4072278f4c",
+      "tdb_path": "C:\\UFRGS\\ICC2027_TDB2\\sample-001-normalized-r04-r04",
+      "queries": {
+        "top": {
+          "command": [
+            "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath\\java.EXE",
+            "-Xmx4g",
+            "-Dlog4j.configurationFile=C:\\Apache\\apache-jena-5.6.0\\log4j2.properties",
+            "-cp",
+            "C:\\Apache\\apache-jena-5.6.0\\lib\\*",
+            "tdb2.tdbquery",
+            "--loc=C:\\UFRGS\\ICC2027_TDB2\\sample-001-normalized-r04-r04",
+            "--query=icc2027-experiments\\evaluations\\stage3-jena-r04-20261025-r01\\queries\\01-top-destination-ip-flow.rq",
+            "--results=JSON"
+          ],
+          "started_utc": "2026-10-26T02:38:36.830096+00:00",
+          "timeout_seconds": 300.0,
+          "returncode": 0,
+          "status": "success",
+          "error": null,
+          "result": {
+            "http://kg/cicids/ip/192.168.10.3": 6916,
+            "http://kg/cicids/ip/192.168.10.50": 5775,
+            "http://kg/cicids/ip/192.168.10.1": 2950,
+            "http://kg/cicids/ip/192.168.10.25": 772,
+            "http://kg/cicids/ip/192.168.10.5": 544,
+            "http://kg/cicids/ip/172.16.0.1": 459,
+            "http://kg/cicids/ip/192.168.10.12": 417,
+            "http://kg/cicids/ip/192.168.10.14": 403,
+            "http://kg/cicids/ip/192.168.10.15": 374,
+            "http://kg/cicids/ip/192.168.10.9": 373,
+            "http://kg/cicids/ip/192.168.10.16": 342,
+            "http://kg/cicids/ip/192.168.10.8": 328,
+            "http://kg/cicids/ip/192.168.10.19": 318,
+            "http://kg/cicids/ip/192.168.10.17": 308,
+            "http://kg/cicids/ip/192.168.10.51": 266,
+            "http://kg/cicids/ip/178.255.83.1": 208,
+            "http://kg/cicids/ip/162.208.20.178": 109,
+            "http://kg/cicids/ip/23.50.75.27": 108,
+            "http://kg/cicids/ip/72.21.91.29": 105,
+            "http://kg/cicids/ip/50.63.243.230": 99
+          },
+          "duration_seconds": 3.9562134000007063,
+          "stdout_sha256": "4acc8189ce103d5d682f9edd5f4bebce70acac86e99752624cf0ffd0fc844e53",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "format": "sparql-json",
+          "stdout_file": "raw/sampling-r04/top.stdout",
+          "query_file": "queries/01-top-destination-ip-flow.rq",
+          "query_sha256": "12ef74828f03d1767c01eef34740d41a659ee2a0885067439566c4e1533d8023",
+          "query_provenance": "executed_snapshot"
+        },
+        "protocol": {
+          "command": [
+            "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath\\java.EXE",
+            "-Xmx4g",
+            "-Dlog4j.configurationFile=C:\\Apache\\apache-jena-5.6.0\\log4j2.properties",
+            "-cp",
+            "C:\\Apache\\apache-jena-5.6.0\\lib\\*",
+            "tdb2.tdbquery",
+            "--loc=C:\\UFRGS\\ICC2027_TDB2\\sample-001-normalized-r04-r04",
+            "--query=icc2027-experiments\\evaluations\\stage3-jena-r04-20261025-r01\\queries\\02-flows-by-protocol-flow.rq",
+            "--results=JSON"
+          ],
+          "started_utc": "2026-10-26T02:38:40.791842+00:00",
+          "timeout_seconds": 300.0,
+          "returncode": 0,
+          "status": "success",
+          "error": null,
+          "result": {
+            "0": 13,
+            "17": 10048,
+            "6": 18311
+          },
+          "duration_seconds": 2.9568451999220997,
+          "stdout_sha256": "f5796be80da0615dfc7029b2b8cabd78d7f3cfc2ed36583ac690399763e685a5",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "format": "sparql-json",
+          "stdout_file": "raw/sampling-r04/protocol.stdout",
+          "query_file": "queries/02-flows-by-protocol-flow.rq",
+          "query_sha256": "9fe231541ed2aef668ffadfe53d993858136cc0330915f818a16fdac26fd10d4",
+          "query_provenance": "executed_snapshot"
+        },
+        "hour": {
+          "command": [
+            "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath\\java.EXE",
+            "-Xmx4g",
+            "-Dlog4j.configurationFile=C:\\Apache\\apache-jena-5.6.0\\log4j2.properties",
+            "-cp",
+            "C:\\Apache\\apache-jena-5.6.0\\lib\\*",
+            "tdb2.tdbquery",
+            "--loc=C:\\UFRGS\\ICC2027_TDB2\\sample-001-normalized-r04-r04",
+            "--query=icc2027-experiments\\evaluations\\stage3-jena-r04-20261025-r01\\queries\\03-attack-flows-per-hour-flow.rq",
+            "--results=JSON"
+          ],
+          "started_utc": "2026-10-26T02:38:43.754425+00:00",
+          "timeout_seconds": 300.0,
+          "returncode": 0,
+          "status": "success",
+          "error": null,
+          "result": {
+            "2017-07-04T09": 58,
+            "2017-07-04T10": 22,
+            "2017-07-04T14": 56,
+            "2017-07-04T15": 10,
+            "2017-07-05T09": 28,
+            "2017-07-05T10": 2273,
+            "2017-07-05T11": 209,
+            "2017-07-06T09": 15,
+            "2017-07-06T10": 7,
+            "2017-07-07T10": 19,
+            "2017-07-07T11": 4,
+            "2017-07-07T12": 4,
+            "2017-07-07T13": 1,
+            "2017-07-07T14": 1371,
+            "2017-07-07T15": 476,
+            "2017-07-07T16": 998
+          },
+          "duration_seconds": 2.9894782999763265,
+          "stdout_sha256": "44fcaadfa4f2b342ac32646f871900375eb3bf61d1063b46c5024be7bedc415a",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "format": "sparql-json",
+          "stdout_file": "raw/sampling-r04/hour.stdout",
+          "query_file": "queries/03-attack-flows-per-hour-flow.rq",
+          "query_sha256": "42cf92f5bca048ccb8666c8930cbec22df6c31ac7d04ee24c013d9e1f921d7e4",
+          "query_provenance": "executed_snapshot"
+        },
+        "stored": {
+          "command": [
+            "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath\\java.EXE",
+            "-Xmx4g",
+            "-Dlog4j.configurationFile=C:\\Apache\\apache-jena-5.6.0\\log4j2.properties",
+            "-cp",
+            "C:\\Apache\\apache-jena-5.6.0\\lib\\*",
+            "tdb2.tdbquery",
+            "--loc=C:\\UFRGS\\ICC2027_TDB2\\sample-001-normalized-r04-r04",
+            "--query=icc2027-experiments\\evaluations\\stage3-jena-r04-20261025-r01\\queries\\stored-triples-default.rq",
+            "--results=JSON"
+          ],
+          "started_utc": "2026-10-26T02:38:46.748116+00:00",
+          "timeout_seconds": 300.0,
+          "returncode": 0,
+          "status": "success",
+          "error": null,
+          "result": {
+            "default_graph": 259855
+          },
+          "duration_seconds": 2.1328568999888375,
+          "stdout_sha256": "07849d3d5ef85557649e4f1eaea3c5edd5eee8548a7e235c3764cb89c7041bf1",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "format": "sparql-json",
+          "stdout_file": "raw/sampling-r04/stored.stdout",
+          "query_file": "queries/stored-triples-default.rq",
+          "query_sha256": "22d180ded68edd3ff84ade607b04c72b141536b8c9ae2bd732be7f991903126d",
+          "query_provenance": "executed_snapshot"
+        }
+      },
+      "storage": {
+        "kind": "logical_file_lengths",
+        "root": "C:\\UFRGS\\ICC2027_TDB2\\sample-001-normalized-r04-r04",
+        "total_bytes": 228540463,
+        "total_mib": 217.95316982269287,
+        "components_bytes": {
+          "SPO.dat": 16777216,
+          "POS.dat": 16777216,
+          "OSP.dat": 16777216,
+          "nodes.dat": 8388608,
+          "nodes-data.obj": 2047715
+        },
+        "other_bytes": 167772492,
+        "files": [
+          {
+            "path": "Data-0001/GOSP.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/GOSP.dat",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/GOSP.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/GPOS.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/GPOS.dat",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/GPOS.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/GPU.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/GPU.dat",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/GPU.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/GSPO.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/GSPO.dat",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/GSPO.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/journal.jrnl",
+            "bytes": 0
+          },
+          {
+            "path": "Data-0001/nodes-data.bdf",
+            "bytes": 16
+          },
+          {
+            "path": "Data-0001/nodes-data.obj",
+            "bytes": 2047715
+          },
+          {
+            "path": "Data-0001/nodes.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/nodes.dat",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/nodes.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/OSP.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/OSP.dat",
+            "bytes": 16777216
+          },
+          {
+            "path": "Data-0001/OSP.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/OSPG.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/OSPG.dat",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/OSPG.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/POS.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/POS.dat",
+            "bytes": 16777216
+          },
+          {
+            "path": "Data-0001/POS.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/POSG.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/POSG.dat",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/POSG.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/prefixes-data.bdf",
+            "bytes": 16
+          },
+          {
+            "path": "Data-0001/prefixes-data.obj",
+            "bytes": 0
+          },
+          {
+            "path": "Data-0001/prefixes.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/prefixes.dat",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/prefixes.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/SPO.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/SPO.dat",
+            "bytes": 16777216
+          },
+          {
+            "path": "Data-0001/SPO.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/SPOG.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/SPOG.dat",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/SPOG.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/tdb.lock",
+            "bytes": 6
+          },
+          {
+            "path": "tdb.lock",
+            "bytes": 6
+          }
+        ]
+      }
+    },
+    {
+      "id": "sampling-r05",
+      "label": "Sampling r05",
+      "manifest_file": "manifests/sampling-r05.json",
+      "manifest_sha256": "e183638e9b052eaef74c8491f1b08ebcd382221900ca7dd73cf36b6bbab78664",
+      "tdb_path": "C:\\UFRGS\\ICC2027_TDB2\\sample-001-normalized-r04-r05",
+      "queries": {
+        "top": {
+          "command": [
+            "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath\\java.EXE",
+            "-Xmx4g",
+            "-Dlog4j.configurationFile=C:\\Apache\\apache-jena-5.6.0\\log4j2.properties",
+            "-cp",
+            "C:\\Apache\\apache-jena-5.6.0\\lib\\*",
+            "tdb2.tdbquery",
+            "--loc=C:\\UFRGS\\ICC2027_TDB2\\sample-001-normalized-r04-r05",
+            "--query=icc2027-experiments\\evaluations\\stage3-jena-r04-20261025-r01\\queries\\01-top-destination-ip-flow.rq",
+            "--results=JSON"
+          ],
+          "started_utc": "2026-10-26T02:38:48.898822+00:00",
+          "timeout_seconds": 300.0,
+          "returncode": 0,
+          "status": "success",
+          "error": null,
+          "result": {
+            "http://kg/cicids/ip/192.168.10.3": 6766,
+            "http://kg/cicids/ip/192.168.10.50": 5914,
+            "http://kg/cicids/ip/192.168.10.1": 2926,
+            "http://kg/cicids/ip/192.168.10.25": 757,
+            "http://kg/cicids/ip/192.168.10.5": 548,
+            "http://kg/cicids/ip/172.16.0.1": 468,
+            "http://kg/cicids/ip/192.168.10.15": 415,
+            "http://kg/cicids/ip/192.168.10.14": 406,
+            "http://kg/cicids/ip/192.168.10.9": 405,
+            "http://kg/cicids/ip/192.168.10.12": 381,
+            "http://kg/cicids/ip/192.168.10.16": 346,
+            "http://kg/cicids/ip/192.168.10.17": 337,
+            "http://kg/cicids/ip/192.168.10.8": 324,
+            "http://kg/cicids/ip/192.168.10.19": 301,
+            "http://kg/cicids/ip/192.168.10.51": 267,
+            "http://kg/cicids/ip/178.255.83.1": 201,
+            "http://kg/cicids/ip/72.21.91.29": 123,
+            "http://kg/cicids/ip/23.50.75.27": 114,
+            "http://kg/cicids/ip/162.208.20.178": 108,
+            "http://kg/cicids/ip/50.63.243.230": 84
+          },
+          "duration_seconds": 3.8457298000575975,
+          "stdout_sha256": "eded3e3ce2ea85f51e1630af44258f57fd2ec2cb29168387c4bbbea659faeec7",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "format": "sparql-json",
+          "stdout_file": "raw/sampling-r05/top.stdout",
+          "query_file": "queries/01-top-destination-ip-flow.rq",
+          "query_sha256": "12ef74828f03d1767c01eef34740d41a659ee2a0885067439566c4e1533d8023",
+          "query_provenance": "executed_snapshot"
+        },
+        "protocol": {
+          "command": [
+            "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath\\java.EXE",
+            "-Xmx4g",
+            "-Dlog4j.configurationFile=C:\\Apache\\apache-jena-5.6.0\\log4j2.properties",
+            "-cp",
+            "C:\\Apache\\apache-jena-5.6.0\\lib\\*",
+            "tdb2.tdbquery",
+            "--loc=C:\\UFRGS\\ICC2027_TDB2\\sample-001-normalized-r04-r05",
+            "--query=icc2027-experiments\\evaluations\\stage3-jena-r04-20261025-r01\\queries\\02-flows-by-protocol-flow.rq",
+            "--results=JSON"
+          ],
+          "started_utc": "2026-10-26T02:38:52.748995+00:00",
+          "timeout_seconds": 300.0,
+          "returncode": 0,
+          "status": "success",
+          "error": null,
+          "result": {
+            "0": 11,
+            "17": 9904,
+            "6": 18254
+          },
+          "duration_seconds": 2.949932700023055,
+          "stdout_sha256": "7d088c430e39722a759176ee9f8aeee95da08103ffd355d929fd9f95c161482f",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "format": "sparql-json",
+          "stdout_file": "raw/sampling-r05/protocol.stdout",
+          "query_file": "queries/02-flows-by-protocol-flow.rq",
+          "query_sha256": "9fe231541ed2aef668ffadfe53d993858136cc0330915f818a16fdac26fd10d4",
+          "query_provenance": "executed_snapshot"
+        },
+        "hour": {
+          "command": [
+            "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath\\java.EXE",
+            "-Xmx4g",
+            "-Dlog4j.configurationFile=C:\\Apache\\apache-jena-5.6.0\\log4j2.properties",
+            "-cp",
+            "C:\\Apache\\apache-jena-5.6.0\\lib\\*",
+            "tdb2.tdbquery",
+            "--loc=C:\\UFRGS\\ICC2027_TDB2\\sample-001-normalized-r04-r05",
+            "--query=icc2027-experiments\\evaluations\\stage3-jena-r04-20261025-r01\\queries\\03-attack-flows-per-hour-flow.rq",
+            "--results=JSON"
+          ],
+          "started_utc": "2026-10-26T02:38:55.704645+00:00",
+          "timeout_seconds": 300.0,
+          "returncode": 0,
+          "status": "success",
+          "error": null,
+          "result": {
+            "2017-07-04T09": 41,
+            "2017-07-04T10": 30,
+            "2017-07-04T14": 40,
+            "2017-07-04T15": 11,
+            "2017-07-05T09": 26,
+            "2017-07-05T10": 2315,
+            "2017-07-05T11": 199,
+            "2017-07-06T09": 21,
+            "2017-07-06T10": 3,
+            "2017-07-07T10": 18,
+            "2017-07-07T11": 3,
+            "2017-07-07T12": 1,
+            "2017-07-07T13": 2,
+            "2017-07-07T14": 1412,
+            "2017-07-07T15": 431,
+            "2017-07-07T16": 1078
+          },
+          "duration_seconds": 3.036680900026113,
+          "stdout_sha256": "9688e447a34a9927620b7e7dc37b221e5e182797e0fc9e9191201c5c42095178",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "format": "sparql-json",
+          "stdout_file": "raw/sampling-r05/hour.stdout",
+          "query_file": "queries/03-attack-flows-per-hour-flow.rq",
+          "query_sha256": "42cf92f5bca048ccb8666c8930cbec22df6c31ac7d04ee24c013d9e1f921d7e4",
+          "query_provenance": "executed_snapshot"
+        },
+        "stored": {
+          "command": [
+            "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath\\java.EXE",
+            "-Xmx4g",
+            "-Dlog4j.configurationFile=C:\\Apache\\apache-jena-5.6.0\\log4j2.properties",
+            "-cp",
+            "C:\\Apache\\apache-jena-5.6.0\\lib\\*",
+            "tdb2.tdbquery",
+            "--loc=C:\\UFRGS\\ICC2027_TDB2\\sample-001-normalized-r04-r05",
+            "--query=icc2027-experiments\\evaluations\\stage3-jena-r04-20261025-r01\\queries\\stored-triples-default.rq",
+            "--results=JSON"
+          ],
+          "started_utc": "2026-10-26T02:38:58.748192+00:00",
+          "timeout_seconds": 300.0,
+          "returncode": 0,
+          "status": "success",
+          "error": null,
+          "result": {
+            "default_graph": 257907
+          },
+          "duration_seconds": 2.320096699986607,
+          "stdout_sha256": "c676cb40bed5a35612b05f6ce8c2d5b1b9bd50f98ff17acbe03d3dcba48df1ec",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "format": "sparql-json",
+          "stdout_file": "raw/sampling-r05/stored.stdout",
+          "query_file": "queries/stored-triples-default.rq",
+          "query_sha256": "22d180ded68edd3ff84ade607b04c72b141536b8c9ae2bd732be7f991903126d",
+          "query_provenance": "executed_snapshot"
+        }
+      },
+      "storage": {
+        "kind": "logical_file_lengths",
+        "root": "C:\\UFRGS\\ICC2027_TDB2\\sample-001-normalized-r04-r05",
+        "total_bytes": 228522128,
+        "total_mib": 217.93568420410156,
+        "components_bytes": {
+          "SPO.dat": 16777216,
+          "POS.dat": 16777216,
+          "OSP.dat": 16777216,
+          "nodes.dat": 8388608,
+          "nodes-data.obj": 2029380
+        },
+        "other_bytes": 167772492,
+        "files": [
+          {
+            "path": "Data-0001/GOSP.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/GOSP.dat",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/GOSP.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/GPOS.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/GPOS.dat",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/GPOS.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/GPU.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/GPU.dat",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/GPU.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/GSPO.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/GSPO.dat",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/GSPO.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/journal.jrnl",
+            "bytes": 0
+          },
+          {
+            "path": "Data-0001/nodes-data.bdf",
+            "bytes": 16
+          },
+          {
+            "path": "Data-0001/nodes-data.obj",
+            "bytes": 2029380
+          },
+          {
+            "path": "Data-0001/nodes.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/nodes.dat",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/nodes.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/OSP.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/OSP.dat",
+            "bytes": 16777216
+          },
+          {
+            "path": "Data-0001/OSP.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/OSPG.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/OSPG.dat",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/OSPG.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/POS.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/POS.dat",
+            "bytes": 16777216
+          },
+          {
+            "path": "Data-0001/POS.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/POSG.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/POSG.dat",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/POSG.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/prefixes-data.bdf",
+            "bytes": 16
+          },
+          {
+            "path": "Data-0001/prefixes-data.obj",
+            "bytes": 0
+          },
+          {
+            "path": "Data-0001/prefixes.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/prefixes.dat",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/prefixes.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/SPO.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/SPO.dat",
+            "bytes": 16777216
+          },
+          {
+            "path": "Data-0001/SPO.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/SPOG.bpt",
+            "bytes": 24
+          },
+          {
+            "path": "Data-0001/SPOG.dat",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/SPOG.idn",
+            "bytes": 8388608
+          },
+          {
+            "path": "Data-0001/tdb.lock",
+            "bytes": 6
+          },
+          {
+            "path": "tdb.lock",
+            "bytes": 6
+          }
+        ]
+      }
+    }
+  ],
+  "cli_probe": {
+    "help": {
+      "command": [
+        "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath\\java.EXE",
+        "-Xmx4g",
+        "-Dlog4j.configurationFile=C:\\Apache\\apache-jena-5.6.0\\log4j2.properties",
+        "-cp",
+        "C:\\Apache\\apache-jena-5.6.0\\lib\\*",
+        "tdb2.tdbquery",
+        "--help"
+      ],
+      "started_utc": "2026-10-26T02:28:44.483583+00:00",
+      "timeout_seconds": 60,
+      "returncode": 0,
+      "status": "success",
+      "error": null,
+      "result": null,
+      "duration_seconds": 1.039831000030972,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "05a28243929c873911b485788ff9facad3d3b3b109f499052f01fdef0c5d865e"
+    },
+    "version": {
+      "command": [
+        "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath\\java.EXE",
+        "-Xmx4g",
+        "-Dlog4j.configurationFile=C:\\Apache\\apache-jena-5.6.0\\log4j2.properties",
+        "-cp",
+        "C:\\Apache\\apache-jena-5.6.0\\lib\\*",
+        "tdb2.tdbquery",
+        "--version"
+      ],
+      "started_utc": "2026-10-26T02:28:45.523593+00:00",
+      "timeout_seconds": 60,
+      "returncode": 0,
+      "status": "success",
+      "error": null,
+      "result": null,
+      "duration_seconds": 0.9796963999979198,
+      "stdout_sha256": "7aca7931c67069b2a838c1d3257572dfdd98108b52f78544c96314ffe2a29b4b",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "java": {
+      "command": [
+        "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath\\java.EXE",
+        "-version"
+      ],
+      "started_utc": "2026-10-26T02:28:46.506935+00:00",
+      "timeout_seconds": 60,
+      "returncode": 0,
+      "status": "success",
+      "error": null,
+      "result": null,
+      "duration_seconds": 0.22929339995607734,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "3e0148f309fdf27793f56bf561bc03bc6cec612d01936a0f38d51bf8643a9646"
+    }
+  }
+}

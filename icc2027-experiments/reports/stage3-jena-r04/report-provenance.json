@@ -1,0 +1,19 @@
+{
+  "created_utc": "2026-10-26T02:44:38.434486+00:00",
+  "python": "3.12.0 (tags/v3.12.0:0fb18b0, Oct  2 2023, 13:03:39) [MSC v.1935 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "argv": [
+    "-"
+  ],
+  "git_commit": "8630fe683e5589f5effb101b655348b43fcd0aff",
+  "git_dirty": true,
+  "module_sha256": {
+    "evaluate_queries.py": "47ec510965a8c37a37bdc7859cbafaf818856c47f32b57600a3bc48424f17c9e",
+    "evaluation_metrics.py": "12a70d35291a507b209ec065be78dc44bc2b1eed405c25b870bc94668786dadd",
+    "icc2027_pipeline.py": "7c2f0cd8024dd1e1859510a89fd935c2e114b97b17a7b6d00f72f7a2bcbd2692",
+    "jena_executor.py": "02e72c57fceaf2910906f3c26ba3a3862424a0d55fc69d937a6671b2ff9eb651",
+    "sparql_results.py": "cf1e431cab422aaa5b4865bb8adbc474b7d8bdd0c928371ef7a7954c1acabaef",
+    "tdb_storage.py": "b2f20ce49f226142c8f5589e9c37593fa715b0848b2d1f5cd3e4b81e68b27dab",
+    "temporal_audit.py": "ee4ed69a829726b4babe5c203bdf1ffd3b48530cc8b636b076c68c95d6dd1862"
+  }
+}

@@ -1,0 +1,11 @@
+{ "head": {
+    "vars": [ "stored_triples" ]
+  } ,
+  "results": {
+    "bindings": [
+      { 
+        "stored_triples": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "value": "6347194" }
+      }
+    ]
+  }
+}

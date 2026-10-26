@@ -1,0 +1,14 @@
+PREFIX ex: <http://example.org/ns#>
+
+SELECT ?hour (COUNT(?flow) AS ?attacks)
+WHERE {
+    ?flow a ex:NetworkFlow ;
+          ex:timestamp ?timestamp ;
+          ex:label ?label .
+
+    FILTER(?label != "BENIGN")
+
+    BIND(SUBSTR(STR(?timestamp), 1, 13) AS ?hour)
+}
+GROUP BY ?hour
+ORDER BY ?hour

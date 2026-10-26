@@ -1,0 +1,15 @@
+{
+  "command": [
+    "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath\\java.EXE",
+    "-version"
+  ],
+  "started_utc": "2026-10-26T02:28:46.506935+00:00",
+  "timeout_seconds": 60,
+  "returncode": 0,
+  "status": "success",
+  "error": null,
+  "result": null,
+  "duration_seconds": 0.22929339995607734,
+  "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stderr_sha256": "3e0148f309fdf27793f56bf561bc03bc6cec612d01936a0f38d51bf8643a9646"
+}

@@ -1,0 +1,53 @@
+{
+  "rows": [
+    {
+      "base": "baseline-normalized-r04-r01",
+      "reference_total_bytes": 4004798446,
+      "observed_total_bytes": 4004798446,
+      "difference_bytes": 0,
+      "main_components_match_rounded_reference": true,
+      "observed_lock_file_bytes": 10
+    },
+    {
+      "base": "sample-001-normalized-r04-r01",
+      "reference_total_bytes": 228525735,
+      "observed_total_bytes": 228525735,
+      "difference_bytes": 0,
+      "main_components_match_rounded_reference": true,
+      "observed_lock_file_bytes": 10
+    },
+    {
+      "base": "sample-001-normalized-r04-r02",
+      "reference_total_bytes": 228530521,
+      "observed_total_bytes": 228530519,
+      "difference_bytes": -2,
+      "main_components_match_rounded_reference": true,
+      "observed_lock_file_bytes": 10
+    },
+    {
+      "base": "sample-001-normalized-r04-r03",
+      "reference_total_bytes": 228535909,
+      "observed_total_bytes": 228535907,
+      "difference_bytes": -2,
+      "main_components_match_rounded_reference": true,
+      "observed_lock_file_bytes": 10
+    },
+    {
+      "base": "sample-001-normalized-r04-r04",
+      "reference_total_bytes": 228540463,
+      "observed_total_bytes": 228540463,
+      "difference_bytes": 0,
+      "main_components_match_rounded_reference": true,
+      "observed_lock_file_bytes": 12
+    },
+    {
+      "base": "sample-001-normalized-r04-r05",
+      "reference_total_bytes": 228522128,
+      "observed_total_bytes": 228522128,
+      "difference_bytes": 0,
+      "main_components_match_rounded_reference": true,
+      "observed_lock_file_bytes": 12
+    }
+  ],
+  "interpretation": "Principal data components match. Total lengths include transient lock files, whose stored PID lengths can change."
+}

@@ -1,0 +1,183 @@
+policy;class;baseline_attack_count;observed_represented_attack_count;retention;inclusion_probability;estimated_attack_count;estimated_standard_error
+Baseline;Bot;1966;1966;1.0;;;
+Baseline;DDoS;128027;128027;1.0;;;
+Baseline;DoS GoldenEye;10293;10293;1.0;;;
+Baseline;DoS Hulk;231073;231073;1.0;;;
+Baseline;DoS Slowhttptest;5499;5499;1.0;;;
+Baseline;DoS slowloris;5796;5796;1.0;;;
+Baseline;FTP-Patator;7938;7938;1.0;;;
+Baseline;Heartbleed;11;11;1.0;;;
+Baseline;Infiltration;36;36;1.0;;;
+Baseline;PortScan;158930;158930;1.0;;;
+Baseline;SSH-Patator;5897;5897;1.0;;;
+Baseline;Web Attack – Brute Force;1507;1507;1.0;;;
+Baseline;Web Attack – Sql Injection;21;21;1.0;;;
+Baseline;Web Attack – XSS;652;652;1.0;;;
+Aggregation 60s;Bot;1966;1966;1.0;;;
+Aggregation 60s;DDoS;128027;128027;1.0;;;
+Aggregation 60s;DoS GoldenEye;10293;10293;1.0;;;
+Aggregation 60s;DoS Hulk;231073;231073;1.0;;;
+Aggregation 60s;DoS Slowhttptest;5499;5499;1.0;;;
+Aggregation 60s;DoS slowloris;5796;5796;1.0;;;
+Aggregation 60s;FTP-Patator;7938;7938;1.0;;;
+Aggregation 60s;Heartbleed;11;11;1.0;;;
+Aggregation 60s;Infiltration;36;36;1.0;;;
+Aggregation 60s;PortScan;158930;158930;1.0;;;
+Aggregation 60s;SSH-Patator;5897;5897;1.0;;;
+Aggregation 60s;Web Attack – Brute Force;1507;1507;1.0;;;
+Aggregation 60s;Web Attack – Sql Injection;21;21;1.0;;;
+Aggregation 60s;Web Attack – XSS;652;652;1.0;;;
+Temporal 6h;Bot;1966;494;0.25127161749745675;;;
+Temporal 6h;DDoS;128027;128027;1.0;;;
+Temporal 6h;DoS GoldenEye;10293;0;0.0;;;
+Temporal 6h;DoS Hulk;231073;0;0.0;;;
+Temporal 6h;DoS Slowhttptest;5499;0;0.0;;;
+Temporal 6h;DoS slowloris;5796;0;0.0;;;
+Temporal 6h;FTP-Patator;7938;0;0.0;;;
+Temporal 6h;Heartbleed;11;0;0.0;;;
+Temporal 6h;Infiltration;36;0;0.0;;;
+Temporal 6h;PortScan;158930;158930;1.0;;;
+Temporal 6h;SSH-Patator;5897;0;0.0;;;
+Temporal 6h;Web Attack – Brute Force;1507;0;0.0;;;
+Temporal 6h;Web Attack – Sql Injection;21;0;0.0;;;
+Temporal 6h;Web Attack – XSS;652;0;0.0;;;
+Temporal 12h;Bot;1966;1966;1.0;;;
+Temporal 12h;DDoS;128027;128027;1.0;;;
+Temporal 12h;DoS GoldenEye;10293;0;0.0;;;
+Temporal 12h;DoS Hulk;231073;0;0.0;;;
+Temporal 12h;DoS Slowhttptest;5499;0;0.0;;;
+Temporal 12h;DoS slowloris;5796;0;0.0;;;
+Temporal 12h;FTP-Patator;7938;0;0.0;;;
+Temporal 12h;Heartbleed;11;0;0.0;;;
+Temporal 12h;Infiltration;36;0;0.0;;;
+Temporal 12h;PortScan;158930;158930;1.0;;;
+Temporal 12h;SSH-Patator;5897;0;0.0;;;
+Temporal 12h;Web Attack – Brute Force;1507;0;0.0;;;
+Temporal 12h;Web Attack – Sql Injection;21;0;0.0;;;
+Temporal 12h;Web Attack – XSS;652;0;0.0;;;
+Temporal 24h;Bot;1966;1966;1.0;;;
+Temporal 24h;DDoS;128027;128027;1.0;;;
+Temporal 24h;DoS GoldenEye;10293;0;0.0;;;
+Temporal 24h;DoS Hulk;231073;0;0.0;;;
+Temporal 24h;DoS Slowhttptest;5499;0;0.0;;;
+Temporal 24h;DoS slowloris;5796;0;0.0;;;
+Temporal 24h;FTP-Patator;7938;0;0.0;;;
+Temporal 24h;Heartbleed;11;0;0.0;;;
+Temporal 24h;Infiltration;36;0;0.0;;;
+Temporal 24h;PortScan;158930;158930;1.0;;;
+Temporal 24h;SSH-Patator;5897;0;0.0;;;
+Temporal 24h;Web Attack – Brute Force;1507;0;0.0;;;
+Temporal 24h;Web Attack – Sql Injection;21;0;0.0;;;
+Temporal 24h;Web Attack – XSS;652;0;0.0;;;
+Temporal 48h;Bot;1966;1966;1.0;;;
+Temporal 48h;DDoS;128027;128027;1.0;;;
+Temporal 48h;DoS GoldenEye;10293;0;0.0;;;
+Temporal 48h;DoS Hulk;231073;0;0.0;;;
+Temporal 48h;DoS Slowhttptest;5499;0;0.0;;;
+Temporal 48h;DoS slowloris;5796;0;0.0;;;
+Temporal 48h;FTP-Patator;7938;0;0.0;;;
+Temporal 48h;Heartbleed;11;0;0.0;;;
+Temporal 48h;Infiltration;36;36;1.0;;;
+Temporal 48h;PortScan;158930;158930;1.0;;;
+Temporal 48h;SSH-Patator;5897;0;0.0;;;
+Temporal 48h;Web Attack – Brute Force;1507;1507;1.0;;;
+Temporal 48h;Web Attack – Sql Injection;21;21;1.0;;;
+Temporal 48h;Web Attack – XSS;652;652;1.0;;;
+Label-Based;Bot;1966;1966;1.0;;;
+Label-Based;DDoS;128027;128027;1.0;;;
+Label-Based;DoS GoldenEye;10293;10293;1.0;;;
+Label-Based;DoS Hulk;231073;231073;1.0;;;
+Label-Based;DoS Slowhttptest;5499;5499;1.0;;;
+Label-Based;DoS slowloris;5796;5796;1.0;;;
+Label-Based;FTP-Patator;7938;7938;1.0;;;
+Label-Based;Heartbleed;11;11;1.0;;;
+Label-Based;Infiltration;36;36;1.0;;;
+Label-Based;PortScan;158930;158930;1.0;;;
+Label-Based;SSH-Patator;5897;5897;1.0;;;
+Label-Based;Web Attack – Brute Force;1507;1507;1.0;;;
+Label-Based;Web Attack – Sql Injection;21;21;1.0;;;
+Label-Based;Web Attack – XSS;652;652;1.0;;;
+Top-K 20;Bot;1966;1962;0.9979654120040692;;;
+Top-K 20;DDoS;128027;128027;1.0;;;
+Top-K 20;DoS GoldenEye;10293;10293;1.0;;;
+Top-K 20;DoS Hulk;231073;231073;1.0;;;
+Top-K 20;DoS Slowhttptest;5499;5499;1.0;;;
+Top-K 20;DoS slowloris;5796;5796;1.0;;;
+Top-K 20;FTP-Patator;7938;7938;1.0;;;
+Top-K 20;Heartbleed;11;11;1.0;;;
+Top-K 20;Infiltration;36;36;1.0;;;
+Top-K 20;PortScan;158930;158930;1.0;;;
+Top-K 20;SSH-Patator;5897;5897;1.0;;;
+Top-K 20;Web Attack – Brute Force;1507;1507;1.0;;;
+Top-K 20;Web Attack – Sql Injection;21;21;1.0;;;
+Top-K 20;Web Attack – XSS;652;652;1.0;;;
+Sampling r01;Bot;1966;18;0.009155645981688708;0.01;1800.0;422.1374183841087
+Sampling r01;DDoS;128027;1238;0.00966983526912292;0.01;123800.0;3500.8856022440946
+Sampling r01;DoS GoldenEye;10293;98;0.009521033712231614;0.01;9800.0;984.9873095629201
+Sampling r01;DoS Hulk;231073;2331;0.010087721196331894;0.01;233100.0;4803.842212229706
+Sampling r01;DoS Slowhttptest;5499;37;0.006728496090198217;0.01;3700.0;605.2272300549604
+Sampling r01;DoS slowloris;5796;65;0.011214630779848172;0.01;6500.0;802.1845174272562
+Sampling r01;FTP-Patator;7938;82;0.010330057949105569;0.01;8200.0;900.9994450608723
+Sampling r01;Heartbleed;11;0;0.0;0.01;0.0;
+Sampling r01;Infiltration;36;1;0.027777777777777776;0.01;100.0;99.498743710662
+Sampling r01;PortScan;158930;1587;0.009985528219971056;0.01;158700.0;3963.7482261112395
+Sampling r01;SSH-Patator;5897;56;0.009496354078344921;0.01;5600.0;744.5804187594514
+Sampling r01;Web Attack – Brute Force;1507;9;0.005972130059721301;0.01;900.0;298.496231131986
+Sampling r01;Web Attack – Sql Injection;21;0;0.0;0.01;0.0;
+Sampling r01;Web Attack – XSS;652;6;0.009202453987730062;0.01;600.0;243.72115213907878
+Sampling r02;Bot;1966;30;0.015259409969481181;0.01;3000.0;544.9770637375485
+Sampling r02;DDoS;128027;1278;0.009982269365055809;0.01;127800.0;3556.993112166511
+Sampling r02;DoS GoldenEye;10293;95;0.009229573496551053;0.01;9500.0;969.7937925146767
+Sampling r02;DoS Hulk;231073;2329;0.010079065922890169;0.01;232900.0;4801.78091961722
+Sampling r02;DoS Slowhttptest;5499;67;0.012184033460629205;0.01;6700.0;814.4323176298936
+Sampling r02;DoS slowloris;5796;72;0.012422360248447204;0.01;7200.0;844.2748367682174
+Sampling r02;FTP-Patator;7938;82;0.010330057949105569;0.01;8200.0;900.9994450608723
+Sampling r02;Heartbleed;11;0;0.0;0.01;0.0;
+Sampling r02;Infiltration;36;0;0.0;0.01;0.0;
+Sampling r02;PortScan;158930;1560;0.009815642106587806;0.01;156000.0;3929.8854945150756
+Sampling r02;SSH-Patator;5897;59;0.01000508733254197;0.01;5900.0;764.2643521714198
+Sampling r02;Web Attack – Brute Force;1507;16;0.010617120106171201;0.01;1600.0;397.994974842648
+Sampling r02;Web Attack – Sql Injection;21;0;0.0;0.01;0.0;
+Sampling r02;Web Attack – XSS;652;8;0.012269938650306749;0.01;800.0;281.42494558940575
+Sampling r03;Bot;1966;16;0.008138351983723296;0.01;1600.0;397.994974842648
+Sampling r03;DDoS;128027;1266;0.009888539136275942;0.01;126600.0;3540.254228159328
+Sampling r03;DoS GoldenEye;10293;111;0.010784027980180706;0.01;11100.0;1048.2843125793688
+Sampling r03;DoS Hulk;231073;2277;0.009854028813405288;0.01;227700.0;4747.873208079593
+Sampling r03;DoS Slowhttptest;5499;51;0.009274413529732678;0.01;5100.0;710.5631569396206
+Sampling r03;DoS slowloris;5796;59;0.01017943409247757;0.01;5900.0;764.2643521714198
+Sampling r03;FTP-Patator;7938;84;0.010582010582010581;0.01;8400.0;911.9210492142397
+Sampling r03;Heartbleed;11;0;0.0;0.01;0.0;
+Sampling r03;Infiltration;36;0;0.0;0.01;0.0;
+Sampling r03;PortScan;158930;1587;0.009985528219971056;0.01;158700.0;3963.7482261112395
+Sampling r03;SSH-Patator;5897;71;0.012040020349330167;0.01;7100.0;838.3913167489272
+Sampling r03;Web Attack – Brute Force;1507;15;0.009953550099535502;0.01;1500.0;385.3569773599539
+Sampling r03;Web Attack – Sql Injection;21;1;0.047619047619047616;0.01;100.0;99.498743710662
+Sampling r03;Web Attack – XSS;652;6;0.009202453987730062;0.01;600.0;243.72115213907878
+Sampling r04;Bot;1966;27;0.013733468972533061;0.01;2700.0;517.0106381884226
+Sampling r04;DDoS;128027;1272;0.009935404250665875;0.01;127200.0;3548.633539829099
+Sampling r04;DoS GoldenEye;10293;103;0.01000680073836588;0.01;10300.0;1009.80196078241
+Sampling r04;DoS Hulk;231073;2300;0.00995356445798514;0.01;230000.0;4771.79211617606
+Sampling r04;DoS Slowhttptest;5499;53;0.009638116021094744;0.01;5300.0;724.3617880589782
+Sampling r04;DoS slowloris;5796;54;0.009316770186335404;0.01;5400.0;731.1634564172365
+Sampling r04;FTP-Patator;7938;80;0.010078105316200554;0.01;8000.0;889.9438184514795
+Sampling r04;Heartbleed;11;0;0.0;0.01;0.0;
+Sampling r04;Infiltration;36;0;0.0;0.01;0.0;
+Sampling r04;PortScan;158930;1574;0.009903731202416157;0.01;157400.0;3947.4802089434215
+Sampling r04;SSH-Patator;5897;66;0.011192131592335086;0.01;6600.0;808.3316151184488
+Sampling r04;Web Attack – Brute Force;1507;15;0.009953550099535502;0.01;1500.0;385.3569773599539
+Sampling r04;Web Attack – Sql Injection;21;0;0.0;0.01;0.0;
+Sampling r04;Web Attack – XSS;652;7;0.010736196319018405;0.01;700.0;263.2489316217637
+Sampling r05;Bot;1966;22;0.011190233977619531;0.01;2200.0;466.6904755831214
+Sampling r05;DDoS;128027;1308;0.010216594937005476;0.01;130800.0;3598.4996873697237
+Sampling r05;DoS GoldenEye;10293;95;0.009229573496551053;0.01;9500.0;969.7937925146767
+Sampling r05;DoS Hulk;231073;2347;0.010156963383865705;0.01;234700.0;4820.300820488282
+Sampling r05;DoS Slowhttptest;5499;48;0.00872885979268958;0.01;4800.0;689.3475175845634
+Sampling r05;DoS slowloris;5796;50;0.00862663906142167;0.01;5000.0;703.5623639735144
+Sampling r05;FTP-Patator;7938;71;0.008944318468127993;0.01;7100.0;838.3913167489272
+Sampling r05;Heartbleed;11;0;0.0;0.01;0.0;
+Sampling r05;Infiltration;36;0;0.0;0.01;0.0;
+Sampling r05;PortScan;158930;1615;0.010161706411627761;0.01;161500.0;3998.5622416063497
+Sampling r05;SSH-Patator;5897;51;0.008648465321349838;0.01;5100.0;710.5631569396206
+Sampling r05;Web Attack – Brute Force;1507;21;0.013934970139349702;0.01;2100.0;455.96052460711985
+Sampling r05;Web Attack – Sql Injection;21;1;0.047619047619047616;0.01;100.0;99.498743710662
+Sampling r05;Web Attack – XSS;652;2;0.003067484662576687;0.01;200.0;140.71247279470288

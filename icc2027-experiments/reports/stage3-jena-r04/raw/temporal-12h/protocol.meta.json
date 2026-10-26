@@ -1,0 +1,26 @@
+{
+  "command": [
+    "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath\\java.EXE",
+    "-Xmx4g",
+    "-Dlog4j.configurationFile=C:\\Apache\\apache-jena-5.6.0\\log4j2.properties",
+    "-cp",
+    "C:\\Apache\\apache-jena-5.6.0\\lib\\*",
+    "tdb2.tdbquery",
+    "--loc=C:\\UFRGS\\ICC2027_TDB2\\temporal-12h-normalized-r04-r01",
+    "--query=icc2027-experiments\\evaluations\\stage3-jena-r04-20261025-r01\\queries\\02-flows-by-protocol-flow.rq",
+    "--results=JSON"
+  ],
+  "started_utc": "2026-10-26T02:32:58.292847+00:00",
+  "timeout_seconds": 300.0,
+  "returncode": 0,
+  "status": "success",
+  "error": null,
+  "result": {
+    "0": 307,
+    "17": 188662,
+    "6": 514276
+  },
+  "duration_seconds": 14.92288140009623,
+  "stdout_sha256": "6d9ab5f83fc42f125edb025d510e105e9a8933dcdf04baa4560ff57a2d664655",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

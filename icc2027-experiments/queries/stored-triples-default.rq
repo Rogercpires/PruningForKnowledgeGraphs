@@ -1,0 +1,3 @@
+# Distinct triples in the default graph only. Declare ontology scope in registry.
+SELECT (COUNT(*) AS ?stored_triples)
+WHERE { ?s ?p ?o }

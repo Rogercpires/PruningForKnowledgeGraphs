@@ -1,0 +1,20 @@
+{
+  "command": [
+    "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath\\java.EXE",
+    "-Xmx4g",
+    "-Dlog4j.configurationFile=C:\\Apache\\apache-jena-5.6.0\\log4j2.properties",
+    "-cp",
+    "C:\\Apache\\apache-jena-5.6.0\\lib\\*",
+    "tdb2.tdbquery",
+    "--help"
+  ],
+  "started_utc": "2026-10-26T02:28:44.483583+00:00",
+  "timeout_seconds": 60,
+  "returncode": 0,
+  "status": "success",
+  "error": null,
+  "result": null,
+  "duration_seconds": 1.039831000030972,
+  "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stderr_sha256": "05a28243929c873911b485788ff9facad3d3b3b109f499052f01fdef0c5d865e"
+}

@@ -4,7 +4,7 @@
 
 A comparable result is a tuple of `(run_id, baseline_run_id, generator manifest, ingestion repetition, query workload revision)`. Results from a temporal workload and the general comparison workload must remain separate unless all elements of this tuple match.
 
-Every table must name the baseline run ID and the metric denominator. Report generated RDF triples from `manifest.json`, not an estimated generator counter or a TDB/Fuseki UI total.
+Every table must name the baseline run ID and the metric denominator. Report emitted RDF statements from `manifest.json` separately from distinct stored triples measured by a SELECT count in the declared data graph. Emitted statements include duplicates and are not a distinct graph cardinality. Record whether the ontology is included; do not infer graph scope from a UI total. See [EVALUATION.md](EVALUATION.md) for formulas, undefined cases and automated reports.
 
 ## Resolution of the audit items
 

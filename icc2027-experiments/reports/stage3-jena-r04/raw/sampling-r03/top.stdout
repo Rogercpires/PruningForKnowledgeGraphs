@@ -1,0 +1,88 @@
+{ "head": {
+    "vars": [ "destination" , "flows" ]
+  } ,
+  "results": {
+    "bindings": [
+      { 
+        "destination": { "type": "uri" , "value": "http://kg/cicids/ip/192.168.10.3" } ,
+        "flows": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "value": "6851" }
+      } ,
+      { 
+        "destination": { "type": "uri" , "value": "http://kg/cicids/ip/192.168.10.50" } ,
+        "flows": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "value": "5805" }
+      } ,
+      { 
+        "destination": { "type": "uri" , "value": "http://kg/cicids/ip/192.168.10.1" } ,
+        "flows": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "value": "2921" }
+      } ,
+      { 
+        "destination": { "type": "uri" , "value": "http://kg/cicids/ip/192.168.10.25" } ,
+        "flows": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "value": "765" }
+      } ,
+      { 
+        "destination": { "type": "uri" , "value": "http://kg/cicids/ip/192.168.10.5" } ,
+        "flows": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "value": "549" }
+      } ,
+      { 
+        "destination": { "type": "uri" , "value": "http://kg/cicids/ip/172.16.0.1" } ,
+        "flows": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "value": "463" }
+      } ,
+      { 
+        "destination": { "type": "uri" , "value": "http://kg/cicids/ip/192.168.10.14" } ,
+        "flows": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "value": "406" }
+      } ,
+      { 
+        "destination": { "type": "uri" , "value": "http://kg/cicids/ip/192.168.10.9" } ,
+        "flows": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "value": "399" }
+      } ,
+      { 
+        "destination": { "type": "uri" , "value": "http://kg/cicids/ip/192.168.10.15" } ,
+        "flows": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "value": "372" }
+      } ,
+      { 
+        "destination": { "type": "uri" , "value": "http://kg/cicids/ip/192.168.10.12" } ,
+        "flows": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "value": "363" }
+      } ,
+      { 
+        "destination": { "type": "uri" , "value": "http://kg/cicids/ip/192.168.10.16" } ,
+        "flows": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "value": "361" }
+      } ,
+      { 
+        "destination": { "type": "uri" , "value": "http://kg/cicids/ip/192.168.10.8" } ,
+        "flows": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "value": "329" }
+      } ,
+      { 
+        "destination": { "type": "uri" , "value": "http://kg/cicids/ip/192.168.10.17" } ,
+        "flows": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "value": "317" }
+      } ,
+      { 
+        "destination": { "type": "uri" , "value": "http://kg/cicids/ip/192.168.10.19" } ,
+        "flows": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "value": "298" }
+      } ,
+      { 
+        "destination": { "type": "uri" , "value": "http://kg/cicids/ip/192.168.10.51" } ,
+        "flows": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "value": "246" }
+      } ,
+      { 
+        "destination": { "type": "uri" , "value": "http://kg/cicids/ip/178.255.83.1" } ,
+        "flows": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "value": "225" }
+      } ,
+      { 
+        "destination": { "type": "uri" , "value": "http://kg/cicids/ip/72.21.91.29" } ,
+        "flows": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "value": "120" }
+      } ,
+      { 
+        "destination": { "type": "uri" , "value": "http://kg/cicids/ip/23.50.75.27" } ,
+        "flows": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "value": "117" }
+      } ,
+      { 
+        "destination": { "type": "uri" , "value": "http://kg/cicids/ip/162.208.20.178" } ,
+        "flows": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "value": "112" }
+      } ,
+      { 
+        "destination": { "type": "uri" , "value": "http://kg/cicids/ip/50.63.243.230" } ,
+        "flows": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "value": "82" }
+      }
+    ]
+  }
+}

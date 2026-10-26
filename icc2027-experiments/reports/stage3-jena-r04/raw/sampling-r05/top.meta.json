@@ -1,0 +1,43 @@
+{
+  "command": [
+    "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath\\java.EXE",
+    "-Xmx4g",
+    "-Dlog4j.configurationFile=C:\\Apache\\apache-jena-5.6.0\\log4j2.properties",
+    "-cp",
+    "C:\\Apache\\apache-jena-5.6.0\\lib\\*",
+    "tdb2.tdbquery",
+    "--loc=C:\\UFRGS\\ICC2027_TDB2\\sample-001-normalized-r04-r05",
+    "--query=icc2027-experiments\\evaluations\\stage3-jena-r04-20261025-r01\\queries\\01-top-destination-ip-flow.rq",
+    "--results=JSON"
+  ],
+  "started_utc": "2026-10-26T02:38:48.898822+00:00",
+  "timeout_seconds": 300.0,
+  "returncode": 0,
+  "status": "success",
+  "error": null,
+  "result": {
+    "http://kg/cicids/ip/192.168.10.3": 6766,
+    "http://kg/cicids/ip/192.168.10.50": 5914,
+    "http://kg/cicids/ip/192.168.10.1": 2926,
+    "http://kg/cicids/ip/192.168.10.25": 757,
+    "http://kg/cicids/ip/192.168.10.5": 548,
+    "http://kg/cicids/ip/172.16.0.1": 468,
+    "http://kg/cicids/ip/192.168.10.15": 415,
+    "http://kg/cicids/ip/192.168.10.14": 406,
+    "http://kg/cicids/ip/192.168.10.9": 405,
+    "http://kg/cicids/ip/192.168.10.12": 381,
+    "http://kg/cicids/ip/192.168.10.16": 346,
+    "http://kg/cicids/ip/192.168.10.17": 337,
+    "http://kg/cicids/ip/192.168.10.8": 324,
+    "http://kg/cicids/ip/192.168.10.19": 301,
+    "http://kg/cicids/ip/192.168.10.51": 267,
+    "http://kg/cicids/ip/178.255.83.1": 201,
+    "http://kg/cicids/ip/72.21.91.29": 123,
+    "http://kg/cicids/ip/23.50.75.27": 114,
+    "http://kg/cicids/ip/162.208.20.178": 108,
+    "http://kg/cicids/ip/50.63.243.230": 84
+  },
+  "duration_seconds": 3.8457298000575975,
+  "stdout_sha256": "eded3e3ce2ea85f51e1630af44258f57fd2ec2cb29168387c4bbbea659faeec7",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

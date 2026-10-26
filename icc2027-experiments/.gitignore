@@ -1,4 +1,5 @@
 __pycache__/
+evaluations/
 *.py[cod]
 runs/
 measurements/

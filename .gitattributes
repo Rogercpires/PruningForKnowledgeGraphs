@@ -1,0 +1,3 @@
+# Preserve exact evidence bytes so stored SHA-256 checks survive new checkouts.
+icc2027-experiments/reports/** -text
+icc2027-experiments/tests/fixtures/** -text

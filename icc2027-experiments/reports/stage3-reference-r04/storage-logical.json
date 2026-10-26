@@ -1,0 +1,2472 @@
+{
+  "baseline": {
+    "kind": "logical_file_lengths",
+    "root": "C:\\UFRGS\\ICC2027_TDB2\\baseline-normalized-r04-r01",
+    "total_bytes": 4004798446,
+    "total_mib": 3819.2734203338623,
+    "components_bytes": {
+      "SPO.dat": 1233125376,
+      "POS.dat": 1149239296,
+      "OSP.dat": 1149239296,
+      "nodes.dat": 109051904,
+      "nodes-data.obj": 187981476
+    },
+    "observed_utc": "2026-10-26T02:42:49.535035+00:00",
+    "missing_components": [],
+    "other_bytes": 176161098,
+    "files": [
+      {
+        "path": "Data-0001/GOSP.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/GOSP.dat",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/GOSP.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/GPOS.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/GPOS.dat",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/GPOS.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/GPU.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/GPU.dat",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/GPU.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/GSPO.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/GSPO.dat",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/GSPO.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/journal.jrnl",
+        "bytes": 0
+      },
+      {
+        "path": "Data-0001/nodes-data.bdf",
+        "bytes": 16
+      },
+      {
+        "path": "Data-0001/nodes-data.obj",
+        "bytes": 187981476
+      },
+      {
+        "path": "Data-0001/nodes.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/nodes.dat",
+        "bytes": 109051904
+      },
+      {
+        "path": "Data-0001/nodes.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/OSP.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/OSP.dat",
+        "bytes": 1149239296
+      },
+      {
+        "path": "Data-0001/OSP.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/OSPG.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/OSPG.dat",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/OSPG.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/POS.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/POS.dat",
+        "bytes": 1149239296
+      },
+      {
+        "path": "Data-0001/POS.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/POSG.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/POSG.dat",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/POSG.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/prefixes-data.bdf",
+        "bytes": 16
+      },
+      {
+        "path": "Data-0001/prefixes-data.obj",
+        "bytes": 0
+      },
+      {
+        "path": "Data-0001/prefixes.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/prefixes.dat",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/prefixes.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/SPO.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/SPO.dat",
+        "bytes": 1233125376
+      },
+      {
+        "path": "Data-0001/SPO.idn",
+        "bytes": 16777216
+      },
+      {
+        "path": "Data-0001/SPOG.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/SPOG.dat",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/SPOG.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/tdb.lock",
+        "bytes": 5
+      },
+      {
+        "path": "tdb.lock",
+        "bytes": 5
+      }
+    ]
+  },
+  "aggregation-60s": {
+    "kind": "logical_file_lengths",
+    "root": "C:\\UFRGS\\ICC2027_TDB2\\aggregate-60s-normalized-r04-r01",
+    "total_bytes": 1884709460,
+    "total_mib": 1797.3990058898926,
+    "components_bytes": {
+      "SPO.dat": 503316480,
+      "POS.dat": 486539264,
+      "OSP.dat": 486539264,
+      "nodes.dat": 67108864,
+      "nodes-data.obj": 173433096
+    },
+    "observed_utc": "2026-10-26T02:42:49.552570+00:00",
+    "missing_components": [],
+    "other_bytes": 167772492,
+    "files": [
+      {
+        "path": "Data-0001/GOSP.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/GOSP.dat",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/GOSP.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/GPOS.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/GPOS.dat",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/GPOS.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/GPU.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/GPU.dat",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/GPU.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/GSPO.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/GSPO.dat",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/GSPO.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/journal.jrnl",
+        "bytes": 0
+      },
+      {
+        "path": "Data-0001/nodes-data.bdf",
+        "bytes": 16
+      },
+      {
+        "path": "Data-0001/nodes-data.obj",
+        "bytes": 173433096
+      },
+      {
+        "path": "Data-0001/nodes.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/nodes.dat",
+        "bytes": 67108864
+      },
+      {
+        "path": "Data-0001/nodes.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/OSP.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/OSP.dat",
+        "bytes": 486539264
+      },
+      {
+        "path": "Data-0001/OSP.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/OSPG.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/OSPG.dat",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/OSPG.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/POS.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/POS.dat",
+        "bytes": 486539264
+      },
+      {
+        "path": "Data-0001/POS.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/POSG.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/POSG.dat",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/POSG.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/prefixes-data.bdf",
+        "bytes": 16
+      },
+      {
+        "path": "Data-0001/prefixes-data.obj",
+        "bytes": 0
+      },
+      {
+        "path": "Data-0001/prefixes.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/prefixes.dat",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/prefixes.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/SPO.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/SPO.dat",
+        "bytes": 503316480
+      },
+      {
+        "path": "Data-0001/SPO.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/SPOG.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/SPOG.dat",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/SPOG.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/tdb.lock",
+        "bytes": 6
+      },
+      {
+        "path": "tdb.lock",
+        "bytes": 6
+      }
+    ]
+  },
+  "temporal-6h": {
+    "kind": "logical_file_lengths",
+    "root": "C:\\UFRGS\\ICC2027_TDB2\\temporal-6h-normalized-r04-r01",
+    "total_bytes": 982554549,
+    "total_mib": 937.0370378494263,
+    "components_bytes": {
+      "SPO.dat": 260046848,
+      "POS.dat": 243269632,
+      "OSP.dat": 243269632,
+      "nodes.dat": 25165824,
+      "nodes-data.obj": 43030121
+    },
+    "observed_utc": "2026-10-26T02:42:49.572411+00:00",
+    "missing_components": [],
+    "other_bytes": 167772492,
+    "files": [
+      {
+        "path": "Data-0001/GOSP.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/GOSP.dat",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/GOSP.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/GPOS.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/GPOS.dat",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/GPOS.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/GPU.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/GPU.dat",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/GPU.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/GSPO.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/GSPO.dat",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/GSPO.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/journal.jrnl",
+        "bytes": 0
+      },
+      {
+        "path": "Data-0001/nodes-data.bdf",
+        "bytes": 16
+      },
+      {
+        "path": "Data-0001/nodes-data.obj",
+        "bytes": 43030121
+      },
+      {
+        "path": "Data-0001/nodes.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/nodes.dat",
+        "bytes": 25165824
+      },
+      {
+        "path": "Data-0001/nodes.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/OSP.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/OSP.dat",
+        "bytes": 243269632
+      },
+      {
+        "path": "Data-0001/OSP.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/OSPG.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/OSPG.dat",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/OSPG.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/POS.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/POS.dat",
+        "bytes": 243269632
+      },
+      {
+        "path": "Data-0001/POS.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/POSG.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/POSG.dat",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/POSG.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/prefixes-data.bdf",
+        "bytes": 16
+      },
+      {
+        "path": "Data-0001/prefixes-data.obj",
+        "bytes": 0
+      },
+      {
+        "path": "Data-0001/prefixes.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/prefixes.dat",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/prefixes.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/SPO.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/SPO.dat",
+        "bytes": 260046848
+      },
+      {
+        "path": "Data-0001/SPO.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/SPOG.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/SPOG.dat",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/SPOG.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/tdb.lock",
+        "bytes": 6
+      },
+      {
+        "path": "tdb.lock",
+        "bytes": 6
+      }
+    ]
+  },
+  "temporal-12h": {
+    "kind": "logical_file_lengths",
+    "root": "C:\\UFRGS\\ICC2027_TDB2\\temporal-12h-normalized-r04-r01",
+    "total_bytes": 1150036402,
+    "total_mib": 1096.7601795196533,
+    "components_bytes": {
+      "SPO.dat": 310378496,
+      "POS.dat": 293601280,
+      "OSP.dat": 293601280,
+      "nodes.dat": 33554432,
+      "nodes-data.obj": 51128422
+    },
+    "observed_utc": "2026-10-26T02:42:49.582210+00:00",
+    "missing_components": [],
+    "other_bytes": 167772492,
+    "files": [
+      {
+        "path": "Data-0001/GOSP.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/GOSP.dat",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/GOSP.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/GPOS.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/GPOS.dat",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/GPOS.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/GPU.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/GPU.dat",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/GPU.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/GSPO.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/GSPO.dat",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/GSPO.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/journal.jrnl",
+        "bytes": 0
+      },
+      {
+        "path": "Data-0001/nodes-data.bdf",
+        "bytes": 16
+      },
+      {
+        "path": "Data-0001/nodes-data.obj",
+        "bytes": 51128422
+      },
+      {
+        "path": "Data-0001/nodes.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/nodes.dat",
+        "bytes": 33554432
+      },
+      {
+        "path": "Data-0001/nodes.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/OSP.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/OSP.dat",
+        "bytes": 293601280
+      },
+      {
+        "path": "Data-0001/OSP.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/OSPG.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/OSPG.dat",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/OSPG.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/POS.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/POS.dat",
+        "bytes": 293601280
+      },
+      {
+        "path": "Data-0001/POS.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/POSG.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/POSG.dat",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/POSG.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/prefixes-data.bdf",
+        "bytes": 16
+      },
+      {
+        "path": "Data-0001/prefixes-data.obj",
+        "bytes": 0
+      },
+      {
+        "path": "Data-0001/prefixes.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/prefixes.dat",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/prefixes.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/SPO.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/SPO.dat",
+        "bytes": 310378496
+      },
+      {
+        "path": "Data-0001/SPO.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/SPOG.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/SPOG.dat",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/SPOG.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/tdb.lock",
+        "bytes": 6
+      },
+      {
+        "path": "tdb.lock",
+        "bytes": 6
+      }
+    ]
+  },
+  "temporal-24h": {
+    "kind": "logical_file_lengths",
+    "root": "C:\\UFRGS\\ICC2027_TDB2\\temporal-24h-normalized-r04-r01",
+    "total_bytes": 1150127110,
+    "total_mib": 1096.846685409546,
+    "components_bytes": {
+      "SPO.dat": 310378496,
+      "POS.dat": 293601280,
+      "OSP.dat": 293601280,
+      "nodes.dat": 33554432,
+      "nodes-data.obj": 51219132
+    },
+    "observed_utc": "2026-10-26T02:42:49.608062+00:00",
+    "missing_components": [],
+    "other_bytes": 167772490,
+    "files": [
+      {
+        "path": "Data-0001/GOSP.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/GOSP.dat",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/GOSP.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/GPOS.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/GPOS.dat",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/GPOS.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/GPU.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/GPU.dat",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/GPU.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/GSPO.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/GSPO.dat",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/GSPO.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/journal.jrnl",
+        "bytes": 0
+      },
+      {
+        "path": "Data-0001/nodes-data.bdf",
+        "bytes": 16
+      },
+      {
+        "path": "Data-0001/nodes-data.obj",
+        "bytes": 51219132
+      },
+      {
+        "path": "Data-0001/nodes.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/nodes.dat",
+        "bytes": 33554432
+      },
+      {
+        "path": "Data-0001/nodes.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/OSP.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/OSP.dat",
+        "bytes": 293601280
+      },
+      {
+        "path": "Data-0001/OSP.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/OSPG.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/OSPG.dat",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/OSPG.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/POS.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/POS.dat",
+        "bytes": 293601280
+      },
+      {
+        "path": "Data-0001/POS.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/POSG.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/POSG.dat",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/POSG.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/prefixes-data.bdf",
+        "bytes": 16
+      },
+      {
+        "path": "Data-0001/prefixes-data.obj",
+        "bytes": 0
+      },
+      {
+        "path": "Data-0001/prefixes.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/prefixes.dat",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/prefixes.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/SPO.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/SPO.dat",
+        "bytes": 310378496
+      },
+      {
+        "path": "Data-0001/SPO.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/SPOG.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/SPOG.dat",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/SPOG.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/tdb.lock",
+        "bytes": 5
+      },
+      {
+        "path": "tdb.lock",
+        "bytes": 5
+      }
+    ]
+  },
+  "temporal-48h": {
+    "kind": "logical_file_lengths",
+    "root": "C:\\UFRGS\\ICC2027_TDB2\\temporal-48h-normalized-r04-r01",
+    "total_bytes": 1766615562,
+    "total_mib": 1684.7758884429932,
+    "components_bytes": {
+      "SPO.dat": 511705088,
+      "POS.dat": 478150656,
+      "OSP.dat": 478150656,
+      "nodes.dat": 41943040,
+      "nodes-data.obj": 88893630
+    },
+    "observed_utc": "2026-10-26T02:42:49.622436+00:00",
+    "missing_components": [],
+    "other_bytes": 167772492,
+    "files": [
+      {
+        "path": "Data-0001/GOSP.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/GOSP.dat",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/GOSP.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/GPOS.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/GPOS.dat",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/GPOS.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/GPU.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/GPU.dat",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/GPU.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/GSPO.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/GSPO.dat",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/GSPO.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/journal.jrnl",
+        "bytes": 0
+      },
+      {
+        "path": "Data-0001/nodes-data.bdf",
+        "bytes": 16
+      },
+      {
+        "path": "Data-0001/nodes-data.obj",
+        "bytes": 88893630
+      },
+      {
+        "path": "Data-0001/nodes.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/nodes.dat",
+        "bytes": 41943040
+      },
+      {
+        "path": "Data-0001/nodes.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/OSP.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/OSP.dat",
+        "bytes": 478150656
+      },
+      {
+        "path": "Data-0001/OSP.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/OSPG.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/OSPG.dat",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/OSPG.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/POS.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/POS.dat",
+        "bytes": 478150656
+      },
+      {
+        "path": "Data-0001/POS.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/POSG.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/POSG.dat",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/POSG.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/prefixes-data.bdf",
+        "bytes": 16
+      },
+      {
+        "path": "Data-0001/prefixes-data.obj",
+        "bytes": 0
+      },
+      {
+        "path": "Data-0001/prefixes.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/prefixes.dat",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/prefixes.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/SPO.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/SPO.dat",
+        "bytes": 511705088
+      },
+      {
+        "path": "Data-0001/SPO.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/SPOG.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/SPOG.dat",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/SPOG.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/tdb.lock",
+        "bytes": 6
+      },
+      {
+        "path": "tdb.lock",
+        "bytes": 6
+      }
+    ]
+  },
+  "label-based": {
+    "kind": "logical_file_lengths",
+    "root": "C:\\UFRGS\\ICC2027_TDB2\\labels-all-attacks-normalized-r04-r01",
+    "total_bytes": 943969107,
+    "total_mib": 900.2390928268433,
+    "components_bytes": {
+      "SPO.dat": 243269632,
+      "POS.dat": 234881024,
+      "OSP.dat": 234881024,
+      "nodes.dat": 25165824,
+      "nodes-data.obj": 37999111
+    },
+    "observed_utc": "2026-10-26T02:42:49.641046+00:00",
+    "missing_components": [],
+    "other_bytes": 167772492,
+    "files": [
+      {
+        "path": "Data-0001/GOSP.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/GOSP.dat",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/GOSP.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/GPOS.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/GPOS.dat",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/GPOS.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/GPU.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/GPU.dat",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/GPU.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/GSPO.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/GSPO.dat",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/GSPO.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/journal.jrnl",
+        "bytes": 0
+      },
+      {
+        "path": "Data-0001/nodes-data.bdf",
+        "bytes": 16
+      },
+      {
+        "path": "Data-0001/nodes-data.obj",
+        "bytes": 37999111
+      },
+      {
+        "path": "Data-0001/nodes.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/nodes.dat",
+        "bytes": 25165824
+      },
+      {
+        "path": "Data-0001/nodes.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/OSP.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/OSP.dat",
+        "bytes": 234881024
+      },
+      {
+        "path": "Data-0001/OSP.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/OSPG.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/OSPG.dat",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/OSPG.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/POS.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/POS.dat",
+        "bytes": 234881024
+      },
+      {
+        "path": "Data-0001/POS.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/POSG.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/POSG.dat",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/POSG.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/prefixes-data.bdf",
+        "bytes": 16
+      },
+      {
+        "path": "Data-0001/prefixes-data.obj",
+        "bytes": 0
+      },
+      {
+        "path": "Data-0001/prefixes.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/prefixes.dat",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/prefixes.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/SPO.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/SPO.dat",
+        "bytes": 243269632
+      },
+      {
+        "path": "Data-0001/SPO.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/SPOG.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/SPOG.dat",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/SPOG.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/tdb.lock",
+        "bytes": 6
+      },
+      {
+        "path": "tdb.lock",
+        "bytes": 6
+      }
+    ]
+  },
+  "top-k-20": {
+    "kind": "logical_file_lengths",
+    "root": "C:\\UFRGS\\ICC2027_TDB2\\topk-20-normalized-r04-r01",
+    "total_bytes": 3150394601,
+    "total_mib": 3004.4504175186157,
+    "components_bytes": {
+      "SPO.dat": 964689920,
+      "POS.dat": 897581056,
+      "OSP.dat": 897581056,
+      "nodes.dat": 75497472,
+      "nodes-data.obj": 147272605
+    },
+    "observed_utc": "2026-10-26T02:42:49.652364+00:00",
+    "missing_components": [],
+    "other_bytes": 167772492,
+    "files": [
+      {
+        "path": "Data-0001/GOSP.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/GOSP.dat",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/GOSP.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/GPOS.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/GPOS.dat",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/GPOS.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/GPU.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/GPU.dat",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/GPU.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/GSPO.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/GSPO.dat",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/GSPO.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/journal.jrnl",
+        "bytes": 0
+      },
+      {
+        "path": "Data-0001/nodes-data.bdf",
+        "bytes": 16
+      },
+      {
+        "path": "Data-0001/nodes-data.obj",
+        "bytes": 147272605
+      },
+      {
+        "path": "Data-0001/nodes.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/nodes.dat",
+        "bytes": 75497472
+      },
+      {
+        "path": "Data-0001/nodes.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/OSP.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/OSP.dat",
+        "bytes": 897581056
+      },
+      {
+        "path": "Data-0001/OSP.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/OSPG.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/OSPG.dat",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/OSPG.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/POS.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/POS.dat",
+        "bytes": 897581056
+      },
+      {
+        "path": "Data-0001/POS.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/POSG.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/POSG.dat",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/POSG.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/prefixes-data.bdf",
+        "bytes": 16
+      },
+      {
+        "path": "Data-0001/prefixes-data.obj",
+        "bytes": 0
+      },
+      {
+        "path": "Data-0001/prefixes.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/prefixes.dat",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/prefixes.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/SPO.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/SPO.dat",
+        "bytes": 964689920
+      },
+      {
+        "path": "Data-0001/SPO.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/SPOG.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/SPOG.dat",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/SPOG.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/tdb.lock",
+        "bytes": 6
+      },
+      {
+        "path": "tdb.lock",
+        "bytes": 6
+      }
+    ]
+  },
+  "sampling-r01": {
+    "kind": "logical_file_lengths",
+    "root": "C:\\UFRGS\\ICC2027_TDB2\\sample-001-normalized-r04-r01",
+    "total_bytes": 228525735,
+    "total_mib": 217.93912410736084,
+    "components_bytes": {
+      "SPO.dat": 16777216,
+      "POS.dat": 16777216,
+      "OSP.dat": 16777216,
+      "nodes.dat": 8388608,
+      "nodes-data.obj": 2032989
+    },
+    "observed_utc": "2026-10-26T02:42:49.674231+00:00",
+    "missing_components": [],
+    "other_bytes": 167772490,
+    "files": [
+      {
+        "path": "Data-0001/GOSP.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/GOSP.dat",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/GOSP.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/GPOS.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/GPOS.dat",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/GPOS.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/GPU.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/GPU.dat",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/GPU.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/GSPO.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/GSPO.dat",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/GSPO.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/journal.jrnl",
+        "bytes": 0
+      },
+      {
+        "path": "Data-0001/nodes-data.bdf",
+        "bytes": 16
+      },
+      {
+        "path": "Data-0001/nodes-data.obj",
+        "bytes": 2032989
+      },
+      {
+        "path": "Data-0001/nodes.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/nodes.dat",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/nodes.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/OSP.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/OSP.dat",
+        "bytes": 16777216
+      },
+      {
+        "path": "Data-0001/OSP.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/OSPG.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/OSPG.dat",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/OSPG.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/POS.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/POS.dat",
+        "bytes": 16777216
+      },
+      {
+        "path": "Data-0001/POS.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/POSG.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/POSG.dat",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/POSG.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/prefixes-data.bdf",
+        "bytes": 16
+      },
+      {
+        "path": "Data-0001/prefixes-data.obj",
+        "bytes": 0
+      },
+      {
+        "path": "Data-0001/prefixes.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/prefixes.dat",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/prefixes.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/SPO.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/SPO.dat",
+        "bytes": 16777216
+      },
+      {
+        "path": "Data-0001/SPO.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/SPOG.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/SPOG.dat",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/SPOG.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/tdb.lock",
+        "bytes": 5
+      },
+      {
+        "path": "tdb.lock",
+        "bytes": 5
+      }
+    ]
+  },
+  "sampling-r02": {
+    "kind": "logical_file_lengths",
+    "root": "C:\\UFRGS\\ICC2027_TDB2\\sample-001-normalized-r04-r02",
+    "total_bytes": 228530519,
+    "total_mib": 217.94368648529053,
+    "components_bytes": {
+      "SPO.dat": 16777216,
+      "POS.dat": 16777216,
+      "OSP.dat": 16777216,
+      "nodes.dat": 8388608,
+      "nodes-data.obj": 2037773
+    },
+    "observed_utc": "2026-10-26T02:42:49.692285+00:00",
+    "missing_components": [],
+    "other_bytes": 167772490,
+    "files": [
+      {
+        "path": "Data-0001/GOSP.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/GOSP.dat",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/GOSP.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/GPOS.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/GPOS.dat",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/GPOS.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/GPU.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/GPU.dat",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/GPU.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/GSPO.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/GSPO.dat",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/GSPO.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/journal.jrnl",
+        "bytes": 0
+      },
+      {
+        "path": "Data-0001/nodes-data.bdf",
+        "bytes": 16
+      },
+      {
+        "path": "Data-0001/nodes-data.obj",
+        "bytes": 2037773
+      },
+      {
+        "path": "Data-0001/nodes.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/nodes.dat",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/nodes.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/OSP.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/OSP.dat",
+        "bytes": 16777216
+      },
+      {
+        "path": "Data-0001/OSP.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/OSPG.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/OSPG.dat",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/OSPG.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/POS.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/POS.dat",
+        "bytes": 16777216
+      },
+      {
+        "path": "Data-0001/POS.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/POSG.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/POSG.dat",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/POSG.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/prefixes-data.bdf",
+        "bytes": 16
+      },
+      {
+        "path": "Data-0001/prefixes-data.obj",
+        "bytes": 0
+      },
+      {
+        "path": "Data-0001/prefixes.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/prefixes.dat",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/prefixes.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/SPO.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/SPO.dat",
+        "bytes": 16777216
+      },
+      {
+        "path": "Data-0001/SPO.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/SPOG.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/SPOG.dat",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/SPOG.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/tdb.lock",
+        "bytes": 5
+      },
+      {
+        "path": "tdb.lock",
+        "bytes": 5
+      }
+    ]
+  },
+  "sampling-r03": {
+    "kind": "logical_file_lengths",
+    "root": "C:\\UFRGS\\ICC2027_TDB2\\sample-001-normalized-r04-r03",
+    "total_bytes": 228535907,
+    "total_mib": 217.94882488250732,
+    "components_bytes": {
+      "SPO.dat": 16777216,
+      "POS.dat": 16777216,
+      "OSP.dat": 16777216,
+      "nodes.dat": 8388608,
+      "nodes-data.obj": 2043161
+    },
+    "observed_utc": "2026-10-26T02:42:49.709846+00:00",
+    "missing_components": [],
+    "other_bytes": 167772490,
+    "files": [
+      {
+        "path": "Data-0001/GOSP.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/GOSP.dat",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/GOSP.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/GPOS.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/GPOS.dat",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/GPOS.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/GPU.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/GPU.dat",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/GPU.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/GSPO.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/GSPO.dat",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/GSPO.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/journal.jrnl",
+        "bytes": 0
+      },
+      {
+        "path": "Data-0001/nodes-data.bdf",
+        "bytes": 16
+      },
+      {
+        "path": "Data-0001/nodes-data.obj",
+        "bytes": 2043161
+      },
+      {
+        "path": "Data-0001/nodes.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/nodes.dat",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/nodes.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/OSP.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/OSP.dat",
+        "bytes": 16777216
+      },
+      {
+        "path": "Data-0001/OSP.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/OSPG.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/OSPG.dat",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/OSPG.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/POS.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/POS.dat",
+        "bytes": 16777216
+      },
+      {
+        "path": "Data-0001/POS.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/POSG.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/POSG.dat",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/POSG.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/prefixes-data.bdf",
+        "bytes": 16
+      },
+      {
+        "path": "Data-0001/prefixes-data.obj",
+        "bytes": 0
+      },
+      {
+        "path": "Data-0001/prefixes.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/prefixes.dat",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/prefixes.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/SPO.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/SPO.dat",
+        "bytes": 16777216
+      },
+      {
+        "path": "Data-0001/SPO.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/SPOG.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/SPOG.dat",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/SPOG.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/tdb.lock",
+        "bytes": 5
+      },
+      {
+        "path": "tdb.lock",
+        "bytes": 5
+      }
+    ]
+  },
+  "sampling-r04": {
+    "kind": "logical_file_lengths",
+    "root": "C:\\UFRGS\\ICC2027_TDB2\\sample-001-normalized-r04-r04",
+    "total_bytes": 228540463,
+    "total_mib": 217.95316982269287,
+    "components_bytes": {
+      "SPO.dat": 16777216,
+      "POS.dat": 16777216,
+      "OSP.dat": 16777216,
+      "nodes.dat": 8388608,
+      "nodes-data.obj": 2047715
+    },
+    "observed_utc": "2026-10-26T02:42:49.737215+00:00",
+    "missing_components": [],
+    "other_bytes": 167772492,
+    "files": [
+      {
+        "path": "Data-0001/GOSP.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/GOSP.dat",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/GOSP.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/GPOS.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/GPOS.dat",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/GPOS.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/GPU.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/GPU.dat",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/GPU.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/GSPO.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/GSPO.dat",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/GSPO.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/journal.jrnl",
+        "bytes": 0
+      },
+      {
+        "path": "Data-0001/nodes-data.bdf",
+        "bytes": 16
+      },
+      {
+        "path": "Data-0001/nodes-data.obj",
+        "bytes": 2047715
+      },
+      {
+        "path": "Data-0001/nodes.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/nodes.dat",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/nodes.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/OSP.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/OSP.dat",
+        "bytes": 16777216
+      },
+      {
+        "path": "Data-0001/OSP.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/OSPG.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/OSPG.dat",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/OSPG.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/POS.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/POS.dat",
+        "bytes": 16777216
+      },
+      {
+        "path": "Data-0001/POS.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/POSG.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/POSG.dat",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/POSG.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/prefixes-data.bdf",
+        "bytes": 16
+      },
+      {
+        "path": "Data-0001/prefixes-data.obj",
+        "bytes": 0
+      },
+      {
+        "path": "Data-0001/prefixes.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/prefixes.dat",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/prefixes.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/SPO.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/SPO.dat",
+        "bytes": 16777216
+      },
+      {
+        "path": "Data-0001/SPO.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/SPOG.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/SPOG.dat",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/SPOG.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/tdb.lock",
+        "bytes": 6
+      },
+      {
+        "path": "tdb.lock",
+        "bytes": 6
+      }
+    ]
+  },
+  "sampling-r05": {
+    "kind": "logical_file_lengths",
+    "root": "C:\\UFRGS\\ICC2027_TDB2\\sample-001-normalized-r04-r05",
+    "total_bytes": 228522128,
+    "total_mib": 217.93568420410156,
+    "components_bytes": {
+      "SPO.dat": 16777216,
+      "POS.dat": 16777216,
+      "OSP.dat": 16777216,
+      "nodes.dat": 8388608,
+      "nodes-data.obj": 2029380
+    },
+    "observed_utc": "2026-10-26T02:42:49.752400+00:00",
+    "missing_components": [],
+    "other_bytes": 167772492,
+    "files": [
+      {
+        "path": "Data-0001/GOSP.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/GOSP.dat",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/GOSP.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/GPOS.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/GPOS.dat",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/GPOS.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/GPU.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/GPU.dat",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/GPU.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/GSPO.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/GSPO.dat",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/GSPO.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/journal.jrnl",
+        "bytes": 0
+      },
+      {
+        "path": "Data-0001/nodes-data.bdf",
+        "bytes": 16
+      },
+      {
+        "path": "Data-0001/nodes-data.obj",
+        "bytes": 2029380
+      },
+      {
+        "path": "Data-0001/nodes.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/nodes.dat",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/nodes.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/OSP.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/OSP.dat",
+        "bytes": 16777216
+      },
+      {
+        "path": "Data-0001/OSP.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/OSPG.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/OSPG.dat",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/OSPG.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/POS.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/POS.dat",
+        "bytes": 16777216
+      },
+      {
+        "path": "Data-0001/POS.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/POSG.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/POSG.dat",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/POSG.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/prefixes-data.bdf",
+        "bytes": 16
+      },
+      {
+        "path": "Data-0001/prefixes-data.obj",
+        "bytes": 0
+      },
+      {
+        "path": "Data-0001/prefixes.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/prefixes.dat",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/prefixes.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/SPO.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/SPO.dat",
+        "bytes": 16777216
+      },
+      {
+        "path": "Data-0001/SPO.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/SPOG.bpt",
+        "bytes": 24
+      },
+      {
+        "path": "Data-0001/SPOG.dat",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/SPOG.idn",
+        "bytes": 8388608
+      },
+      {
+        "path": "Data-0001/tdb.lock",
+        "bytes": 6
+      },
+      {
+        "path": "tdb.lock",
+        "bytes": 6
+      }
+    ]
+  }
+}

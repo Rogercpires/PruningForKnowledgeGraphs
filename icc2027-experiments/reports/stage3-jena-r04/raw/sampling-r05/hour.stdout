@@ -1,0 +1,72 @@
+{ "head": {
+    "vars": [ "hour" , "attacks" ]
+  } ,
+  "results": {
+    "bindings": [
+      { 
+        "hour": { "type": "literal" , "value": "2017-07-04T09" } ,
+        "attacks": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "value": "41" }
+      } ,
+      { 
+        "hour": { "type": "literal" , "value": "2017-07-04T10" } ,
+        "attacks": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "value": "30" }
+      } ,
+      { 
+        "hour": { "type": "literal" , "value": "2017-07-04T14" } ,
+        "attacks": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "value": "40" }
+      } ,
+      { 
+        "hour": { "type": "literal" , "value": "2017-07-04T15" } ,
+        "attacks": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "value": "11" }
+      } ,
+      { 
+        "hour": { "type": "literal" , "value": "2017-07-05T09" } ,
+        "attacks": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "value": "26" }
+      } ,
+      { 
+        "hour": { "type": "literal" , "value": "2017-07-05T10" } ,
+        "attacks": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "value": "2315" }
+      } ,
+      { 
+        "hour": { "type": "literal" , "value": "2017-07-05T11" } ,
+        "attacks": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "value": "199" }
+      } ,
+      { 
+        "hour": { "type": "literal" , "value": "2017-07-06T09" } ,
+        "attacks": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "value": "21" }
+      } ,
+      { 
+        "hour": { "type": "literal" , "value": "2017-07-06T10" } ,
+        "attacks": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "value": "3" }
+      } ,
+      { 
+        "hour": { "type": "literal" , "value": "2017-07-07T10" } ,
+        "attacks": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "value": "18" }
+      } ,
+      { 
+        "hour": { "type": "literal" , "value": "2017-07-07T11" } ,
+        "attacks": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "value": "3" }
+      } ,
+      { 
+        "hour": { "type": "literal" , "value": "2017-07-07T12" } ,
+        "attacks": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "value": "1" }
+      } ,
+      { 
+        "hour": { "type": "literal" , "value": "2017-07-07T13" } ,
+        "attacks": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "value": "2" }
+      } ,
+      { 
+        "hour": { "type": "literal" , "value": "2017-07-07T14" } ,
+        "attacks": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "value": "1412" }
+      } ,
+      { 
+        "hour": { "type": "literal" , "value": "2017-07-07T15" } ,
+        "attacks": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "value": "431" }
+      } ,
+      { 
+        "hour": { "type": "literal" , "value": "2017-07-07T16" } ,
+        "attacks": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "value": "1078" }
+      }
+    ]
+  }
+}

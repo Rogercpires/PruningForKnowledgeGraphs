@@ -1,0 +1,320 @@
+{
+  "schema_version": 1,
+  "all_equal": true,
+  "reference_bundle_sha256": "8d5827938ad2cd19aadc69f0aa611281aa379fdad452a9a2c260a30d3d916fbd",
+  "candidate_bundle_sha256": "4b910c87c0a1266726318a949001737def895611a06f9fecef61a87216c80ee6",
+  "queries": [
+    {
+      "policy_id": "baseline",
+      "query": "top",
+      "equal": true,
+      "differences": {},
+      "reference_status": "imported",
+      "candidate_status": "success"
+    },
+    {
+      "policy_id": "baseline",
+      "query": "protocol",
+      "equal": true,
+      "differences": {},
+      "reference_status": "imported",
+      "candidate_status": "success"
+    },
+    {
+      "policy_id": "baseline",
+      "query": "hour",
+      "equal": true,
+      "differences": {},
+      "reference_status": "imported",
+      "candidate_status": "success"
+    },
+    {
+      "policy_id": "aggregation-60s",
+      "query": "top",
+      "equal": true,
+      "differences": {},
+      "reference_status": "imported",
+      "candidate_status": "success"
+    },
+    {
+      "policy_id": "aggregation-60s",
+      "query": "protocol",
+      "equal": true,
+      "differences": {},
+      "reference_status": "imported",
+      "candidate_status": "success"
+    },
+    {
+      "policy_id": "aggregation-60s",
+      "query": "hour",
+      "equal": true,
+      "differences": {},
+      "reference_status": "imported",
+      "candidate_status": "success"
+    },
+    {
+      "policy_id": "temporal-6h",
+      "query": "top",
+      "equal": true,
+      "differences": {},
+      "reference_status": "imported",
+      "candidate_status": "success"
+    },
+    {
+      "policy_id": "temporal-6h",
+      "query": "protocol",
+      "equal": true,
+      "differences": {},
+      "reference_status": "imported",
+      "candidate_status": "success"
+    },
+    {
+      "policy_id": "temporal-6h",
+      "query": "hour",
+      "equal": true,
+      "differences": {},
+      "reference_status": "imported",
+      "candidate_status": "success"
+    },
+    {
+      "policy_id": "temporal-12h",
+      "query": "top",
+      "equal": true,
+      "differences": {},
+      "reference_status": "imported",
+      "candidate_status": "success"
+    },
+    {
+      "policy_id": "temporal-12h",
+      "query": "protocol",
+      "equal": true,
+      "differences": {},
+      "reference_status": "imported",
+      "candidate_status": "success"
+    },
+    {
+      "policy_id": "temporal-12h",
+      "query": "hour",
+      "equal": true,
+      "differences": {},
+      "reference_status": "imported",
+      "candidate_status": "success"
+    },
+    {
+      "policy_id": "temporal-24h",
+      "query": "top",
+      "equal": true,
+      "differences": {},
+      "reference_status": "imported",
+      "candidate_status": "success"
+    },
+    {
+      "policy_id": "temporal-24h",
+      "query": "protocol",
+      "equal": true,
+      "differences": {},
+      "reference_status": "imported",
+      "candidate_status": "success"
+    },
+    {
+      "policy_id": "temporal-24h",
+      "query": "hour",
+      "equal": true,
+      "differences": {},
+      "reference_status": "imported",
+      "candidate_status": "success"
+    },
+    {
+      "policy_id": "temporal-48h",
+      "query": "top",
+      "equal": true,
+      "differences": {},
+      "reference_status": "imported",
+      "candidate_status": "success"
+    },
+    {
+      "policy_id": "temporal-48h",
+      "query": "protocol",
+      "equal": true,
+      "differences": {},
+      "reference_status": "imported",
+      "candidate_status": "success"
+    },
+    {
+      "policy_id": "temporal-48h",
+      "query": "hour",
+      "equal": true,
+      "differences": {},
+      "reference_status": "imported",
+      "candidate_status": "success"
+    },
+    {
+      "policy_id": "label-based",
+      "query": "top",
+      "equal": true,
+      "differences": {},
+      "reference_status": "imported",
+      "candidate_status": "success"
+    },
+    {
+      "policy_id": "label-based",
+      "query": "protocol",
+      "equal": true,
+      "differences": {},
+      "reference_status": "imported",
+      "candidate_status": "success"
+    },
+    {
+      "policy_id": "label-based",
+      "query": "hour",
+      "equal": true,
+      "differences": {},
+      "reference_status": "imported",
+      "candidate_status": "success"
+    },
+    {
+      "policy_id": "top-k-20",
+      "query": "top",
+      "equal": true,
+      "differences": {},
+      "reference_status": "imported",
+      "candidate_status": "success"
+    },
+    {
+      "policy_id": "top-k-20",
+      "query": "protocol",
+      "equal": true,
+      "differences": {},
+      "reference_status": "imported",
+      "candidate_status": "success"
+    },
+    {
+      "policy_id": "top-k-20",
+      "query": "hour",
+      "equal": true,
+      "differences": {},
+      "reference_status": "imported",
+      "candidate_status": "success"
+    },
+    {
+      "policy_id": "sampling-r01",
+      "query": "top",
+      "equal": true,
+      "differences": {},
+      "reference_status": "imported",
+      "candidate_status": "success"
+    },
+    {
+      "policy_id": "sampling-r01",
+      "query": "protocol",
+      "equal": true,
+      "differences": {},
+      "reference_status": "imported",
+      "candidate_status": "success"
+    },
+    {
+      "policy_id": "sampling-r01",
+      "query": "hour",
+      "equal": true,
+      "differences": {},
+      "reference_status": "imported",
+      "candidate_status": "success"
+    },
+    {
+      "policy_id": "sampling-r02",
+      "query": "top",
+      "equal": true,
+      "differences": {},
+      "reference_status": "imported",
+      "candidate_status": "success"
+    },
+    {
+      "policy_id": "sampling-r02",
+      "query": "protocol",
+      "equal": true,
+      "differences": {},
+      "reference_status": "imported",
+      "candidate_status": "success"
+    },
+    {
+      "policy_id": "sampling-r02",
+      "query": "hour",
+      "equal": true,
+      "differences": {},
+      "reference_status": "imported",
+      "candidate_status": "success"
+    },
+    {
+      "policy_id": "sampling-r03",
+      "query": "top",
+      "equal": true,
+      "differences": {},
+      "reference_status": "imported",
+      "candidate_status": "success"
+    },
+    {
+      "policy_id": "sampling-r03",
+      "query": "protocol",
+      "equal": true,
+      "differences": {},
+      "reference_status": "imported",
+      "candidate_status": "success"
+    },
+    {
+      "policy_id": "sampling-r03",
+      "query": "hour",
+      "equal": true,
+      "differences": {},
+      "reference_status": "imported",
+      "candidate_status": "success"
+    },
+    {
+      "policy_id": "sampling-r04",
+      "query": "top",
+      "equal": true,
+      "differences": {},
+      "reference_status": "imported",
+      "candidate_status": "success"
+    },
+    {
+      "policy_id": "sampling-r04",
+      "query": "protocol",
+      "equal": true,
+      "differences": {},
+      "reference_status": "imported",
+      "candidate_status": "success"
+    },
+    {
+      "policy_id": "sampling-r04",
+      "query": "hour",
+      "equal": true,
+      "differences": {},
+      "reference_status": "imported",
+      "candidate_status": "success"
+    },
+    {
+      "policy_id": "sampling-r05",
+      "query": "top",
+      "equal": true,
+      "differences": {},
+      "reference_status": "imported",
+      "candidate_status": "success"
+    },
+    {
+      "policy_id": "sampling-r05",
+      "query": "protocol",
+      "equal": true,
+      "differences": {},
+      "reference_status": "imported",
+      "candidate_status": "success"
+    },
+    {
+      "policy_id": "sampling-r05",
+      "query": "hour",
+      "equal": true,
+      "differences": {},
+      "reference_status": "imported",
+      "candidate_status": "success"
+    }
+  ]
+}

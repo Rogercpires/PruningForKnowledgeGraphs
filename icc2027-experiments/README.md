@@ -39,7 +39,7 @@ The temporal layer is now available to new generator runs, with explicit `raw` a
 - Dataset discovery is deterministic (the eight canonical CIC-IDS-2017 filenames, in fixed order).
 - Sampling uses a local seeded PRNG and records the seed; it reports selected **flows** separately from emitted triples.
 - Aggregated node URIs use SHA-256, never Python's randomized `hash()`.
-- Aggregation is held in one map for the complete run. This prevents a time bucket from becoming several RDF resources when an in-memory flush happens.
+- Aggregation is held in one map per canonical input file, without intermediate flushing. Equal keys in different files remain separate aggregate resources; there is no global cross-file aggregation map.
 - Aggregation retains a SPARQL-queryable label distribution: each `AggregatedFlow` has one `ex:LabelCount` resource per source-flow label, linked through `ex:hasLabelCount`, with `ex:label` and exact `ex:count` values. The extension is defined in `rdf-model.ttl` and queried by `queries/aggregate-label-distribution.rq`.
 - Top-K ties use lexical destination ordering, which makes selection deterministic.
 - Label retention is reported by label and relative to the baseline manifest. “All selected labels retained” is not reported as global label coverage.
@@ -51,6 +51,15 @@ The `aggregate-60s.json` policy retains the number of source flows per label ins
 For an aggregation run, `manifest.json` reports `aggregate_input_flows` (valid source-flow rows passed to aggregation), `aggregated_groups`, `aggregate_label_counts`, `aggregate_label_count_sum`, and exact `emitted_triples`. The generator rejects the run if the sum of label counts differs from the number of input flows represented by the aggregates.
 
 See [METHODS.md](METHODS.md) for the audit-resolution matrix and reporting rules.
+
+## Automatic evaluation of existing databases
+
+Use [EVALUATION.md](EVALUATION.md) for the Python quality-evaluation command,
+offline replay, metric formulas, logical TDB2 storage reports and separate unit
+and Jena integration tests. The 13-policy registry is
+`configs/evaluation-r04.json`. This evaluation does not regenerate RDF or run a
+latency benchmark. [STAGE3_AUDIT_DISPOSITION.md](STAGE3_AUDIT_DISPOSITION.md)
+records addressed audit items and remaining debt.
 
 
 

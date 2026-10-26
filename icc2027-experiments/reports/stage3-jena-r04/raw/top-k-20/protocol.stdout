@@ -1,0 +1,20 @@
+{ "head": {
+    "vars": [ "protocol" , "flows" ]
+  } ,
+  "results": {
+    "bindings": [
+      { 
+        "protocol": { "type": "literal" , "value": "0" } ,
+        "flows": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "value": "1578" }
+      } ,
+      { 
+        "protocol": { "type": "literal" , "value": "17" } ,
+        "flows": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "value": "977977" }
+      } ,
+      { 
+        "protocol": { "type": "literal" , "value": "6" } ,
+        "flows": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "value": "1224115" }
+      }
+    ]
+  }
+}
