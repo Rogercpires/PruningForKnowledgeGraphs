@@ -58,3 +58,4 @@ O rótulo e o Flow ID foram inspecionados para explicar os casos, mas **não** s
 As propostas são horários civis locais, sem offset: por exemplo, `2017-07-05T14:24:00`, nunca `Z`. O bucket de 60 s é calculado por arredondamento local para baixo, também sem epoch. A auditoria não demonstra o fuso horário nem recupera entidades individuais de fluxo.
 
 Ainda não é autorizado ativar a normalização no gerador RDF. Antes disso, revisar `temporal-differences.csv`, decidir e documentar a convenção de fuso horário, e executar testes de equivalência contra o Baseline em uma execução separada. O tempo desta auditoria não é uma medição de desempenho.
+

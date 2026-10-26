@@ -37,3 +37,4 @@ Logo, em relação à R03, `corrected` diminuiu em 7, `preserved` aumentou em 5 
 Os cinco registros preservados não validam o rótulo nem reconstroem entidades individuais de fluxo; apenas evitam uma correção temporal que contradiz a janela de madrugada publicada. Os dois registros ambíguos permanecem fora de qualquer transformação até que PCAPs, log de coleta ou outra fonte temporal independente fundamente uma escolha. A representação continua em horário civil local sem offset, sem `Z` e sem epoch.
 
 Fonte: G. Engelen, V. Rimmer e W. Joosen, *Troubleshooting an Intrusion Detection Dataset: the CICIDS2017 Case Study*, documentação complementar, tabela “Labelling”, 2021.
+

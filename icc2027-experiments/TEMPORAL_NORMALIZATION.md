@@ -64,3 +64,4 @@ O CSV de Web Attacks pode conter linhas estruturais completamente vazias depois 
 ## Limitações e próximo ponto de decisão
 
 Esta reconstrução não prova o fuso horário, não estabelece ordem cronológica de linhas e não corrige todos os relógios de 12 horas. O conjunto de regras atual é uma proposta conservadora e auditável. Sua ativação no gerador RDF exige uma revisão explícita das diferenças, uma decisão documentada sobre fuso horário e novos testes de equivalência do Baseline. Tempos desta auditoria não são dados de benchmark.
+

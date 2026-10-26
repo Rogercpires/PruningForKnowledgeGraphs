@@ -28,3 +28,4 @@ ex:firstSeen a rdf:Property ; rdfs:range xsd:dateTime .
 ex:lastSeen a rdf:Property ; rdfs:range xsd:dateTime .
 
 
+

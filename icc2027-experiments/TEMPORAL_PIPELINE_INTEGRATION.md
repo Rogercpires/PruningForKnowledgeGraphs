@@ -64,3 +64,4 @@ Set-Location 'C:\Users\roger.pires\OneDrive\Documentos\Meus Documentos\Documento
 ```
 
 Cada `RunId` deve ser inédito; o script recusa diretórios existentes. Esses comandos não devem ser executados como parte desta entrega.
+

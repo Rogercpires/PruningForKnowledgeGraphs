@@ -3,3 +3,4 @@ SELECT (COUNT(?flow) AS ?flows)
 WHERE { ?flow a ex:NetworkFlow }
 
 
+
